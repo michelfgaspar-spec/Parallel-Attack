@@ -6,7 +6,7 @@ This is part of an ongoing investigation into the mathematical performance of AI
 
 ## Reading the results
 
-The seven problem folders contain manuscript PDFs, any included supplements, and a separate Lean project in `lean/`. Six folders also contain finite computational companions in `computational/`.
+The seven problem folders contain manuscript PDFs, any included supplements, a separate Lean project in `lean/`, and finite computational companions in `computational/`.
 
 - **Manuscripts** present the arguments and their relationship to existing mathematics for human evaluation.
 - **Computer-assisted arguments** depend on specified algorithms, finite input or certificate data, and the coverage established by their checks. The companions below support the stated finite cases; complete executable packages are not yet available for every claim.
@@ -32,7 +32,7 @@ We ask whether a particular two-parameter family admits a graceful labeling with
 
 Lebesgue's [1914 covering problem](https://arxiv.org/abs/1502.01251) asks for a convex planar set of least area that can contain a rigidly moved copy of every set of diameter one. Successive geometric constructions and numerical refinements have developed upper and lower bounds.
 
-We study a test family consisting of a disk, a Reuleaux triangle, and a Reuleaux pentagon. Can low-area placements be confined to a bounded translation region, and can a bound at one angle be propagated to nearby angles? The [manuscript](universal-covering/Universal_Covering.pdf) derives explicit confinement estimates and angular continuity bounds for a clipped area infimum. Its application to inherited regional numerical premises leaves two positive angular gaps, so it gives no new global numerical lower bound. The [Lean project](universal-covering/lean/) proves selected analytic and topological components; geometric imports and complete regional certificate admission remain open.
+We study a test family consisting of a disk, a Reuleaux triangle, and a Reuleaux pentagon. Can low-area placements be confined to a bounded translation region, and can a bound at one angle be propagated to nearby angles? The [manuscript](universal-covering/Universal_Covering.pdf) derives explicit confinement estimates and angular continuity bounds for a clipped area infimum. Its application to inherited regional numerical premises leaves two positive angular gaps, so it gives no new global numerical lower bound. The [Lean project](universal-covering/lean/) proves selected analytic and topological components; its geometric imports and admission of the numerical certificates into Lean remain open.
 
 ### Cap sets
 
@@ -70,17 +70,16 @@ Each problem's `lean/` directory contains its required local modules and pinned 
 
 ## Computational companions
 
-These are conventional mathematical checking programs and their finite data. They use Python's standard library and have separate run instructions. The manuscripts identify the relevant checks and their mathematical scope.
+These are conventional mathematical checking programs and their finite data, with separate run instructions. Six companions use Python's standard library; universal covering additionally uses the pinned python-flint/Arb dependency for rigorous interval arithmetic. The manuscripts identify the relevant checks and their mathematical scope.
 
 | Problem | Finite computation | Scope |
 | --- | --- | --- |
 | [ARRIVAL](arrival/computational/) | Decoder and routing comparisons in small instances | Supplementary finite checks |
 | [Graceful trees](graceful-trees/computational/) | Complete labeling checks for 10,000 parameter pairs | Supplementary to the all-parameter proof |
+| [Universal covering](universal-covering/computational/) | 43 core cases, 286 middle-strip cells, restricted certificates, endpoint pilot and angular propagation arithmetic | Stated regional and restricted domains, with the manuscript's analytic arguments; two angular gaps remain |
 | [Cap sets](cap-sets/computational/) | Subgroup and two-coset certificate checks | Exact classification within the specified coefficient domains; run both verifiers |
 | [Parity games](parity-games/computational/) | Forward-profile collision and feedback | Four selected graphs in the stated example |
 | [Unit-distance colouring](unit-distance-colouring/computational/) | Words, fibres, local geometry, matching, coordinate bounds, and line selection | Finite construction checks; seed forcing remains a cited input |
 | [Wilf](wilf-13-37/computational/) | Finite-cover generation and recorded-case checking for `14 ≤ n ≤ 37` | Partial recorded validation and same-implementation replay; the newer general algorithms are separate specifications |
 
-The manuscript references identify version [`companions-v1`](https://github.com/michelfgaspar-spec/Parallel-Attack/releases/tag/companions-v1). Wilf's large execution archive is provided as an asset of that release; its README gives the checksum and commands. The repository and release assets are currently private and require repository access.
-
-Universal covering has no computational companion in this release. Its manuscript PDFs and Lean project remain available in their problem folder.
+The first six companions' manuscript references identify version [`companions-v1`](https://github.com/michelfgaspar-spec/Parallel-Attack/releases/tag/companions-v1). Universal covering's manuscript references identify [`companions-v2`](https://github.com/michelfgaspar-spec/Parallel-Attack/tree/companions-v2/universal-covering/computational). Wilf's large execution archive remains an asset of `companions-v1`; its README gives the checksum and commands. The repository and release assets are currently private and require repository access.
