@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "n": 14,
+  "q_domain": [
+    1,
+    14
+  ],
+  "residual_q_domain": [
+    4,
+    4
+  ],
+  "e_leaf": "I1 full e<=3; all later e>=4",
+  "cutoff": {
+    "H": 200,
+    "inclusive": true,
+    "import": "I7",
+    "admitted_without_rerun": true
+  },
+  "status": "closed",
+  "unresolved": [],
+  "omitted_children": 0,
+  "counts": {
+    "alpha": 14,
+    "early_empty": 6,
+    "raw_cutoff": 8
+  },
+  "depths": [
+    {
+      "q": 4,
+      "counts": {
+        "alpha": 14,
+        "early_empty": 6,
+        "raw_cutoff": 8
+      }
+    }
+  ],
+  "stages": {
+    "profiles": {
+      "file": "profiles.jsonl.gz",
+      "events": 28,
+      "content_sha256": "739023c9ca85936255c558b73ac435587e4582931de5f5083cb3cb45d0065d9d",
+      "sha256": "6fec56f74715c96624b2bbb8cca0b0756dffa6ea42526b64b6abce83d811fb19",
+      "rules": {
+        "I1_I5_SMALL_TOTAL_DEPTH": 9,
+        "I2_Q_LE_3": 3,
+        "I3_EARLY_EMPTY": 6,
+        "L20_ALPHA_DOMAIN": 1,
+        "L2_Q_EQUALS_N": 1,
+        "L3_L5_L6_I7_RAW_CUTOFF": 8
+      }
+    },
+    "allocations": {
+      "file": "allocations.jsonl.gz",
+      "events": 0,
+      "content_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "rules": {}
+    },
+    "tuples": {
+      "file": "tuples.jsonl.gz",
+      "events": 0,
+      "content_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "rules": {}
+    },
+    "labels": {
+      "file": "labels.jsonl.gz",
+      "events": 0,
+      "content_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "rules": {}
+    }
+  },
+  "elapsed_seconds": 0.0017852783203125
+}

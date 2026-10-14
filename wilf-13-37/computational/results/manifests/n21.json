@@ -1,0 +1,99 @@
+{
+  "schema_version": 1,
+  "n": 21,
+  "q_domain": [
+    1,
+    21
+  ],
+  "residual_q_domain": [
+    4,
+    7
+  ],
+  "e_leaf": "I1 full e<=3; all later e>=4",
+  "cutoff": {
+    "H": 200,
+    "inclusive": true,
+    "import": "I7",
+    "admitted_without_rerun": true
+  },
+  "status": "closed",
+  "unresolved": [],
+  "omitted_children": 0,
+  "counts": {
+    "alpha": 271,
+    "early_empty": 69,
+    "raw_cutoff": 202
+  },
+  "depths": [
+    {
+      "q": 4,
+      "counts": {
+        "alpha": 33,
+        "early_empty": 9,
+        "raw_cutoff": 24
+      }
+    },
+    {
+      "q": 5,
+      "counts": {
+        "alpha": 64,
+        "early_empty": 9,
+        "raw_cutoff": 55
+      }
+    },
+    {
+      "q": 6,
+      "counts": {
+        "alpha": 84,
+        "early_empty": 27,
+        "raw_cutoff": 57
+      }
+    },
+    {
+      "q": 7,
+      "counts": {
+        "alpha": 90,
+        "early_empty": 24,
+        "raw_cutoff": 66
+      }
+    }
+  ],
+  "stages": {
+    "profiles": {
+      "file": "profiles.jsonl.gz",
+      "events": 292,
+      "content_sha256": "dac22a5f9234da0c1aa8e4ce7e8bb7c9c910f3b76f13fefd12df6e50550ee862",
+      "sha256": "9db6947b7ae8a206690b102a78be2ef62b1d5a9f25e6194117f56ba97b573b09",
+      "rules": {
+        "I1_I5_SMALL_TOTAL_DEPTH": 13,
+        "I2_Q_LE_3": 3,
+        "I3_EARLY_EMPTY": 69,
+        "L20_ALPHA_DOMAIN": 4,
+        "L2_Q_EQUALS_N": 1,
+        "L3_L5_L6_I7_RAW_CUTOFF": 202
+      }
+    },
+    "allocations": {
+      "file": "allocations.jsonl.gz",
+      "events": 0,
+      "content_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "rules": {}
+    },
+    "tuples": {
+      "file": "tuples.jsonl.gz",
+      "events": 0,
+      "content_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "rules": {}
+    },
+    "labels": {
+      "file": "labels.jsonl.gz",
+      "events": 0,
+      "content_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "rules": {}
+    }
+  },
+  "elapsed_seconds": 0.0060558319091796875
+}

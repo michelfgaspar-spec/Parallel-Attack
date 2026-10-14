@@ -3,3 +3,7 @@
 *.olean
 *.ilean
 *.trace
+/wilf-13-37/computational/release-assets/
+/unit-distance-colouring/computational/replay-output/
+__pycache__/
+*.pyc

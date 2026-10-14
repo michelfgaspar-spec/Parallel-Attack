@@ -1,0 +1,95 @@
+{
+  "schema": "unit-distance-companion-manifest-v1",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 3179,
+      "sha256": "692b932f3ac2cbfe41dba526304196c3de3a3334e42567491d8303230614269c"
+    },
+    {
+      "path": "checks/finite_construction.py",
+      "bytes": 19231,
+      "sha256": "33ca0bea8ace6a026942fc976b175d5e6ede390f1124900701cef239b64da0cc"
+    },
+    {
+      "path": "checks/line_cover.py",
+      "bytes": 6281,
+      "sha256": "ec1e88641560f6b37afcb3cb8264e4228f95a2799da88dcfaee4da7190843c62"
+    },
+    {
+      "path": "checks/matching_components.py",
+      "bytes": 4666,
+      "sha256": "c03f2d1c2efedd54f4df81c8746d43ce556e6927ccacf5d514234d8f0dbc64e2"
+    },
+    {
+      "path": "checks/max_pairs.py",
+      "bytes": 6635,
+      "sha256": "1dcac849428698bb7d8b513b153753a45eeea8b09f254a83ccd302d036bf7924"
+    },
+    {
+      "path": "checks/relations.py",
+      "bytes": 4826,
+      "sha256": "5a1777861ccee45af4f06820af4ec3dbf7f9bcee1b58c95d1e030a5907e72654"
+    },
+    {
+      "path": "data/BASE_G1.json",
+      "bytes": 227094,
+      "sha256": "fa4c104a76f4695ef87d5cc64018f464bc8410868fb1a213d5392265731d77b6"
+    },
+    {
+      "path": "data/CERTIFICATE.json",
+      "bytes": 25279,
+      "sha256": "e375d8fe0f380fc655737be36ccc2ee2b1c3caadadb0ef0341cc3b5b4353cd1d"
+    },
+    {
+      "path": "data/CHAIN_GEOMETRY.json",
+      "bytes": 7894226,
+      "sha256": "5e27a16a2bbe4d3ee6e6dd9c3549d9305164cbeb72620dd8210f22764ffcfb4e"
+    },
+    {
+      "path": "data/COMPARISON.json",
+      "bytes": 4768,
+      "sha256": "c1564998ca144b1bc0b203bbda7dbd11ea275cf109ce4a3f19d05d123c15370b"
+    },
+    {
+      "path": "data/ROOT_WORDS.json",
+      "bytes": 2088441,
+      "sha256": "98da85cd786674ff8341a131e37e25b3f694f80e6b431c9c9b3e80ffb1ddcaae"
+    },
+    {
+      "path": "data/SHORT_FOREST.json",
+      "bytes": 1010575,
+      "sha256": "d890727cd3dc854a26ccc399053ec3db05a9faf95e9d74df01848c3b783f3cbf"
+    },
+    {
+      "path": "data/spectrum.json",
+      "bytes": 177288,
+      "sha256": "4644f59780abee0cb4e536fe4106c6aaee4628909c3e6a4dbea628e5450f982c"
+    },
+    {
+      "path": "expected/FINITE_CHECK_RESULTS.json",
+      "bytes": 2621,
+      "sha256": "760f31d7b0671f29455565e7c28208f2190260740dbf32010092a9ef7c3bc558"
+    },
+    {
+      "path": "expected/LINE_COVER.json",
+      "bytes": 11389,
+      "sha256": "221be5f87e0a46f1dd781e67e7fa9b8c24c0224ff3490bf2f6a3853a8e98c73b"
+    },
+    {
+      "path": "expected/MAX_PAIRS.json",
+      "bytes": 345126,
+      "sha256": "874c0bacf5e0afbcbf47956b2e48dc8378e58a1695d5115a8148ed349d3252c9"
+    },
+    {
+      "path": "expected/RELATIONS.json",
+      "bytes": 39892,
+      "sha256": "06837ad6aaeacdadcd6f3e57b5662dc27164d67f7ab8e5b2903adb17349b7bb6"
+    },
+    {
+      "path": "verify.py",
+      "bytes": 7996,
+      "sha256": "8e041b3b09732473be9d4ed4d23f79b9dfc274a29b9268add2f774f321e86cb2"
+    }
+  ]
+}

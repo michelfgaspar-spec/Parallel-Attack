@@ -1,0 +1,179 @@
+{
+  "schema_version": 1,
+  "scope": "Bibliographic references, source versions and mathematical hypothesis adapters for the finite-cover computation.",
+  "conventions": {
+    "n": "|S intersect [0,c)|, including zero",
+    "e": "all minimal generators, including those in [c,c+m)",
+    "q": "ceil(c/m)",
+    "rho": "qm-c",
+    "Ai": "Ap(S,m) intersect [im-rho,(i+1)m-rho)"
+  },
+  "sources": [
+    {
+      "id": "EMA12",
+      "authors": [
+        "Shalom Eliahou",
+        "Daniel Marín-Aragón"
+      ],
+      "title": "On numerical semigroups with at most 12 left elements",
+      "url": "https://arxiv.org/html/2006.01480v1",
+      "metadata_url": "https://arxiv.org/abs/2006.01480",
+      "version": "arXiv:2006.01480v1",
+      "version_date": "2020-06-02",
+      "publication": "Communications in Algebra 49(6) (2021), 2402–2422; DOI 10.1080/00927872.2021.1871621",
+      "locations": [
+        "§2.1–2.7",
+        "Proposition2.7",
+        "Theorem3.1",
+        "Theorem4.1",
+        "Proposition2.20",
+        "Lemma2.13",
+        "Proposition2.18"
+      ],
+      "hypotheses": "Thm3.1: q>=4 and all A_i empty for 1<=i<ceil(q/2); no n bound. Thm4.1: n<=12. Prop2.7: universal W>=W0.",
+      "application": "Exact shifted layers, full P, and zero-inclusive L; W=W0+|P intersect[c,c+m)|(n-q).",
+      "limits": "Historical open>=13 sentence is dated2020. Negative W0 does not refute W."
+    },
+    {
+      "id": "BACHER200",
+      "authors": [
+        "Axel Bacher"
+      ],
+      "title": "Families of Eliahou semigroups linked to Farey intervals",
+      "url": "https://arxiv.org/html/2604.25051v8",
+      "metadata_url": "https://arxiv.org/abs/2604.25051",
+      "version": "arXiv:2604.25051v8",
+      "version_date": "2026-09-27",
+      "first_submission": "2026-04-27",
+      "locations": [
+        "§1 definitions",
+        "§2.3 first experiment and final conclusion"
+      ],
+      "hypotheses": "All numerical semigroups with c<=200 inclusive.",
+      "application": "Bacher k=n, ell=left primitives,r=right primitives; full e=ell+r; W=k(ell+r)-c.",
+      "limits": "c<=320 assumes Conjecture2.5; c<=400 assumes further conjectures and the restriction ell<=7. Neither larger range is imported."
+    },
+    {
+      "id": "DEF100",
+      "authors": [
+        "Manuel Delgado",
+        "Shalom Eliahou",
+        "Jean Fromentin"
+      ],
+      "title": "A verification of Wilf's conjecture up to genus 100",
+      "url": "https://arxiv.org/html/2310.07742v1",
+      "metadata_url": "https://arxiv.org/abs/2310.07742",
+      "version": "arXiv:2310.07742v1",
+      "version_date": "2023-10-11",
+      "publication": "Journal of Algebra 664 (2025), 150–163",
+      "locations": [
+        "Theorem1.1(1)",
+        "Theorem3.5",
+        "Definition4.1/Theorem4.4 exclusion",
+        "§1 definitions"
+      ],
+      "hypotheses": "Every numerical semigroup with genus g<=100.",
+      "application": "Unrestricted g<=100; g=c-n so c<=n+100. Exact modern primary corroboration of classical e<=3.",
+      "limits": "The separate genus120 result requires m|c and is not imported."
+    },
+    {
+      "id": "GRAPH",
+      "authors": [
+        "Shalom Eliahou"
+      ],
+      "title": "A graph-theoretic approach to Wilf's conjecture",
+      "url": "https://arxiv.org/html/1909.03699v1",
+      "metadata_url": "https://arxiv.org/abs/1909.03699",
+      "version": "arXiv:1909.03699v1",
+      "version_date": "2019-09-09",
+      "publication": "Electronic Journal of Combinatorics 27(2) (2020), P2.15; DOI 10.37236/9106",
+      "locations": [
+        "Proposition2.9/Corollary2.10",
+        "Theorem3.24",
+        "Propositions3.11/3.12,Corollary3.21",
+        "§4 universal graph properties",
+        "§5 introduction/Lemma5.2/Proposition5.3",
+        "entire§§5.2–5.4, Lemma5.6, Propositions5.7–5.12"
+      ],
+      "hypotheses": "Theorem1.1 requires e>=m/3. Separate proof-level consequence: for every S, e>=4,q>=4,tau(X)<=2q-1 imply W>=0; no ratio hypothesis.",
+      "application": "tau(X)=n_left-q; paper n=|V| renamed b, graph delta renamed depth_G. Maximum matching counts touched vertices, loops once. Cor3.21 counts distinct weak-edge weights.",
+      "limits": "§5.8 LK5 is corrected to K5 by Prop5.7; §5.2 loopless star uses d<=b (actually b-1), with displayed final expression a conservative bound. Notation2.3 HTML rho typo corrected by c=qm-rho. Details in IMPORTS_v1.txt. No independently numbered small-tau theorem is invented."
+    },
+    {
+      "id": "MACAULAY",
+      "authors": [
+        "Shalom Eliahou"
+      ],
+      "title": "Wilf's conjecture and Macaulay's theorem",
+      "url": "https://arxiv.org/html/1703.01761v1",
+      "metadata_url": "https://arxiv.org/abs/1703.01761",
+      "version": "arXiv:1703.01761v1",
+      "version_date": "2017-03-06",
+      "publication": "Journal of the European Mathematical Society 20(9) (2018), 2105–2129; DOI 10.4171/JEMS/807",
+      "locations": [
+        "Definitions5.1/5.2",
+        "Notation5.4/Theorem5.5",
+        "Proposition3.11/Proposition3.13",
+        "Corollary6.5"
+      ],
+      "hypotheses": "Standard graded commutative algebra over a field, degree d>=1. Use proper homogeneous quotient over Q and ordinary total degree. Numerical q=3 result; q=2 by Prop3.13; q=1 elementary.",
+      "application": "Hilbert growth h_(d+1)<=M_d(h_d); small positive arguments completed by Gao§1, zero endpoint directly by degree1 generation. Shifted A_i do not supply grading.",
+      "limits": "Shifted numerical Ai do not automatically form a standard grading. §7 true grading requires extra set-addition hypotheses. Classical growth and its small extremal values receive prior credit."
+    },
+    {
+      "id": "FGH",
+      "authors": [
+        "R. Fröberg",
+        "C. Gottlieb",
+        "R. Häggkvist"
+      ],
+      "title": "On numerical semigroups",
+      "url": "https://link.springer.com/article/10.1007/BF02573091",
+      "version": "Semigroup Forum35,63–83; DOI10.1007/BF02573091",
+      "version_date": null,
+      "locations": [
+        "Publisher About this article",
+        "Delgado--Eliahou--Fromentin2310.07742v1 Theorem1.1(1)/reference17",
+        "EMA2006.01480v1 §1/reference8"
+      ],
+      "hypotheses": "Every numerical semigroup with full embedding dimension e<=3.",
+      "application": "Eliminates e<=3 before counterexample reductions.",
+      "limits": "Publisher dates volume35 pp63–83/issue December1986; revised and accepted2January1987; EMA bibliography1987, Bacher bibliography1986. DOI fixed; bibliographic year conventions differ between sources. No original theorem locator invented."
+    },
+    {
+      "id": "OWN13",
+      "authors": [
+        "Michel Gaspar"
+      ],
+      "title": "Oracle-Tree Forcing and Wilfs Inequality for Thirteen Left Elements",
+      "url": "https://arxiv.org/abs/2609.32078",
+      "version": "arXiv:2609.32078v1",
+      "version_date": "2026-09-25",
+      "locations": [
+        "Title, authors and submission history"
+      ],
+      "hypotheses": "The thirteen-left-element result is cited as the predecessor of the present finite cover.",
+      "application": "Predecessor credit; not a dispatch leaf in the finite cover for 14..37.",
+      "limits": "The predecessor is not an input to the finite computation for 14..37."
+    },
+    {
+      "id": "GAO",
+      "authors": [
+        "Yun Gao"
+      ],
+      "title": "Some results related to Macaulay's Theorem about Hilbert functions and applications",
+      "url": "https://arxiv.org/html/2512.21590v1",
+      "version": "arXiv:2512.21590v1",
+      "version_date": "2025-12-25",
+      "locations": [
+        "§1 positive-integer Macaulay representation paragraph",
+        "§1 field setup before Theorem1.1",
+        "Theorem1.1 endpoint limitation"
+      ],
+      "hypotheses": "Every positive a and positive degree d have truncated binomial expansion; §1 quotient theorem is over characteristic-zero field.",
+      "application": "All small positive Macaulay values available; M_d(0)=0 supplied by elementary algebra. Q meets characteristic-zero setup; algebraic closure in abstract not used.",
+      "limits": "Printed d>=0 in Thm1.1 is not imported at d=0: source representation is for positive degree. No Hermitian/sum-of-squares claim or historical priority assertion imported."
+    }
+  ],
+  "import_dossier": "IMPORTS_v1.txt"
+}

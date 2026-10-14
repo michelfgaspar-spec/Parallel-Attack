@@ -1,0 +1,195 @@
+PRIMARY IMPORTS AND HYPOTHESIS ADAPTERS
+
+These are cited results and adapters, not new proofs of the imported results
+or an independent audit of the external computations. SOURCES_v1.json records
+source versions, locators and mathematical hypotheses.
+
+COMMON SETTING
+N={0,1,...}; S is a cofinite additive submonoid of N containing 0. For S!=N,
+m=min(S\{0}), c=min{t in N:[t,infinity) subset S}, L=S intersect [0,c),
+n=|L| (INCLUDING ZERO), P=(S\{0})\((S\{0})+(S\{0})), e=|P| (ALL minimal
+generators, INCLUDING RIGHT primitives), D=(S\{0})+(S\{0}), q=ceil(c/m),
+rho=qm-c in {0,...,m-1}, I_i=[im-rho,(i+1)m-rho),
+A=Ap(S,m)=S\(m+S), A_i=A intersect I_i, alpha_i=|A_i|,
+W=e n-c. Thus I_q=[c,c+m). A_0={0} and alpha_0=1.
+Intervals are integer intervals. S=N has c=0,n=0,e=1,W=0 and is handled
+directly whenever an imported paper works with positive conductor.
+No n=13 theorem is used as a leaf in the finite cover for 14..37.
+
+I1 CLASSICAL SMALL EMBEDDING DIMENSION
+For every numerical semigroup S with full e<=3, W(S)>=0.
+Original credit: R. Froberg, C. Gottlieb, R. Haggkvist, On numerical
+semigroups, Semigroup Forum 35,63-83, DOI10.1007/BF02573091.
+Exact inspected modern primary statement: Delgado--Eliahou--Fromentin,
+arXiv:2310.07742v1, Theorem1.1(1), with original attribution in reference17;
+also Eliahou, arXiv:1703.01761v1 Introduction, and EMA §1/reference8.
+Adapter: their embedding dimension is |P|, not |P intersect L|. S=N is direct.
+Limit: original subscription full text was not inspected; no original theorem
+number is supplied. Publisher says December1986/volume35(1986), while EMA
+reference8 and other modern primary references say1987; publisher revised and
+accepted dates are 2January1987. Preserve DOI/pages; resolve final bibliography
+year convention later. This metadata inconsistency is not a hypothesis gap.
+
+I2 SMALL DEPTH
+For every numerical semigroup S with q<=3, W(S)>=0, equivalently c<=3m.
+Credit: Shalom Eliahou, arXiv:1703.01761v1, Corollary6.5 for q=3,
+Proposition3.13 for q=2, and Proposition3.11 for W>=W0.
+Corollary6.5 itself states q=3, not q<=3. The paper's abstract/introduction
+states the combined c<=3m result. For q=1, necessarily c=m and
+S={0} union [m,infinity), n=1,e=m,W=0 directly. For q=0 use S=N directly.
+Adapter: q=ceil(c/m) with m>0 makes q<=3 iff c<=3m. Full e and zero-inclusive
+L agree. No hypothesis on individual A_i is added to this leaf.
+
+I3 W0 TRANSFER, EARLY EMPTY LAYERS, AND CREDITED <=12 BASELINE
+Credit: Shalom Eliahou and DANIEL Marin-Aragon, arXiv:2006.01480v1.
+Set p=|P intersect L|, d_q=|D intersect [c,c+m)|,
+W0=p n-q d_q+rho. Proposition2.7 states W>=W0, with exact identity
+W=W0+|P intersect [c,c+m)|(n-q), and n>=q.
+Theorem3.1: for every numerical semigroup of depth q>=4, if
+A_i=empty for every 1<=i<ceil(q/2), then W0>=0 and consequently W>=0.
+Theorem4.1: for every numerical semigroup with zero-inclusive n<=12,
+W0>=0 and consequently W>=0.
+Adapter: the paper's alpha_i=|A_i|, shifted I_i and rho agree exactly, so
+alpha_i=0 iff A_i=empty. Theorem3.1 has NO n<=12 bound, no embedding-ratio
+condition, and applies to both parity cases of q. Transfer uses right primitives
+as well as left ones; replacing full e by p in W would change the target.
+Support: §2.1–2.7 definitions; Proposition2.7, Theorems3.1/4.1.
+Proposition2.20 additionally credits n=q+sum_(i=1)^(q-1)(q-i)alpha_i;
+Lemma2.13 credits proper-summand closure; Proposition2.18 credits the ONE global
+bound rho>=|C|, where C is the union of all compressed decomposable Apéry
+values. Those elementary facts are proved in the ordinary dossier itself.
+Limit: dated2020 wording about n>=13 being open is not a current status claim;
+negative W0 does not imply negative W. The <=12 classification is cited.
+
+I4 GRAPH MAIN THEOREM (SEPARATE LEAF)
+Credit: Shalom Eliahou, arXiv:1909.03699v1, Theorem1.1.
+For every numerical semigroup S, full e>=m/3 implies W>=0.
+This numbered theorem has its ratio hypothesis. It is separate from I5.
+
+I5 SMALL TOTAL DEPTH: EXACT PROOF-LEVEL CONSEQUENCE AND DERIVATION
+For every numerical semigroup S with full e>=4 and q>=4,
+tau(X)<=2q-1 implies W>=0, where X=A\{0} and
+depth_G(x) is the unique integer t with x+t m in [c,c+m),
+tau(X)=sum_(x in X) depth_G(x).
+Equivalently, under e>=4,q>=4, n<=3q-1 implies W>=0.
+Credit and exact locator: Eliahou, arXiv:1909.03699v1, §5 introduction,
+Proposition5.3 and complete §§5.2–5.4, ending immediately before Corollary5.13.
+This consequence is proved by those passages; it is not a separately numbered
+theorem and is not obtained by dropping the hypothesis of Theorem1.1.
+
+Adapter and source proof path:
+(a) Proposition2.9 gives tau(X)=|L|-q=n-q, all depths on X nonnegative,
+and m=e+d where d=|X intersect D|. Corollary2.10 gives
+W=e tau(X)-d q+rho. In shifted layer A_i, depth_G(x)=q-i.
+(b) Define G with edges {x,y}, x,y in X and x+y in X, loops allowed;
+vertices are the incident elements. Rename the paper's n=|V(G)| as b, distinct
+from the target's n=|L|. Let k be the greatest NUMBER OF TOUCHED VERTICES of a
+matching (a loop touches one); lambda is the number of loops; nu is the largest
+number of vertices touched by normal edges within a k-vertex matching. A normal
+edge has depth_G(x)+depth_G(y)>=q; a weak edge has this sum q-1.
+(c) Theorem3.24: tau(X)>=(k(q-1)+nu)/2+(b-k). Proposition5.3 therefore gives
+k<=4 under tau(X)<=2q-1,q>=4: k>=5 would force q<=3.
+(d) §5.2 closes k=0,1,2 using e>=4 and q>=4. §5.3 closes k=3, with
+Lemma5.4 splitting the possible loopy graphs, Proposition5.5 first disposing of
+d<=4, and the remaining lambda=3,2,1 cases using the same universal depth,
+weight-fiber and vertex bounds. None of these passages invokes e>=m/3.
+(e) For k=4, Lemma5.6 forces b in {4,5},nu<=2; b=5 additionally forces
+nu=0,tau(X)=2q-1. For b=5, Proposition5.7 gives |E|<=10;
+Propositions5.8/5.9 and the ensuing lambda=3,2,1,0 cases are exhaustive.
+For b=4, Propositions5.10–5.12 close V intersect D sizes 0,1,>=2.
+These cases again use e,q>=4, tau bound and properties true of every G(S).
+Universal supporting properties: Propositions3.11/3.12 (edge-weight fibers),
+Corollary3.21 (rho bounds DISTINCT weak-edge weights), Theorem3.24,
+Lemmas4.3–4.6, Proposition4.7/Corollary4.8, Lemmas4.12–4.14,
+Propositions4.15–4.17. Their statements have no embedding-ratio hypothesis.
+(f) The ratio e>=m/3 appears in Lemma5.2 only for the branch |L|>=3q.
+For |L|<=3q-1 that lemma uses the separately proved small-tau case above.
+Thus the logical direction is: the small-tau result implies the ratio theorem
+after the elementary |L|>=3q branch; the small-tau result itself needs no ratio.
+
+Specific source reading corrections, without changing the imported conclusion:
+* Proposition5.8 says |E|=10 forces LK_5. The preceding Proposition5.7 gives
+K_5 as the 10-edge maximum; LK_5 has15edges and k=5. Read K_5 here. K_5 is
+regular, so the proof's application of Corollary4.8 remains exactly valid.
+* §5.2's loopless-star sentence says d=|E|=b, although a star on b vertices
+has b-1 edges. Use the valid conservative d<=b. With e>=b+1, the source's
+displayed lower bound W>=(b+1)(q-1+nu/2+b-2)-b q+rho remains valid;
+its exact expansion is q+(b+1)(b-3)+(b+1)nu/2+rho. The source's following
+expression q+b(b-3)+b nu/2+rho is a conservative lower bound, rather than an
+equality: the difference is b-3+nu/2>=0 since b>=5. Either bound suffices
+independently of any ratio assumption.
+* HTML Notation2.3 renders rho incorrectly as cm-q. Use rho=qm-c, as the same
+passage states c=qm-rho and §5.1/Corollary2.10 require.
+The dossier imports the cited classification reasoning; it does not claim an
+independent enumeration/reproof of every pictured graph or a full-paper audit.
+Source graph delta means depth_G, NEVER the dossier's decomposable count delta.
+Source multiplicative monomials mean Z^a in an isomorphic semigroup; numerical
+factorization collisions are allowed. They do not provide the dossier's graded
+polynomial quotient by themselves.
+
+I6 MACAULAY HILBERT GROWTH OVER Q, ALL SMALL VALUES AND ZERO
+Classical Macaulay credit; exact cited statement: Eliahou arXiv:1703.01761v1,
+Definitions5.1/5.2, Notation5.4, Theorem5.5. If R is a standard graded
+commutative algebra over a field K, h_d=dim_K R_d, then for every integer d>=1,
+h_(d+1)<=M_d(h_d). In this task K=Q. In particular R=Q[z_1,...,z_r]/J for a
+proper homogeneous ideal J, ordinary total degree and finite r>=0 meets the
+hypotheses (R_0=Q, degree1 generates, each component is finite dimensional).
+
+For every integer a>0,d>=1 define its unique positive truncated binomial
+expansion a=sum_(j=t)^d binom(a_j,j), a_d>...>a_t>=t, t>=1, a_j>=j,
+and M_d(a)=sum_(j=t)^d binom(a_j+1,j+1). Define M_d(0)=0.
+Complementary exact notation locator: Yun Gao arXiv:2512.21590v1 §1,
+positive-integer Macaulay representation paragraph immediately before Theorem1.1.
+It supplies every a>0, including a<d, whereas Eliahou's Notation5.4 is explicitly
+written for a>=d. Gao's §1 works over a characteristic-zero field, so Q is
+permitted; algebraic closure in his abstract is not required for this notation.
+No Hermitian or sum-of-squares theorem from Gao is imported.
+
+Small and zero endpoints are elementary: if 1<=a<=d, the expansion has
+a_j=j for j=d-a+1,...,d, so M_d(a)=a. If h_d=0, generation by degree1 gives
+R_(d+1)=R_1 R_d=0. Thus the zero endpoint agrees with M_d(0)=0. When r=0,
+R=Q has h_d=0 for d>=1 and the same reasoning applies.
+The inequality is used ONLY for d>=1. Gao prints d>=0 in Theorem1.1, although
+his displayed binomial representation requires positive degree; no d=0 growth
+operator or alleged universal bound on h_1 from h_0 is imported.
+Adapter obligation for the proof author: construct an actual proper homogeneous
+quotient over Q with one global monomial selection and prove the numerical-value
+correspondence at every needed total degree. Shifted A_i, weighted rank, and
+numerical level are not themselves a standard grading. The source does not
+establish those new selection/admissibility statements. The ordinary dossier
+must supply them; no additional published premise is requested here.
+
+I7 ADMITTED CONDUCTOR200 COMPUTATION
+Axel Bacher, arXiv:2604.25051v8, §2.3, first experiment and final conclusion:
+every numerical semigroup with c<=200 INCLUSIVE satisfies W>=0.
+Adapter: Bacher's k=|L| is target n; ell counts LEFT primitives, r counts RIGHT
+primitives; full e=ell+r. His W=k(ell+r)-c agrees with target W. The zero element
+belongs to L. Its Eliahou number E is a lower bound, not the target W itself.
+The finite cover uses this cited computation as an admitted result without rerun or full source-code audit.
+The no-conjecture experiment enumerated Eliahou semigroups and checked their W;
+other semigroups have E>=0 and hence W>=0. The reported c<=320 experiment uses
+Conjecture2.5; c<=400 uses Conjectures2.5–2.8 and ell<=7. Neither is imported.
+No journal/peer-review status is asserted for this preprint.
+
+I8 ADMITTED UNRESTRICTED GENUS100 COMPUTATION
+Manuel Delgado, Shalom Eliahou, Jean Fromentin, arXiv:2310.07742v1,
+Theorem3.5: every numerical semigroup with g<=100 satisfies W>=0.
+Adapter: g=|N\S|=c-n, since all gaps lie below c; hence g<=100 iff c<=n+100.
+For n14..37 this gate is contained in c<=137, and therefore in I7's c<=200.
+The stated computer verification is admitted without rerun/audit. Theorem4.4
+of that paper reaches genus120 ONLY for special semigroups m|c; it is excluded.
+
+I9 OWN THIRTEEN PREDECESSOR: CITATION ONLY
+Michel Gaspar, Oracle-Tree Forcing and Wilfs Inequality for Thirteen Left
+Elements, arXiv:2609.32078v1, metadata dated25September2026.
+The predecessor is cited here by its title, author and submission metadata.
+Its proof and computation are not checked by this package, and no n=13
+conclusion is a dispatch leaf in the finite-cover soundness theorem.
+
+IMPORT STATUS AND LIMITS
+These exact leaves and adapters have no current unresolved import-hypothesis gap.
+I1 is a credited classical import corroborated at an exact modern primary
+statement, with original-access/year limits. I5 is a source-proof consequence
+with explicit quantifiers, identities, exhaustive source path and reading
+corrections, not an invented numbered theorem. I6's quotient/selection proof
+is given in LEMMAS_v1.txt; see the manuscript for the final exposition.

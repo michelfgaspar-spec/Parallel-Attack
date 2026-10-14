@@ -1,0 +1,844 @@
+ORDINARY LEMMAS AND FINITE-COVER SOUNDNESS
+
+SCOPE
+These notes give the numbered lemmas and conditional finite-cover soundness
+theorem. The theorem requires complete domains and a contradiction at every
+terminal leaf. It is distinct from verifying an implementation and executing
+a complete cover. The accompanying manuscript supplies the final exposition
+and correspondence qualifications. Original rule numbering is retained.
+
+The only external theorem used within the shadow arguments is classical
+Macaulay growth for an actual standard total-degree graded quotient over Q.
+Its exact source statement is a published leaf: Eliahou, arXiv:1703.01761v1,
+Definitions5.1/5.2, Notation5.4, Theorem5.5; the all-positive binomial convention
+is also stated in Gao, arXiv:2512.21590v1, Section1/Theorem1.1. The quotient
+hypotheses and the numerical adapters are proved here, not imported.
+The following optional Wilf dispatch leaves are distinct from these proofs:
+full embedding dimension e<=3 (Fröberg--Gottlieb--Häggkvist, On numerical
+semigroups, Semigroup Forum35,63--83, DOI10.1007/BF02573091; exact inspected
+corroboration Delgado--Eliahou--Fromentin2310.07742v1, Theorem1.1(1)); q<=3
+(Eliahou1703.01761v1, Corollary6.5 at q=3, Proposition3.13 at q=2,
+and q=1 directly); early-empty q>=4 with every
+alpha_i=0 for i<ceil(q/2) (Eliahou--Marín-Aragón2006.01480v1,
+Theorem3.1 and Proposition2.7); and the proof-level e,q>=4, n<=3q-1
+consequence of Eliahou1909.03699v1, Section5. Its adapter uses depth
+tau(X)=n-q, not the graph's vertex cardinality; it is not obtained by removing
+the hypothesis of the paper's numbered ratio theorem. Exact primary-source
+adapters and inspection limits are supplied separately in
+IMPORTS_v1.txt/SOURCES_v1.json: I1 small e, I2 small q, I3 early-empty and
+<=12, I4 separate ratio gate, I5 small total depth, I6 Macaulay, I7
+conductor200, I8 genus100, I9 citation-only predecessor. In I3 the
+right-primitive transfer identity is W=W0+|P intersect[c,c+m)|(n-q).
+
+The certificate soundness theorem can simply retain every q=1,...,n and use
+none of those optional gates. For a conductor cutoff H, the theorem accepts
+an independently proved or explicitly admitted Wilf leaf for c<=H. The
+computation uses as admitted results Bacher2604.25051v8, Section2.3, c<=200 INCLUSIVE,
+and Delgado--Eliahou--Fromentin2310.07742v1, Theorem3.5, genus<=100. Neither
+computation is audited or rerun here; no conjecture-assisted larger range is
+used. The <=12 theorem is credited to Eliahou--Marín-Aragón2006.01480v1,
+Theorem4.1; the author's n13 predecessor is citation only, with no check.
+
+CONVENTIONS
+A numerical semigroup is a cofinite additive submonoid S of N containing0.
+Its conductor is c=min{a in N:[a,infinity) subset S}; its multiplicity is
+m=min(S\{0}); its primitive elements are positive elements not expressible
+as a sum of two positive S-elements; e counts ALL primitives. Put
+n=|S intersect[0,c)|, including0, and W=ne-c. For S=N, c=n=0 and W=0;
+all remaining definitions concern S!=N, so c>0,m>=2. Set
+q=ceil(c/m), rho=qm-c, A={a in S:a-m notin S},
+lambda(x)=floor((x+rho)/m), A_i={a in A:lambda(a)=i}.
+For 1<=i<q put alpha_i=|A_i|. Let D be the positive decomposable elements
+of A, delta=|D|, R=A intersect(0,c) intersect D, R_i=R intersect A_i,
+kappa_i=|R_i|, beta_i=alpha_i-kappa_i,
+T=A intersect(0,c), B=T\D, s=|B|=sum beta_i, K=|R|=sum kappa_i.
+Use [a,b]_Z={z in Z:a<=z<=b}, empty for a>b. A strict interval upper
+bound b means inclusive integer endpoint b-1. All monomials permit repeated
+variables; all pattern and divisor statements include their multiplicities.
+Empty sums are0, empty products1, and binom(a,b)=0 for integers0<=a<b.
+Our finite D means D_A=A intersect((S\{0})+(S\{0})). The source notation
+D in IMPORTS_v1 instead means the infinite set D_S=(S\{0})+(S\{0});
+source |X intersect D_S| equals our delta, never |D_S|.
+
+1. APERY PARTITION, FULL EMBEDDING DIMENSION, AND UNIVERSAL SUBSUMS.
+There is exactly one A-element in each residue modulo m; A subset[0,c+m),
+A_0={0}, and every positive A-element has level1,...,q. Its primitive
+elements are exactly the primitives of S other than m. Every decomposable
+A-element is a sum of members of B. Every positive partial sum of ANY
+representation of an A-element as positive S-elements belongs to A; every
+proper positive partial sum is <c. In particular all proper primitive
+submonomials of such a representation are left Apéry values. Moreover
+ m=e+delta,
+ n=q+sum_(i=1)^(q-1)(q-i)alpha_i,
+ c=q(e+delta)-rho,
+ W<0 iff qdelta-rho>(n-q)e.                              (1.1)
+One has 1<=q<=n, 0<=rho<m, kappa_1=0, and e>=1+s. In fact e>=2.
+
+Proof. Cofiniteness gives a least S-element in each residue class. It is
+exactly the one whose predecessor by m is outside S. Every S-element has
+a unique form a+tm with a in A,t>=0. If a>=c+m its predecessor is in S,
+so a<c+m. A positive A-element is at least m+1, since m notin A; hence
+its shifted level is>=1 and its upper level is<=q. A primitive p!=m must
+be Apéry: otherwise p=m+(p-m) is a positive decomposition. Conversely the
+notion of primitivity in A is the same as in S. The element m is primitive
+and is outside A. Partitioning the m elements of A into0,e-1 primitives,
+and delta decomposables gives m=e+delta, retaining right primitives.
+
+Every positive S-element decomposes into primitives by induction on its
+integer value. If a=x_1+...+x_t is Apéry and a positive partial sum v had
+v-m in S, then a-m would be in S too, a contradiction. For a proper
+partial sum the complement is>=m, so v<=a-m<c. Thus each primitive in a
+decomposition of a decomposable A-value is left and belongs to B. This
+argument concerns every representation and every partial sum. Adding a
+positive S-element of size>=m raises lambda by at least1. A decomposable
+value therefore has level>=2, proving kappa_1=0. Write a+rho=im+r,
+0<=r<m. Its m-progression contributes q-i terms below c when i<q and0
+when i=q; the zero progression contributes q. This proves the n formula
+and q<=n. Substitute m=e+delta and c=qm-rho to obtain the last two
+identities. Counting m together with B gives e>=1+s. A semigroup with a
+single positive primitive is its multiples; cofiniteness would force m=1.
+Thus e>=2 when S!=N. QED.
+
+2. LEVEL BOUNDS, LENGTH, AND THE EMPTY BOUNDARY.
+For x,y positive in S,
+ lambda(x)+lambda(y)-1 <= lambda(x+y) <= lambda(x)+lambda(y)+1,
+ lambda(x+y)>=lambda(x)+1, lambda(x+y)>=lambda(y)+1.       (2.1)
+For a primitive-factor pattern l=(l_1,...,l_t), every represented value
+has level in
+ [max(max_i l_i+t-1, sum_i l_i-t+1), sum_i l_i+t-1].       (2.2)
+An Apéry representation has t<=q; a target of level<=Q has t<=Q and
+each l_i<=Q-t+1. If B is empty, D is empty. If n=q then T is empty,
+D is empty, and c=qe-rho<=ne, independently of all other gates.
+
+Proof. Write x+rho=im+r_x, y+rho=jm+r_y with0<=r_x,r_y<m.
+The remaining floor is floor((r_x+r_y-rho)/m), between-1 and1.
+The strict increments follow from x,y>=m. Iterate the floor inequalities
+and, separately, add t-1 factors to a factor of largest level. Primitive
+factors have level>=1, proving t<=Q and the indicated individual range.
+The B-empty conclusion follows from Lemma1. If n=q all nonnegative
+weighted alpha terms vanish, so T is empty and the same conclusion applies.
+This also handles q=1: its T is empty. QED.
+
+3. ELIGIBLE PAIRS, WEIGHTS, AND LOOP CONVENTION.
+For a vector z=(z_1,...,z_(Q-1)) define
+ P_Q(z)=sum_(i<j,i+j<=Q+1) z_i z_j
+          +sum_(2i<=Q+1) binom(z_i+1,2),
+ U_Q(z)=sum_(i<j,i+j<=Q) z_i z_j
+          +sum_(2i<=Q) binom(z_i+1,2).                 (3.1)
+Indices are1,...,Q-1; absent coordinates are0. These count unordered
+pairs with replacement. Set M=P_q(alpha), U=U_q(alpha). Then delta<=M.
+For q>=2 give each T-vertex weight w(x)=q-lambda(x), of total n-q.
+Eligibility means w(x)+w(y)>=q-1. If n-q<q-1, no distinct-vertex pair
+is eligible and M<=floor((n-q)/ceil((q-1)/2)). If2(n-q)<q-1, M=0.
+
+Proof. Each D-value splits into two proper positive factors in T by
+Lemma1. The lower floor bound makes their level sum<=q+1. Choosing one
+pair per distinct value is injective into eligible formal pairs, since
+a fixed pair has one numerical sum. Counting distinct-level and same-level
+pairs gives(3.1). The weighted identity gives the total weight. Distinct
+vertices have combined weight<=n-q, while an eligible loop must use a
+vertex of weight>=ceil((q-1)/2). Any pair weight is<=2(n-q). QED.
+
+4. ACTUAL SUM GRAPH, MISSING STARS, AND COLLISIONS.
+Let E_g be the unordered pairs with replacement from T whose sum lies in A.
+For a vertex u count its neighbors, a loop once, as deg(u). If u in R,
+then deg(u)<=K. If such u has deg(u)>=2, then delta<=|E_g|-1.
+If it has r eligible neighbors and a actual neighbors, |E_g|<=M-r+a.
+Thus an occupied decomposable vertex with at least two eligible neighbors
+implies delta<=M-1. Multiple missing-star losses may be added ONLY when
+the sets of eligible pair objects in those stars are disjoint. For q>=4,
+ delta<=M-kappa_2*alpha_(q-1).                           (4.1)
+
+Proof. Write u=x+y with positive factors. For any actual neighbor v of u,
+x+v is a proper left decomposable subsum of u+v, so v->x+v injects its
+neighbor set into R. Suppose the sum map E_g->D were injective. The
+equal-sum actual edges {v+x,y} and {v+y,x}, obtained by subsum closure,
+must coincide. Since v>0, this forces x=y. Then the equal-sum edges
+{v,u} and {x,v+x} must coincide, which forces v=x (the other pairing
+would force x=0). There could then be only one neighbor. Thus two
+neighbors force a collision and at least one lost image. The r-a missing
+pairs in a single star are distinct even with a loop; disjoint star
+sets permit their losses to add. If r>=2 and a<r there is a missing
+edge; otherwise a>=2 gives the collision loss. Losses from alternative
+arguments are intersected by a minimum, not added without disjointness.
+For(4.1), any u in R_2 splits into two A_1 elements by strict increments.
+If v in A_(q-1) and u+v were Apéry, one of those A_1 factors plus v
+would be a proper left subsum of level>=q, impossible. All kappa_2*
+alpha_(q-1) pairs are eligible and distinct; levels2 and q-1 differ at
+q>=4. Hence they are missing. QED.
+
+5. ONE GLOBAL COMPRESSION ALLOWANCE.
+Let Cmp be the set of D-values z possessing ANY split z=x+y into
+positive S-elements with lambda(z)=lambda(x)+lambda(y)-1. All such
+factors are proper left Apéry values. Then |Cmp|<=rho. For every z
+outside Cmp, EVERY such split satisfies lambda(z)>=lambda(x)+lambda(y).
+One has delta<=U+rho. If delta<=F and |D\Cmp|<=N are separately proved,
+ qdelta-rho <= min(qF,(q-1)F+U,(q-1)F+N).              (5.1)
+
+Proof. For a compressed split with levels i,j, factor intervals give
+(i+j)m<=z+2rho, while its sum level gives z+2rho<(i+j)m+rho.
+Thus (z+2rho) mod m is in[0,rho)_Z. Distinct A-values have distinct
+residues modulo m, and the same shift2rho preserves distinctness. This
+is one injection for the union of ALL compressed values, regardless of
+factor degree or level type. At rho=0 the set is empty. Integrality and
+the lower floor bound give the universal noncompression assertion.
+For a D-value outside the image of pairs of level sum<=q, any chosen
+split has level sum q+1, hence its target level q is compressed. There
+are at most rho such values and at most U values in the other image.
+Finally delta-rho<=U and delta-rho<=N; combine each with
+(q-1)delta<=(q-1)F. QED.
+
+6. STRICT INTEGER ENDPOINTS AND CUTOFF BRANCHES.
+Assume q<n, delta<=F and qdelta-rho<=sigma. Put
+ e_min=max(2,1+s), E=floor((sigma-1)/(n-q)), C=qE+sigma.   (6.1)
+Every strict violation has e_min<=e<=E and c<=C. After an independently
+justified e<=3 Wilf dispatch, replace e_min by max(4,1+s). If
+sigma<=(n-q)e_min or E<e_min, no strict violation exists. For any
+integer H>=0 with a Wilf theorem for c<=H, remaining violations satisfy
+c>=H+1; C<=H closes the branch. The genus<=G leaf closes c-n<=G.
+
+Proof. All quantities are integers. From(n-q)e<qdelta-rho<=sigma one
+gets(n-q)e<=sigma-1, proving E, with its indispensable subtraction1.
+Since c=qe+(qdelta-rho), the conductor bound follows. Lemma1 supplies
+the lower bound and counts full e; there is no equality e=1+s premise.
+The other tests are direct inequalities and the stated imported leaves.
+The q=n case uses Lemma2 rather than dividing by zero. QED.
+
+7. CLASSICAL GROWTH AND THE COMPLETE BINOMIAL CONVENTION.
+For j>=1 and a nonnegative integer a, use the canonical full j-binomial
+expansion a=sum_(i=1)^j binom(a_i,i), with
+a_j>...>a_1>=0, a_i>=i-1; zero tails have a_i=i-1. Define
+ G_j(a)=sum_(i=1)^j binom(a_i+1,i+1), G_j(0)=0,
+ H_(d,t)=G_(t-1) o ... o G_d for1<=d<t.                (7.1)
+For0<=a<j, G_j(a)=a. These maps are increasing. The imported Macaulay
+theorem says that the Hilbert dimensions of a standard graded
+commutative Q-algebra obey h_(j+1)<=G_j(h_j); consequently
+h_t<=H_(d,t)(h_d). Zero and small dimensions are included.
+
+Proof of the convention and monotonicity. Greedily choose the largest
+a_j with binom(a_j,j)<=a. Pascal's identity bounds the remainder by
+binom(a_j,j-1), strictly, which forces the next positive top index
+below a_j. Iterate, filling a zero tail with i-1. This proves existence
+and uniqueness by induction. At a=0 all binomials vanish. For a<j the
+a positive terms are leading unit binomials and growth leaves them1.
+For the successor choose the smallest r with a_r+1<a_(r+1), taking
+a_(j+1)=infinity. The lower indices through r are consecutive. Increase
+a_r by1 and reset the indices below r to i-1. The hockey-stick identity
+shows that this increases the original sum by exactly1 and the growth
+sum by a_r-r+2>=1. The zero-tail endpoint gives the same identity
+directly. Thus G_j is strictly increasing on nonnegative integers,
+and compositions are increasing. Iterated Macaulay gives(7.1).
+The growth theorem itself is the cited classical leaf; no shifted
+Apéry level is used as a grading. QED.
+
+8. FIXED-DEGREE NUMERICAL SHADOW ADAPTER (UNIVERSAL REPRESENTATIONS).
+Let B0 be a finite set of DISTINCT integers (signs arbitrary), d<t
+positive integers, K0 subset dB0 of cardinality a, and V subset tB0.
+Suppose EVERY degree-t representation of EVERY v in V has EVERY
+degree-d partial sum in K0. Then |V|<=H_(d,t)(a).
+
+Proof. If B0 is empty V is empty. Otherwise enumerate b_0,...,b_(s-1),
+attach variables X_i and v(X^u)=sum u_i b_i. In degree<=t use the
+additive rank w(u)=sum u_i(t+1)^i. Each exponent is<=t, so ranks are
+distinct in those degrees. Choose the least-rank degree-d representative
+of each K0-value, obtaining a distinct monomial set Z_d of size a.
+Choose the least-rank degree-t representative of each V-value. Each
+degree-d divisor has its value in K0 by the UNIVERSAL hypothesis. If
+it were not the selected representative, replacing it by the lower-rank
+equal-value degree-d monomial would keep total degree t and numerical
+value and decrease rank, a contradiction. In Q[X_0,...,X_(s-1)] kill
+all degree-d monomials outside Z_d by a homogeneous monomial ideal.
+The surviving degree-d basis has size a. A degree-t monomial survives
+exactly when all its degree-d divisors survive. The chosen V-monomials
+therefore inject into its degree-t basis. The quotient is generated
+in degree1 over Q, with genuine polynomial total degree; Lemma7 yields
+the claimed bound. Colliding numerical values cause no problem, and
+the hypothesis is not replaced by a single chosen representation. QED.
+
+9. UNIVERSAL NUMERICAL PREFIX SHADOWS.
+For2<=Q<=q let B_Q consist of primitive left values of level<Q. If it
+is empty, no decomposable A-value through level Q exists. Otherwise let
+ell be its smallest occupied level. For t=3,...,Q and2<=d<t put
+ L_d=max(ell+d-1,d(ell-1)+1),
+ a_(Q,t,d)=sum_(L_d<=i<=Q-t+d) kappa_i.
+Then, with empty ranges0,
+ |D intersect union_(i<=Q) A_i|
+ <=P_Q(beta)+sum_(t=3)^Q min_(2<=d<t) H_(d,t)(a_(Q,t,d)). (9.1)
+For Q<q this bounds sum_(i<=Q)kappa_i; for Q=q it bounds delta.
+
+Proof. Primitive factorizations of a target through Q use B_Q and have
+length<=Q. Pair targets inject into P_Q(beta). Fix all numerical targets
+having a length-t representation. For EVERY such representation and
+EVERY degree-d partial sum, Lemmas1--2 give a proper decomposable left
+Apéry value, lower level L_d, and upper level Q-t+d. Taking K0 to be
+the intersection of dB_Q with that R-level range supplies Lemma8's
+universal hypothesis. Its size is at most a_(Q,t,d); Lemma7's
+monotonicity gives each bound. Take their minimum and then a union
+bound over factor lengths. A value may have several lengths, so this
+sum is an upper bound, never an assertion of disjoint numerical classes.
+QED.
+
+10. ALL-BIPARTITION OCCUPIED-LEVEL RECURSION.
+Work with a primitive level multiset l. Singleton levels with beta_i=0
+are unavailable; otherwise mu((i))=i. For length t>=2 examine EVERY
+bipartition into nonempty submultisets v,w. If any proper piece is
+unavailable, full-target bounds are unavailable. Otherwise define
+ a(l)=max_(v+w=l){mu(v)+mu(w)-1,mu(v)+1,mu(w)+1},
+ b(l)=max_(v+w=l){mu(v)+mu(w),mu(v)+1,mu(w)+1}.          (10.1)
+For a PROPER nonsingleton sum, define mu(l) as the least j with
+kappa_j>0 and
+ a(l)<=j<=min(q-1,sum l_i+t-1);                        (10.2)
+if no such j exists it is unavailable. This recursion is well founded.
+Every proper actual sum with pattern l has level>=mu(l). A full target
+through Q requires a(l)<=Q; a noncompressed full target requires
+b(l)<=Q. Full targets are not rounded to left occupancy.
+
+Proof. Both pieces have smaller length. By induction their actual levels
+are at least the computed mu. Every split exists as an actual proper
+subsum of a full Apéry representation. Lemma2 gives both floor and
+strict-increment lower bounds, hence all entries of a(l). A proper
+nonsingleton sum belongs to R, so its actual occupied level lies in
+(10.2); the upper endpoint follows from Lemma2 and proper leftness.
+Its level is therefore at least the least such j. Unavailability proves
+that the represented proper sum cannot exist. At a noncompressed full
+target, Lemma5's assertion for EVERY split supplies the extra floor
+unit in b(l). The target may be in A_q, explaining why no left rounding
+is imposed on the full target. Repeated levels and factors do not alter
+this induction. QED.
+
+11. FORMAL COUNTS, OCCUPIED SHADOW ENDPOINTS, AND NONCOMPRESSION.
+For t=2,...,Q, enumerate ALL weakly increasing patterns of length t
+with1<=l_i<=Q-t+1 and
+max(max l_i+t-1,sum l_i-t+1)<=Q. If r_i is the multiplicity of level i,
+its formal monomial count is product_i binom(beta_i+r_i-1,r_i), with
+an r_i=0 factor1 and an r_i>0,beta_i=0 factor0. Retain available a(l)<=Q
+for ordinary targets, available b(l)<=Q for noncompressed targets.
+Call the totals A_(Q,t), B_(Q,t). These bound, respectively, numerical
+targets with such a primitive representation, and their noncompressed
+subfamily. For exact level j, also require sum l_i+t-1>=j and a(l)<=j
+(or b(l)<=j). For Q<q all nonsingleton target levels must be occupied;
+requiring some occupied j in the permitted range is another sound filter.
+
+For d>=1 define a_d(Q) as follows. For d=1 take the least occupied
+primitive level below Q. For d>=2 enumerate the same primitive patterns
+at target bound Q-1, with nonzero multiplicity and available mu(l)<=Q-1,
+and take the least mu(l). If the set is empty use sentinel Q. Every
+degree-d proper sum of a target through Q has level>=a_d(Q). For2<=d<t
+its level range is
+ a_d(Q)<=j<=min(Q-t+d,Q-a_(t-d)(Q)+1),                 (11.1)
+with the last +1 deleted for a noncompressed target. Intersect numerical
+degree-t caps with H_(d,t)(sum kappa_j over this range), for EVERY d.
+Empty ranges give0. Summing these valid per-length bounds gives ordinary
+F_Q and noncompressed N_Q; overlap between lengths only enlarges the sum.
+
+Proof. Lemma2 contains every actual factor pattern in the listed finite
+domain. Stars and bars counts unordered choices with repetition from
+beta_i distinct variables in each level. Choose a representative for
+each distinct numerical value; a fixed monomial has a fixed value, so
+this is an injection into retained monomials. Lemma10 justifies the
+filters, including every split. Every proper d-subsum has level<=Q-1,
+so its pattern appears in the a_d enumeration and gives the asserted
+lower bound. For a complementary subsum of t-d factors the lower bound
+is a_(t-d); the ordinary floor inequality yields the second upper
+endpoint in(11.1), and t-d strict increments yield the first. Universal
+noncompression improves the floor endpoint by1. All representations
+and all their d-subsets satisfy these facts. Lemma8 applies with K0
+in the corresponding R-range. A sentinel Q forces a needed shadow
+range empty and correctly excludes that representation. QED.
+
+12. FORCED COMPRESSED LEFT-PAIR SUBTRACTION.
+Suppose a collection J of layers j<q is proved pair-only: for each such
+j, every primitive pattern of every length3<=t<=j fails the exact-level
+ordinary filters of Lemma11 (possibly with a valid cutoff or rank filter).
+Let p_j count ALL formal primitive pairs capable of a noncompressed
+target at exact level j by Lemma11, and put f_j=max(0,kappa_j-p_j).
+Then, provided this profile is actual,
+ number of noncompressed D-values having a primitive pair representation
+ <=U_q(beta)-sum_(j in J) f_j.                         (12.1)
+A negative right side proves the profile impossible; it is not a negative
+cardinality bound applied to a surviving object.
+
+Proof. Length>j is impossible by Lemma2; the hypothesis excludes the
+other longer lengths, so every R_j value has a primitive pair
+representation. Such a pair has level sum<=j+1<=q and is counted in
+U_q(beta). At most p_j of the kappa_j values are noncompressed, so
+choose f_j distinct compressed values and one primitive pair for each.
+Distinct numerical values, also across different layers, give distinct
+pair representatives. No noncompressed value can use one of these pairs,
+because its numerical sum would be the chosen compressed value. Selecting
+a pair for each distinct noncompressed pair-value injects that family into
+the remaining U_q(beta) pairs. If the number to remove exceeds U_q(beta),
+even the required chosen compressed representatives cannot exist. QED.
+
+13. ONE GLOBAL DEGREE-FIRST, RANK-SECOND ORDER IDEAL.
+Enumerate B=b_0,...,b_(s-1). For EVERY B-representable Apéry value,
+including0, select the monomial minimizing lexicographically
+ (|u|,w(u)), w(u)=sum u_i(q+1)^i.                     (13.1)
+There is a unique selection. Its set Z is divisor closed, and its
+numerical map is injective globally, including across degrees. Z consists
+of1, the s primitive variables, and one monomial for each D-value.
+The complement of Z is a monomial ideal in Q[X_0,...,X_(s-1)]; its
+quotient is standard graded by TRUE TOTAL DEGREE, with basis Z.
+For2<=d<=q-1,1<=j<q define
+ h[d,j]=#{u in Z:|u|=d, v(u) in R_j}.
+Then h[d,j]>=0, h[d,j]=0 for d>j, and
+ sum_(d=2)^(q-1)h[d,j]=kappa_j.                       (13.2)
+This SAME allocation is used throughout all prefixes, degrees and shadows.
+
+Proof. All representations have degree<=q by Lemma2, so there are
+finitely many and their base(q+1) ranks are distinct. For a divisor v
+of a selected u, its value is Apéry by Lemma1. If its selected equal-value
+representative v' has smaller degree, replacement u-v+v' decreases total
+degree; if degrees agree it decreases additive rank. Either contradicts
+(13.1). Thus every divisor is selected. A divisor-closed monomial set has
+upward-closed complement; that complement generates the claimed homogeneous
+monomial ideal. Degree0 is Q and degree1 variables generate the quotient.
+There is exactly one selected representative for each represented value;
+right primitives are not B-representable, whereas all D-values are, by
+Lemma1. This proves the stated partition and global injection, resolving
+cross-degree numerical collisions. A left value at level j cannot have
+degree>j, so(13.2) follows. For B empty the ring is Q, Z={1}, D empty.
+QED.
+
+14. SELECTED-DIVISOR SHADOWS, SHARED CAPS, AND THE EXACT TOP SPLIT.
+Fix Q<=q,2<=t<=Q, and a subset Y of selected degree-t targets through Q.
+Each degree-d divisor,2<=d<t, is selected left and lies in(11.1), with
+the improved endpoint when Y is noncompressed. Put a=sum h[d,j] over
+that range. Then |Y|<=H_(d,t)(a). Intersect these bounds with Lemma11's
+formal count and all independently justified degree-t bounds; call the
+result C_(Q,t)(h), Cnc_(Q,t)(h). For t=2 there is no shadow minimum;
+use the formal count. Then
+ sum_(j<=Q)h[t,j]<=C_(Q,t)(h) for Q<q,
+ delta<=F_h=sum_(t=2)^q C_(q,t)(h),
+ |D\Cmp|<=N_h=sum_(t=2)^q Cnc_(q,t)(h).               (14.1)
+For a degree t write L_t=sum_(j<q)h[t,j], interpreted0 for t=q.
+Every selected degree-t value consists of exactly L_t left values plus
+values at EXACT level q. Hence also intersect C_(q,t) with
+ L_t + formal_count_of_degree_t_at_exact_level_q.       (14.2)
+For the noncompressed cap it is safe to count ALL L_t left values and
+only the noncompressed exact-top formal count. Lemma12 can sharpen the
+noncompressed degree2 term. Lemma5 then gives one global rho allowance.
+
+Proof. If Y is empty the claim is immediate. Otherwise divisor closure
+is Lemma13 and proper leftness Lemma1. These
+give (11.1) for every selected divisor. Take the downward closure of Y,
+an actual finite monomial order ideal. Its total-degree-t basis is exactly
+Y; its degree-d basis is its shadow, of size at most a. Its standard
+graded quotient over Q meets Lemma7's hypotheses, so the bound follows
+by Macaulay and monotonicity. This is a SELECTED-DIVISOR assertion;
+universal factorization of a numerical value is not its premise.
+The h budget nevertheless is one global selection, not a fresh choice
+for each shadow. Formal and shadow upper bounds can be intersected.
+Selected numerical classes of distinct degrees are disjoint by Lemma13,
+which justifies (14.1). All positive A-values have level<=q; selected
+nonleft values are in A_q, proving the exact split. Counting left
+noncompressed targets by L_t is conservative. No unused monomial whose
+value is forced left is thereby counted as an extra top value. QED.
+
+15. CUTOFF-CONDITIONED PATTERNS AND TERMINATING ENDPOINT REFINEMENT.
+Let H>=0 be an integer, c>=H+1, and m<=Mmax, with Mmax>0. Necessarily
+ rho/m<=q-(H+1)/Mmax.                                 (15.1)
+For a primitive pattern of length t, level sum L, and r factors of
+level>=2, a target through Q requires
+ (L-Q-1)m<(r-1)rho.                                   (15.2)
+Thus r<=1,L>=Q+1 is impossible. For r>=2 it is impossible if
+ (L-Q-1)Mmax >= (r-1)(qMmax-(H+1)).                   (15.3)
+These tests apply also to t=2 and prefixes Q<q, using actual depth q
+in(15.1). Retaining only patterns passing them gives sound conditioned
+ordinary and noncompressed formal caps, and exact-level h-coordinate caps.
+At exact m,rho one may instead use(15.2) directly.
+
+Proof. Since c=qm-rho and c>=H+1, rho/m<=q-(H+1)/m. The last quantity
+is increasing in m>0, proving(15.1). A level1 primitive is>=m+1, so
+using m is a conservative lower bound; a level-i primitive for i>=2
+is>=im-rho. Thus the sum is>=Lm-r*rho, while a level<=Q target is
+STRICTLY less than(Q+1)m-rho. This proves(15.2), including rho=0 and
+the case r<=1. For r>=2 divide(15.2) by positive m and use(15.1);
+(15.3) contradicts the resulting strict inequality. All lower bounds
+are universal, so filtering preserves every actual representation.
+
+Begin with any valid finite F,N,E caps, Mmax=F+E. Replace caps only by
+the minimum of old and newly proved bounds; compute sigma by Lemma5,
+E by Lemma6 and Mmax=F+E again. Every actual violation remains within
+the new bounds. Retain old sigma by a minimum as well. A nonstationary
+step decreases at least one of the nonnegative integer F,N,sigma,E caps;
+stop at a fixed point or a proved rejection. If E is below
+e_min or a cap is negative, reject before further use. Therefore iteration
+terminates and never treats a failure to improve as an exclusion. QED.
+
+16. SPECIAL CUBIC AND TOP-ONLY CAPS.
+(a) If R subset A_(q-1), q>=4, every primitive Apéry factorization has
+length<=3, and any length3 factor is in A_1 or A_2. Writing
+b_low=beta_1+beta_2 and P=P_q(beta),
+ delta<=P+binom(b_low+2,3).                            (16.1)
+(b) At actual depth q>=5, if kappa_2=0, the numerical primitive cubic
+targets through Q=5 number at most
+ binom(beta_1+beta_2+2,3)+kappa_3*beta_3.              (16.2)
+(c) At actual depth q>=5, without kappa_2=0, their NONCOMPRESSED subfamily
+numbers at most
+ binom(beta_1+2,3)+(kappa_2+kappa_3)*beta_2
+                         +kappa_2*beta_3.            (16.3)
+These are per-degree minima, including for Q=5 prefixes at larger q.
+
+Proof. In(a), a proper pair in length>=4 is left decomposable, hence
+at level q-1; two remaining factors raise its level above q. In a
+cubic a factor of level>=3 and its complementary pair of level q-1
+give total level>=q+1 by the floor bound. P counts pairs and the
+displayed binomial all remaining formal cubics. If R empty, a cubic
+cannot exist and the upper bound remains valid.
+In(b), every proper pair is at level>=3. A level>=4 factor with its
+complementary pair forces total level>=6. Two level3 factors are
+impossible, since the pair complementary to one has level>=4. A cubic
+with its sole level3 factor has complementary pair at exactly3 and
+therefore a value in R_3+B_3, of cardinality<=kappa_3*beta_3. Otherwise
+all factors are at levels1/2, counted by the binomial. In(c), every
+proper pair has level>=2. Noncompression excludes a level>=4 factor.
+With a level3 factor its complement is in R_2; with a level2 factor
+its complement is in R_2 union R_3. The remaining case uses only B_1.
+The stated numerical image bounds cover these cases by a union bound;
+overlap and collisions only decrease their cardinality. QED.
+
+17. ELEMENTARY SMALL SHADOWS AND THE MARKED QUARTIC CAP.
+(a) If at most k quadratics are allowed, with0<=k<=4, the cubics all
+of whose quadratic divisors are allowed number at most0,1,2,4,5,
+respectively. This supplies the small degree2/3 numerical adapter without
+an external growth theorem, after Lemma8's injection.
+(b) For targets through Q=5 at actual q>=5, suppose beta_1=1 and
+kappa_2+kappa_3<=3. Numerical quartic targets number at most5. If no
+quartic target uses four B_2 factors, the bound is4; if in addition none
+uses one B_1 and three B_2 factors, it is3. For NONCOMPRESSED quartics,
+both exclusions hold automatically, hence the bound is3. The ordinary
+exclusions may also be supplied by Lemma15's valid pattern tests.
+
+Proof. For(a), a cube x^3 needs loop x^2; x^2y needs loop x^2 and edge
+xy; xyz needs all three triangle edges. With ell loops and k-ell edges,
+the count is ell plus edge incidences at loop vertices plus triangles.
+For k<=2 this is<=k. For k=3 the maxima by ell=0,1,2,3 are1,3,4,3.
+For k=4 and ell=0 there is at most one triangle (two triangles need
+at least5 edges); ell=1 gives at most1+3+1=5; ell=2 permits at most3
+loop incidences on two distinct edges and no triangle, giving5;
+ell=3 gives at most3+2=5; ell=4 gives4. Empty variables cause no issue.
+For(b), strict increments force all quartic factors into B_1 union B_2
+and all their quadratic subsums into R_2 union R_3. Lemma8's least-rank
+injection supplies a set of at most3 allowed quadratics. Exponent types
+2+1+1 and1+1+1+1 need4 and6 distinct quadratic divisors and are excluded.
+A fourth power needs one loop; x^3y needs its loop and edge; x^2y^2 needs
+two loops and their edge. With one loop and at most two edges there are
+at most3 good quartics. With two loops and one edge there are at most5,
+and5 occurs only when the edge joins the loop vertices: the two fourth
+powers, two3+1 monomials and one2+2 monomial. Three loops and no edges
+give3. The statements cover smaller sets by adjoining formal quadratics
+or simply deleting possibilities. In the five-monomial case at most
+one variable is the unique low variable. If both are high, all monomials
+are excluded by the first exclusion; otherwise the high fourth power
+is excluded, giving4, and the high-cubed/low-single monomial is excluded
+by the second, giving3. All other cases had at most3.
+For noncompression, four high factors split into two pairs of level>=3.
+One low and three high factors split into a low-high pair and a high-high
+pair, again each of level>=3. Noncompression makes either full target
+level>=6. This proves both exclusions without a cutoff. QED.
+
+18. GENERIC Q4 CAPS AND THE ALL-TOP-LEFT COMPRESSED CAP.
+Assume q=4, alpha=(a,b,d), kappa=(0,h,k), r=a+b. Put
+ M=binom(r+1,2)+rd, U=binom(r+1,2)+ad,
+ P=binom(r-h+1,2)+(r-h)(d-k).
+Then h<=min(b,binom(a+1,2)) and
+ delta<=min(M-hd, P+G_2(h+k)+H_(2,4)(h)).             (18.1)
+The quartic term may additionally be intersected with H_(3,4)(k).
+If h=0 and k=d (A_2 primitive, every A_3 value decomposable), put
+ P0=binom(a+b+1,2), F0=P0+G_2(k),
+ V0=(P0-k)+binom(a+1,2)+ab+binom(a+2,3).
+Then delta<=F0, |D\Cmp|<=V0, and for ANY proved delta<=F,
+ 4delta-rho<=3F+V0.                                  (18.2)
+If P0-k<0 the required left-pair values already prove impossibility.
+
+Proof. All eligible pairs from T are within levels1/2 or between those
+levels and3; the lower pairs exclude2+3. This gives M,U. Every R_2
+value is a pair of A_1 elements, proving the h cap, and Lemma4 gives
+M-hd. Primitive pair counts give P. Every pair in a cubic representation
+is proper left decomposable, in R_2 union R_3, so Lemma8 gives G_2(h+k).
+All quartic factors are in A_1, because a level>=2 factor plus three
+positive factors would have level>=5. Every quadratic quartic subsum
+has level2, while every cubic subsum has level3, by strict increments
+and upper level4. Lemma8 gives the two quartic shadow bounds.
+All lengths are<=4, proving(18.1) by their union.
+For(18.2), R is entirely level3. Lemma16 excludes quartics. Every left
+decomposable level3 value is a primitive pair: a proper pair of a cubic
+would already be at level3 and adding one factor would give level>=4.
+Thus at most P0-k distinct primitive pair values are top. A noncompressed
+left pair value has some A_1 factor, since any A_2+A_2 split at level3
+is compressed, so their number is at most binom(a+1,2)+ab. Any cubic
+with an A_2 factor splits as that factor plus its R_3 complement, which
+is compressed at total level4. Remaining noncompressed cubic values use
+A_1 alone, counted by binom(a+2,3). This proves the V0 union bound and
+Lemma5 supplies the single global allowance and last inequality. QED.
+
+19. TWO MORE Q4 SHADOW ADAPTERS USED BY EARLY BRANCHES.
+(a) Suppose q=4,A_1 empty. Set b=alpha_2,d=alpha_3,k=kappa_3,
+J=A_4 intersect(A_2+A_2), ell=|J|,
+H0=(A_4 intersect D)\(A_2+A_2), h0=|H0|. Then
+ delta=k+ell+h0, k+ell<=binom(b+1,2), e>=1+b+d-k,
+ k+h0<=rho, h0<=min(bd,b(d-k)+G_2(k)),
+ 4delta-rho<=2b(b+1)-k+3h0.                           (19.1)
+(b) Suppose q=4 all elements of U0=A_1 union A_2 are primitive.
+Set r0=|U0|,d=alpha_3,k=kappa_3. Then
+ delta<=binom(r0+1,2)+G_2(k)+r0(d-k).                 (19.2)
+
+Proof. In(a), A_2 is primitive; pairs at level3 use A_2+A_2 and top
+decompositions use A_2+A_2 or A_2+A_3. The partition and pair count
+follow, and all A_2 and primitive A_3 values contribute to e. R_3 is
+compressed by2+2; H0 by2+3 at level4. Lemma5 gives k+h0<=rho once.
+There are at most bd values from A_2+A_3. Remove the subfamily in
+A_2+(A_3\R_3), of size at most b(d-k). Any remaining value in H0 has
+an A_2-cubic representation; in EVERY such representation each pair is
+proper left at level>=3 and at most3 (adding a level2 factor must reach
+level4). Thus all pair subsums are in R_3 and Lemma8 gives G_2(k).
+Finally4delta-rho<=3k+4ell+3h0=4(k+ell)-k+3h0, proving(19.1).
+In(b), eligible decompositions are U0+U0, U0+(A_3\R_3), or U0+R_3.
+Every R_3 value has a U0-pair representation. For a U0-cubic Apéry
+value every pair subsum is proper left decomposable; primitivity of
+the entire U0 forces it into R_3. Lemma8 bounds this numerical cubic
+image by G_2(k). Counting the other two images proves(19.2). QED.
+
+20. COMPLETE FINITE PROFILE AND EXACT INTEGER DOMAINS.
+For a fixed positive integer n, every potential nontrivial violation is
+covered by q=1,...,n; q=n closes by Lemma2. For q<n enumerate EVERY
+nonnegative vector alpha with sum(q-i)alpha_i=n-q, and EVERY rectangle
+kappa_1=0,0<=kappa_i<=alpha_i (integer). Let beta=alpha-kappa,
+M=P_q(alpha), U=U_q(alpha), F=M,
+sigma=min(qF,(q-1)F+U), E=floor((sigma-1)/(n-q)).
+Use e_min=max(2,1+s), or max(4,1+s) AFTER the optional e<=3 gate.
+If no earlier valid rejection applies, retain EVERY
+ e in[e_min,E]_Z, delta in[K,F]_Z, m=e+delta>=2,
+ rho in[0,m-1]_Z, c=qm-rho, c>ne.                    (20.1)
+With a cutoff leaf retain c>=H+1; a genus leaf can exclude c-n<=G.
+Additional F,N,sigma,E refinements retain all actual tuples by minima.
+
+Enumerate EVERY h satisfying(13.2), nonnegative integer, with d=2,...,q-1,
+j=1,...,q-1, h[d,j]=0 for d>j. In each level this is the COMPLETE bounded
+composition of kappa_j, not a selected sample. Independently valid exact
+level counts, shared prefix inequalities and h-coordinate caps may prune.
+An empty h-domain when K>0 proves the corresponding profile impossible.
+
+Proof. Lemma1 supplies q<=n, the weighted equation and rectangle. Each
+alpha_i lies between0 and floor((n-q)/(q-i)), so this enumeration is
+finite and complete by direct bounded product search or recursion that
+assigns every value0,...,floor(remaining/(q-i)) and tests final remainder0.
+The kappa rectangle contains the actual decomposable counts. Lemmas3,5,6
+give finite F,E. Actual delta>=K and m=e+delta, so(20.1) contains its
+full e,m,rho; right primitive counts are not discarded. The actual global
+selection supplies one h by Lemma13, within every complete composition.
+All declared extra pruning predicates are necessary inequalities proved
+above. Finiteness is an existence statement about this domain, not a
+claim that a program has traversed or excluded it. QED.
+
+21. SIMULTANEOUS PRIMITIVE RANK BOXES AND ALL-DIVISOR RANK FILTERS.
+For an exact tuple name the beta_i primitives in increasing order within
+level i as x[i,a], a=0,...,beta_i-1. Their simultaneous integer ranges are
+ max(m+1,im-rho)+a <= x[i,a]
+                 <=(i+1)m-rho-beta_i+a.              (21.1)
+Enforce adjacent same-level order x[i,a+1]>=x[i,a]+1. For a primitive
+monomial u its box sum interval is[sum u_i L_i,sum u_i U_i]_Z.
+All-proper-divisor filtering may strengthen Lemma10: singletons retain
+their named levels; for each nonsingleton proper divisor v, examine ALL
+bipartitions, obtain a(v) as before, and round to the least occupied
+left level j>=a(v) whose inclusive layer interval intersects v's box
+sum interval and with j<=min(q-1,sum l_i+|v|-1). If none exists, reject
+this full target representation. For full ordinary/noncompressed targets
+use a(u)/b(u), the full box interval, and the intended prefix or exact
+layer intersection, without left rounding of a top target. Counting every
+named exponent vector surviving these tests gives a sound ranked formal cap.
+
+Proof. A primitive Apéry value is>=m+1 and lies in its layer. The a
+earlier distinct integers reserve a positions below it; the beta_i-1-a
+later integers reserve that many above it, proving both sides of(21.1)
+simultaneously. Any actual value vector lies in this box. Its every
+proper divisor is left, with numerical value in the corresponding sum
+interval, and its actual level satisfies every split bound. Induction
+therefore shows that each recursive occupied minimum is at most the
+actual level, and no actual representation is rejected. The full target
+also lies in its sum interval and target layer. Choosing selected
+representatives injects actual numerical values into surviving exponent
+vectors, proving the counting bound. Interval correlations omitted by this
+filter only enlarge the surviving domain. Empty B has no such variables
+and no decomposable targets. QED.
+
+22. EXACT ALL-DEGREE LEFT LABELS AND TOP CANDIDATES.
+For fixed h let r=max({1} union {d:sum_j h[d,j]>0}). Every selected top
+D-monomial has degree<=min(q,r+1). Enumerate ALL exponent vectors u>=0
+of degree d for d=2,...,r in a fixed order that finishes lower degrees
+first. Label each0 or a left level j, with EXACT quotas h[d,j]. Label0
+means 'not selected LEFT'; it says nothing about membership in S or top
+selection. For label j require the factor-level bounds, occupied/rank
+filters, and box-sum intersection with[jm-rho,(j+1)m-rho-1]_Z. At d>=3,
+EVERY distinct immediate divisor u-e_i (u_i>0) must already have a
+positive left label <j. This implies all lower divisors by induction.
+The domain includes repeated variables and all degrees; no assumption of
+quadratic-only labels, one cubic, or vanishing higher left degrees is made.
+
+Quota lookahead may reject only if a remaining quota exceeds the number
+of remaining eligible monomials for its degree/layer, or the total quota
+exceeds remaining monomials. At termination every quota must be zero.
+Enumerate every eligible choice, including0 when quotas can still be met.
+Reusing an eligibility superset obtained before tightening is conservative;
+recomputation may remove only choices failing a proved necessary test.
+
+From a completed labeling and a retained box, form ALL top candidates of
+degrees2,...,min(q,r+1): exclude labeled left monomials, require each
+immediate divisor labeled left at d>=3, and retain necessary level/rank
+filters and nonempty
+ I_u=[sum u_i L_i,sum u_i U_i] intersect
+                         [qm-rho,(q+1)m-rho-1]_Z.    (22.1)
+These form a conservative superset of all actual selected top monomials.
+
+Proof. If a selected top monomial had degree>=r+2, a proper divisor of
+degree r+1 would be selected left, contradicting the definition of r.
+Lemma13 supplies one actual labeling. Lemmas1--2 make all its immediate
+divisors left at strictly smaller levels; iterating yields every divisor.
+All eligibility tests are necessary by earlier lemmas. Exact h supplies
+the quotas, so elementary counts of remaining eligible choices cannot
+remove the actual labeling. Enumeration of every choice covers it.
+The same facts place every actual selected top monomial in(22.1).
+For K=0 one has r=1 and top degree<=2; for B empty there are no positive
+degree monomials. No numerical collision constraints are presumed between
+different relaxed candidate labels; omitting them is conservative. QED.
+
+23. MULTIPLICITY-SENSITIVE INTEGER PROPAGATION.
+For a monomial u labeled j impose a=jm-rho<=sum u_i x_i<=b=(j+1)m-rho-1.
+For each u_i>0 sound updates are
+ L_i <- max(L_i,ceil((a-sum_(k!=i)u_k U_k)/u_i)),
+ U_i <- min(U_i,floor((b-sum_(k!=i)u_k L_k)/u_i)).      (23.1)
+Also propagate adjacent same-level rank inequalities with
+L_next>=L_previous+1, U_previous<=U_next-1. Iterate any sequence of these
+updates until fixed or a coordinate is empty. Every actual solution is
+preserved. Nonempty finite initial boxes imply termination of a complete
+repeated pass procedure. Only an empty coordinate proves a propagation
+contradiction; a surviving box can still be unrealizable.
+
+Proof. For an actual solution, sum_(k!=i)u_k x_k is at most the U sum
+and at least the L sum. Isolating u_i x_i yields both bounds, with
+integer ceil and floor valid also when the numerator is negative. The
+same argument proves rank updates. Each intersects an old interval
+with an implied necessary bound, so every step preserves the solution
+regardless of update order. Integer lower endpoints rise and upper
+endpoints fall in a finite initial box until a fixed point or emptiness.
+Using u_i as divisor, rather than treating repeated variables as distinct
+coordinates, handles loops and arbitrary multiplicities. QED.
+
+24. JOINT INTEGER-POINT MAXIMUM MATCHING.
+For ALL top candidates of ALL degrees, build a bipartite graph with
+candidate u on the left and top-layer integers on the right, with edge
+u--z iff z in I_u. If T_max is its MAXIMUM matching cardinality, then
+ delta<=K+T_max.                                     (24.1)
+T_max is computed exactly by sorting nonempty inclusive intervals by
+nondecreasing upper endpoint and assigning each the smallest unused
+integer in it, skipping only if none remains. Ties, repeated intervals,
+and cross-degree overlaps are permitted.
+
+Proof. Actual selected top values are globally distinct by Lemma13,
+so their candidate-value pairs form one matching in this JOINT graph.
+For greedy exactness, inductively choose a maximum matching agreeing
+with earlier greedy decisions. If the current interval has no unused
+point, earlier fixed matches occupy all its points, so it must be
+skipped. Otherwise let x be its smallest unused point. If the maximum
+assigns it y, then y>=x. If x is free, replace y by x; if x is assigned
+to a later interval J, swap y to J. Its lower endpoint<=x<=y and its
+upper endpoint is at least the current upper endpoint>=y, so the swap
+is valid. If the current interval is unmatched and x belongs to J,
+transfer x from J to it, preserving cardinality; if both are unmatched,
+adding the pair contradicts maximal cardinality. Thus a maximum can
+agree with the next greedy decision. Induction proves greedy optimality.
+A found matching alone is a lower bound and cannot establish(24.1).
+For s=0 the top candidate graph is empty. QED.
+
+25. JOINT APERY-RESIDUE MAXIMUM MATCHING, WITH RIGHT PRIMITIVES OMITTED.
+Use mandatory left vertices0, all s primitive variables, and all K
+positively labeled left monomials, plus optional top candidates of ALL
+degrees. Their numerical intervals are{0},[L_i,U_i], the monomial box
+sum intersected with its labeled layer, and I_u, respectively. Connect
+each to every residue modulo m attained by its interval. If R_max is
+the unconstrained MAXIMUM matching cardinality, then
+ 1+s+delta<=R_max, delta<=R_max-1-s.                  (25.1)
+Right primitive vertices may be omitted, for every full e. Mandatory
+coverage need not be imposed on the computed maximum.
+
+Proof. Distinct Apéry values have distinct residues. An actual set
+{0} union B union R union(top D) therefore supplies a matching of size
+1+s+delta in this graph, using all mandatory vertices and its selected
+top subset. Its size is bounded by the unrestricted maximum even if
+that maximum chooses a different set of mandatory vertices. Right
+primitives are absent from this displayed actual subset; omitting them
+enlarges no required conclusion and never imposes e=1+s.
+For an inclusive interval of at least m integers all residues occur;
+otherwise enumerate its integers modulo m, including wraparound. This
+is exact for the interval and conservative for omitted correlations.
+To compute a maximum, start empty and introduce left vertices one at
+a time. Adding one vertex can increase the maximum by at most1. If
+a larger matching exists, the symmetric difference gives an alternating
+augmenting path starting at the new unmatched vertex; an augmenting
+path wholly in the old prefix would contradict its maximality. Exhaustive
+alternating search follows the unique owner of each matched residue
+and visits reachable residues, with a visited set preventing cycles.
+If a free residue is reached, flip the path; if not, no augmenting path
+exists. Induction yields the maximum of the finite graph. A nonmaximum
+matching is insufficient for exclusion. QED.
+
+26. COVERING BOX SPLITS AND HONEST UNRESOLVED LEAVES.
+At each completed label branch reject a box only by a proved necessary
+contradiction, e.g. an empty coordinate or
+ min(K+T_max,R_max-1-s)<required delta=m-e.            (26.1)
+Otherwise choose a coordinate L_i<U_i and set mid=floor((L_i+U_i)/2).
+Its children replace that interval by[L_i,mid] and[mid+1,U_i]. Recompute
+sound propagation and candidate/matching caps in each child. A finite
+tree all of whose leaves contradict excludes its initial box. A
+resource limit, interrupted computation, unvisited child, passing
+singleton, or any noncontradicted leaf remains an UNRESOLVED obligation.
+Neither a singleton nor a passing relaxation is asserted to be an actual
+semigroup. If there are no coordinates, evaluate the available contradiction
+rules; inability to contradict is still unresolved.
+
+Proof. The children are disjoint integer boxes with union the parent.
+Every actual solution lies in exactly one child and survives Lemma23's
+updates there. Lemmas22--25 include all its selected values and contradict
+it only under(26.1). Induct on the finite tree from contradiction leaves
+to the root. Stopping for a resource condition provides no mathematical
+contradiction and cannot be used in that induction. QED.
+
+27. PARAMETERIZED FINITE-COVER SOUNDNESS THEOREM.
+Fix a finite set N0 of nonnegative integers; independently supplied Wilf
+leaves (possibly none) with their exact hypotheses; and an integer cutoff
+H>=0, used only if the c<=H leaf is available. Suppose a finite certificate
+has the COMPLETE domains of Lemma20 for each positive n in N0, uses one
+global h per branch, every exact tuple and all labels of Lemma22, and
+the covering children of Lemma26. Suppose every discarded family has a
+specific justified dispatch leaf or contradiction rule from this dossier,
+and every remaining terminal branch is contradicted. No unresolved leaf
+or omitted branch is permitted in its closure manifest. Then W>=0 for
+EVERY numerical semigroup whose zero-inclusive left cardinality is in N0,
+with full embedding dimension e. This conclusion is relative to any
+explicitly admitted imported theorem leaves actually used by the certificate.
+
+Proof. The S=N case has W=0. Suppose another S has n in N0 and W<0.
+It is not covered by a valid dispatch leaf, since such a leaf gives W>=0.
+Lemma1 gives its actual q,alpha,kappa,beta and Lemma2 closes q=n, so
+q<n. Lemmas3--6 place its actual full e,delta,m,rho in Lemma20's finite
+domain, including any cutoff-conditioned tests; every proved refinement
+preserves this SAME violating S. Lemma13 supplies one actual selected
+order ideal and hence one globally shared h. Lemmas9--19 justify all
+ordinary, noncompressed, special, prefix and selected-shadow pruning.
+Lemma21 contains its actual ordered primitive vector. Lemma22 gives
+one enumerated actual left labeling, satisfying every exact quota and
+divisor requirement. Lemma23 preserves that vector during propagation.
+At each split it lies in a unique covering child by Lemma26. Its
+selected top values give matchings in both joint graphs, so Lemmas24--25
+prevent any false exclusion. Following this vector to a terminal leaf
+therefore reaches a required genuine contradiction, impossible. Thus
+no such S exists. The proof establishes soundness of a COMPLETE closed
+finite cover. It does not establish that any specified N0 already has
+one, that a particular implementation satisfies these rules, or that a
+single uniform implementation has run them. QED.
+
+LIMITS
+The imported results and their hypotheses are specified in IMPORTS_v1.txt and
+SOURCES_v1.json. These arguments do not independently audit the admitted
+external computations or constitute proof-assistant certification.

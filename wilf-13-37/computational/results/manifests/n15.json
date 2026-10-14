@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "n": 15,
+  "q_domain": [
+    1,
+    15
+  ],
+  "residual_q_domain": [
+    4,
+    5
+  ],
+  "e_leaf": "I1 full e<=3; all later e>=4",
+  "cutoff": {
+    "H": 200,
+    "inclusive": true,
+    "import": "I7",
+    "admitted_without_rerun": true
+  },
+  "status": "closed",
+  "unresolved": [],
+  "omitted_children": 0,
+  "counts": {
+    "alpha": 39,
+    "early_empty": 12,
+    "raw_cutoff": 27
+  },
+  "depths": [
+    {
+      "q": 4,
+      "counts": {
+        "alpha": 16,
+        "early_empty": 6,
+        "raw_cutoff": 10
+      }
+    },
+    {
+      "q": 5,
+      "counts": {
+        "alpha": 23,
+        "early_empty": 6,
+        "raw_cutoff": 17
+      }
+    }
+  ],
+  "stages": {
+    "profiles": {
+      "file": "profiles.jsonl.gz",
+      "events": 54,
+      "content_sha256": "40afa1425352d27d4ef866a9f7fa08c3b2cdc3dcb82a285deb1e753b07a50281",
+      "sha256": "bbcab6dd3fe0acbd2d76321defb9cc16c44468874cf2d558fe52e545b215299d",
+      "rules": {
+        "I1_I5_SMALL_TOTAL_DEPTH": 9,
+        "I2_Q_LE_3": 3,
+        "I3_EARLY_EMPTY": 12,
+        "L20_ALPHA_DOMAIN": 2,
+        "L2_Q_EQUALS_N": 1,
+        "L3_L5_L6_I7_RAW_CUTOFF": 27
+      }
+    },
+    "allocations": {
+      "file": "allocations.jsonl.gz",
+      "events": 0,
+      "content_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "rules": {}
+    },
+    "tuples": {
+      "file": "tuples.jsonl.gz",
+      "events": 0,
+      "content_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "rules": {}
+    },
+    "labels": {
+      "file": "labels.jsonl.gz",
+      "events": 0,
+      "content_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "rules": {}
+    }
+  },
+  "elapsed_seconds": 0.0014700889587402344
+}

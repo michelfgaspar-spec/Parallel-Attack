@@ -1,0 +1,123 @@
+{
+  "schema_version": 1,
+  "n": 24,
+  "q_domain": [
+    1,
+    24
+  ],
+  "residual_q_domain": [
+    4,
+    8
+  ],
+  "e_leaf": "I1 full e<=3; all later e>=4",
+  "cutoff": {
+    "H": 200,
+    "inclusive": true,
+    "import": "I7",
+    "admitted_without_rerun": true
+  },
+  "status": "closed",
+  "unresolved": [],
+  "omitted_children": 0,
+  "counts": {
+    "alpha": 606,
+    "early_empty": 155,
+    "raw_cutoff": 428,
+    "kappa": 654,
+    "profile_rejects": 654
+  },
+  "depths": [
+    {
+      "q": 4,
+      "counts": {
+        "alpha": 44,
+        "early_empty": 11,
+        "raw_cutoff": 14,
+        "kappa": 530,
+        "profile_rejects": 530
+      }
+    },
+    {
+      "q": 5,
+      "counts": {
+        "alpha": 94,
+        "early_empty": 10,
+        "raw_cutoff": 80,
+        "kappa": 124,
+        "profile_rejects": 124
+      }
+    },
+    {
+      "q": 6,
+      "counts": {
+        "alpha": 141,
+        "early_empty": 37,
+        "raw_cutoff": 104,
+        "kappa": 0,
+        "profile_rejects": 0
+      }
+    },
+    {
+      "q": 7,
+      "counts": {
+        "alpha": 163,
+        "early_empty": 33,
+        "raw_cutoff": 130,
+        "kappa": 0,
+        "profile_rejects": 0
+      }
+    },
+    {
+      "q": 8,
+      "counts": {
+        "alpha": 164,
+        "early_empty": 64,
+        "raw_cutoff": 100,
+        "kappa": 0,
+        "profile_rejects": 0
+      }
+    }
+  ],
+  "stages": {
+    "profiles": {
+      "file": "profiles.jsonl.gz",
+      "events": 1284,
+      "content_sha256": "31c7c1a6d7103147d1a0e67f26198ebe6cecadeab67d97d94275d2b86b74cb5f",
+      "sha256": "3944586cff510d96be3b2c0de7b9fe4ee66ca56049294b4c16c06eedb7e6c250",
+      "rules": {
+        "I1_I5_SMALL_TOTAL_DEPTH": 15,
+        "I2_Q_LE_3": 3,
+        "I3_EARLY_EMPTY": 155,
+        "L20_ALPHA_DOMAIN": 5,
+        "L20_KAPPA_RECTANGLE": 23,
+        "L2_Q_EQUALS_N": 1,
+        "L3_L5_L6_I7_RAW_CUTOFF": 428,
+        "L6_EMPTY": 337,
+        "L6_I7_CUTOFF": 6,
+        "L9_L11_PREFIX": 311
+      }
+    },
+    "allocations": {
+      "file": "allocations.jsonl.gz",
+      "events": 0,
+      "content_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "rules": {}
+    },
+    "tuples": {
+      "file": "tuples.jsonl.gz",
+      "events": 0,
+      "content_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "rules": {}
+    },
+    "labels": {
+      "file": "labels.jsonl.gz",
+      "events": 0,
+      "content_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "rules": {}
+    }
+  },
+  "elapsed_seconds": 0.0525970458984375
+}

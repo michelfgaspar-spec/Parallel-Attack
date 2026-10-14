@@ -1,0 +1,307 @@
+{
+  "schema_version": 1,
+  "n": 35,
+  "q_domain": [
+    1,
+    35
+  ],
+  "residual_q_domain": [
+    4,
+    11
+  ],
+  "e_leaf": "I1 full e<=3; all later e>=4",
+  "cutoff": {
+    "H": 200,
+    "inclusive": true,
+    "import": "I7",
+    "admitted_without_rerun": true
+  },
+  "status": "closed",
+  "unresolved": [],
+  "omitted_children": 0,
+  "counts": {
+    "alpha": 6894,
+    "early_empty": 1338,
+    "raw_cutoff": 4151,
+    "kappa": 122870,
+    "profile_rejects": 122491,
+    "profile_survivors": 379,
+    "allocations": 3521,
+    "allocation_rejects": 3490,
+    "allocation_survivors": 31,
+    "tuples": 661,
+    "exact_rejects": 101,
+    "label_inputs": 560,
+    "quota_rejects": 188013,
+    "complete_labels": 407977,
+    "boxes": 408619,
+    "contradicted_boxes": 408298,
+    "propagation_rejects": 181265,
+    "maximum_depth": 10,
+    "splits": 321,
+    "examined_singletons": 1734
+  },
+  "depths": [
+    {
+      "q": 4,
+      "counts": {
+        "alpha": 96,
+        "early_empty": 16,
+        "raw_cutoff": 1,
+        "kappa": 3811,
+        "profile_rejects": 3796,
+        "profile_survivors": 15,
+        "allocations": 58,
+        "allocation_rejects": 54,
+        "allocation_survivors": 4,
+        "tuples": 66,
+        "exact_rejects": 6,
+        "label_inputs": 60,
+        "quota_rejects": 95,
+        "complete_labels": 60,
+        "boxes": 508,
+        "contradicted_boxes": 284,
+        "propagation_rejects": 722,
+        "splits": 224
+      }
+    },
+    {
+      "q": 5,
+      "counts": {
+        "alpha": 297,
+        "early_empty": 16,
+        "raw_cutoff": 12,
+        "kappa": 25128,
+        "profile_rejects": 25016,
+        "profile_survivors": 112,
+        "allocations": 980,
+        "allocation_rejects": 974,
+        "allocation_survivors": 6,
+        "tuples": 230,
+        "exact_rejects": 3,
+        "label_inputs": 227,
+        "quota_rejects": 630,
+        "complete_labels": 1233,
+        "boxes": 1427,
+        "contradicted_boxes": 1330,
+        "propagation_rejects": 4618,
+        "splits": 97,
+        "examined_singletons": 2
+      }
+    },
+    {
+      "q": 6,
+      "counts": {
+        "alpha": 603,
+        "early_empty": 85,
+        "raw_cutoff": 92,
+        "kappa": 44054,
+        "profile_rejects": 43856,
+        "profile_survivors": 198,
+        "allocations": 1948,
+        "allocation_rejects": 1927,
+        "allocation_survivors": 21,
+        "tuples": 365,
+        "exact_rejects": 92,
+        "label_inputs": 273,
+        "quota_rejects": 187288,
+        "complete_labels": 406684,
+        "boxes": 406684,
+        "contradicted_boxes": 406684,
+        "propagation_rejects": 175925,
+        "splits": 0,
+        "examined_singletons": 1732
+      }
+    },
+    {
+      "q": 7,
+      "counts": {
+        "alpha": 931,
+        "early_empty": 80,
+        "raw_cutoff": 391,
+        "kappa": 40476,
+        "profile_rejects": 40423,
+        "profile_survivors": 53,
+        "allocations": 535,
+        "allocation_rejects": 535,
+        "allocation_survivors": 0,
+        "tuples": 0,
+        "exact_rejects": 0,
+        "label_inputs": 0,
+        "quota_rejects": 0,
+        "complete_labels": 0,
+        "boxes": 0,
+        "contradicted_boxes": 0,
+        "propagation_rejects": 0,
+        "splits": 0,
+        "examined_singletons": 0
+      }
+    },
+    {
+      "q": 8,
+      "counts": {
+        "alpha": 1175,
+        "early_empty": 225,
+        "raw_cutoff": 829,
+        "kappa": 7386,
+        "profile_rejects": 7385,
+        "profile_survivors": 1,
+        "allocations": 0,
+        "allocation_rejects": 0,
+        "allocation_survivors": 0,
+        "tuples": 0,
+        "exact_rejects": 0,
+        "label_inputs": 0,
+        "quota_rejects": 0,
+        "complete_labels": 0,
+        "boxes": 0,
+        "contradicted_boxes": 0,
+        "propagation_rejects": 0,
+        "splits": 0,
+        "examined_singletons": 0
+      }
+    },
+    {
+      "q": 9,
+      "counts": {
+        "alpha": 1297,
+        "early_empty": 206,
+        "raw_cutoff": 1057,
+        "kappa": 1490,
+        "profile_rejects": 1490,
+        "profile_survivors": 0,
+        "allocations": 0,
+        "allocation_rejects": 0,
+        "allocation_survivors": 0,
+        "tuples": 0,
+        "exact_rejects": 0,
+        "label_inputs": 0,
+        "quota_rejects": 0,
+        "complete_labels": 0,
+        "boxes": 0,
+        "contradicted_boxes": 0,
+        "propagation_rejects": 0,
+        "splits": 0,
+        "examined_singletons": 0
+      }
+    },
+    {
+      "q": 10,
+      "counts": {
+        "alpha": 1291,
+        "early_empty": 377,
+        "raw_cutoff": 903,
+        "kappa": 375,
+        "profile_rejects": 375,
+        "profile_survivors": 0,
+        "allocations": 0,
+        "allocation_rejects": 0,
+        "allocation_survivors": 0,
+        "tuples": 0,
+        "exact_rejects": 0,
+        "label_inputs": 0,
+        "quota_rejects": 0,
+        "complete_labels": 0,
+        "boxes": 0,
+        "contradicted_boxes": 0,
+        "propagation_rejects": 0,
+        "splits": 0,
+        "examined_singletons": 0
+      }
+    },
+    {
+      "q": 11,
+      "counts": {
+        "alpha": 1204,
+        "early_empty": 333,
+        "raw_cutoff": 866,
+        "kappa": 150,
+        "profile_rejects": 150,
+        "profile_survivors": 0,
+        "allocations": 0,
+        "allocation_rejects": 0,
+        "allocation_survivors": 0,
+        "tuples": 0,
+        "exact_rejects": 0,
+        "label_inputs": 0,
+        "quota_rejects": 0,
+        "complete_labels": 0,
+        "boxes": 0,
+        "contradicted_boxes": 0,
+        "propagation_rejects": 0,
+        "splits": 0,
+        "examined_singletons": 0
+      }
+    }
+  ],
+  "stages": {
+    "profiles": {
+      "file": "profiles.jsonl.gz",
+      "events": 129799,
+      "content_sha256": "a9abd996e5c51a2f05a0fa5f7f99ac89a166a8c3802653c03d80e72858cd92e5",
+      "sha256": "442686e5e88dfff02602cc69d0922d83a9ddff88a31ce47c020df9bba19f8045",
+      "rules": {
+        "I1_I5_SMALL_TOTAL_DEPTH": 23,
+        "I2_Q_LE_3": 3,
+        "I3_EARLY_EMPTY": 1338,
+        "L12_NEGATIVE_N2": 1,
+        "L20_ALPHA_DOMAIN": 8,
+        "L20_DOMAIN": 379,
+        "L20_KAPPA_RECTANGLE": 1405,
+        "L2_Q_EQUALS_N": 1,
+        "L3_L5_L6_I7_RAW_CUTOFF": 4151,
+        "L6_EMPTY": 46082,
+        "L6_I7_CUTOFF": 1174,
+        "L9_L11_PREFIX": 75234
+      }
+    },
+    "allocations": {
+      "file": "allocations.jsonl.gz",
+      "events": 24924,
+      "content_sha256": "c1735f3d4b51fcebcc5b7f5921c649f80ce1bf8645cc5817a4e4d025e668fae1",
+      "sha256": "7eb0f8d59987b00320c861545ae856f31d0aede6093e1be73e553eb98dc32fb5",
+      "rules": {
+        "L13_GLOBAL_H": 3521,
+        "L14_L15_COORDINATE": 1984,
+        "L14_PREFIX": 10772,
+        "L20_EXACT_DOMAIN": 31,
+        "L20_H_COMPOSITION": 5126,
+        "L6_EMPTY": 3463,
+        "L6_I7_CUTOFF": 27
+      }
+    },
+    "tuples": {
+      "file": "tuples.jsonl.gz",
+      "events": 1557,
+      "content_sha256": "4c818e4bbde1f80a69b881eee0e082cca72f5dfb48f7543c743cf4a1e8b4ce98",
+      "sha256": "285543c0377eb6a28dd339480b921fdfaa830ac706d84440a7332a3a87293188",
+      "rules": {
+        "L21_L22_LABEL_DOMAIN": 560,
+        "L5_L14_L21_CAP": 101,
+        "L5_L6_L20_RHO_INTERSECTION": 896
+      }
+    },
+    "labels": {
+      "file": "labels.jsonl.gz",
+      "events": 7378180,
+      "content_sha256": "15bff57e5aedd91757c5f39ab1a52b3feb017a40be5654f3e7f11bf1b16377fe",
+      "sha256": "a6020013ec3dfa0b207abed0b413aaf12899c6ea78529ac8836a3ffda243f8df",
+      "rules": {
+        "L21_L22_DOMAIN": 560,
+        "L22_ALL_DEGREES": 78158,
+        "L22_CHILD_DOMAIN": 2463536,
+        "L22_EXACT_QUOTAS": 407977,
+        "L22_POSITIVE": 1678307,
+        "L22_QUOTA_LOOKAHEAD": 188013,
+        "L22_ZERO": 1561924,
+        "L23_EMPTY": 181265,
+        "L24_L25_JOINT_MAX": 408619,
+        "L26_CHILD": 642,
+        "L26_COVER_COMPLETE": 560,
+        "L26_COVER_SPLIT": 321,
+        "L26_MATCHING": 408298
+      }
+    }
+  },
+  "elapsed_seconds": 470.48763394355774
+}

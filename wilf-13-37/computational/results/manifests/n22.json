@@ -1,0 +1,112 @@
+{
+  "schema_version": 1,
+  "n": 22,
+  "q_domain": [
+    1,
+    22
+  ],
+  "residual_q_domain": [
+    4,
+    7
+  ],
+  "e_leaf": "I1 full e<=3; all later e>=4",
+  "cutoff": {
+    "H": 200,
+    "inclusive": true,
+    "import": "I7",
+    "admitted_without_rerun": true
+  },
+  "status": "closed",
+  "unresolved": [],
+  "omitted_children": 0,
+  "counts": {
+    "alpha": 320,
+    "early_empty": 76,
+    "raw_cutoff": 240,
+    "kappa": 120,
+    "profile_rejects": 120
+  },
+  "depths": [
+    {
+      "q": 4,
+      "counts": {
+        "alpha": 37,
+        "early_empty": 10,
+        "raw_cutoff": 23,
+        "kappa": 120,
+        "profile_rejects": 120
+      }
+    },
+    {
+      "q": 5,
+      "counts": {
+        "alpha": 72,
+        "early_empty": 9,
+        "raw_cutoff": 63,
+        "kappa": 0,
+        "profile_rejects": 0
+      }
+    },
+    {
+      "q": 6,
+      "counts": {
+        "alpha": 101,
+        "early_empty": 30,
+        "raw_cutoff": 71,
+        "kappa": 0,
+        "profile_rejects": 0
+      }
+    },
+    {
+      "q": 7,
+      "counts": {
+        "alpha": 110,
+        "early_empty": 27,
+        "raw_cutoff": 83,
+        "kappa": 0,
+        "profile_rejects": 0
+      }
+    }
+  ],
+  "stages": {
+    "profiles": {
+      "file": "profiles.jsonl.gz",
+      "events": 462,
+      "content_sha256": "8533a0a8148b15f2fefa1ebe675f18821cfc32283283fefd3b7be5ea4595714c",
+      "sha256": "383e6ec2211a50d3b092b1c2e9ac5d8233b779c4f151b6fa43b85747aec7e43c",
+      "rules": {
+        "I1_I5_SMALL_TOTAL_DEPTH": 14,
+        "I2_Q_LE_3": 3,
+        "I3_EARLY_EMPTY": 76,
+        "L20_ALPHA_DOMAIN": 4,
+        "L20_KAPPA_RECTANGLE": 4,
+        "L2_Q_EQUALS_N": 1,
+        "L3_L5_L6_I7_RAW_CUTOFF": 240,
+        "L6_EMPTY": 40,
+        "L9_L11_PREFIX": 80
+      }
+    },
+    "allocations": {
+      "file": "allocations.jsonl.gz",
+      "events": 0,
+      "content_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "rules": {}
+    },
+    "tuples": {
+      "file": "tuples.jsonl.gz",
+      "events": 0,
+      "content_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "rules": {}
+    },
+    "labels": {
+      "file": "labels.jsonl.gz",
+      "events": 0,
+      "content_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "rules": {}
+    }
+  },
+  "elapsed_seconds": 0.013230085372924805
+}

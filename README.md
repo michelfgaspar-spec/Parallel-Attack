@@ -6,10 +6,10 @@ This is part of an ongoing investigation into the mathematical performance of AI
 
 ## Reading the results
 
-The seven problem folders contain manuscript PDFs, any included supplements, and a separate Lean project in `lean/`.
+The seven problem folders contain manuscript PDFs, any included supplements, and a separate Lean project in `lean/`. Six folders also contain finite computational companions in `computational/`.
 
 - **Manuscripts** present the arguments and their relationship to existing mathematics for human evaluation.
-- **Computer-assisted arguments** depend on specified algorithms, inputs, and coverage evidence. The PDFs describe these procedures; complete execution and data bundles are not included for every claim in this repository.
+- **Computer-assisted arguments** depend on specified algorithms, finite input or certificate data, and the coverage established by their checks. The companions below support the stated finite cases; complete executable packages are not yet available for every claim.
 - **Lean formalizations** provide kernel-checked evidence for the encoded statements under their stated hypotheses. They contain completed proofs alongside definitions, specifications, and results whose required inputs remain open.
 
 All seven Lean projects have passed separate builds with the recorded toolchain and dependency pins. Proof coverage and manuscript-to-code correspondence remain partial. The repository does not promise AI reproducibility of the arguments: another model run need not recover the same reasoning or discovery process.
@@ -67,3 +67,20 @@ Evidence retention is part of that investigation. An argument needs recoverable 
 ## Lean projects
 
 Each problem's `lean/` directory contains its required local modules and pinned build configuration. With the specified toolchain and dependencies available, run `lake build` from that directory. Shared foundations are copied into the projects that use them, so a project's source imports do not require another problem folder.
+
+## Computational companions
+
+These are conventional mathematical checking programs and their finite data. They use Python's standard library and have separate run instructions. The manuscripts identify the relevant checks and their mathematical scope.
+
+| Problem | Finite computation | Scope |
+| --- | --- | --- |
+| [ARRIVAL](arrival/computational/) | Decoder and routing comparisons in small instances | Supplementary finite checks |
+| [Graceful trees](graceful-trees/computational/) | Complete labeling checks for 10,000 parameter pairs | Supplementary to the all-parameter proof |
+| [Cap sets](cap-sets/computational/) | Subgroup and two-coset certificate checks | Exact classification within the specified coefficient domains; run both verifiers |
+| [Parity games](parity-games/computational/) | Forward-profile collision and feedback | Four selected graphs in the stated example |
+| [Unit-distance colouring](unit-distance-colouring/computational/) | Words, fibres, local geometry, matching, coordinate bounds, and line selection | Finite construction checks; seed forcing remains a cited input |
+| [Wilf](wilf-13-37/computational/) | Finite-cover generation and recorded-case checking for `14 ≤ n ≤ 37` | Partial recorded validation and same-implementation replay; the newer general algorithms are separate specifications |
+
+The manuscript references identify version [`companions-v1`](https://github.com/michelfgaspar-spec/Parallel-Attack/releases/tag/companions-v1). Wilf's large execution archive is provided as an asset of that release; its README gives the checksum and commands. The repository and release assets are currently private and require repository access.
+
+Universal covering has no computational companion in this release. Its manuscript PDFs and Lean project remain available in their problem folder.

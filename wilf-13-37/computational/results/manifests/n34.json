@@ -1,0 +1,297 @@
+{
+  "schema_version": 1,
+  "n": 34,
+  "q_domain": [
+    1,
+    34
+  ],
+  "residual_q_domain": [
+    4,
+    11
+  ],
+  "e_leaf": "I1 full e<=3; all later e>=4",
+  "cutoff": {
+    "H": 200,
+    "inclusive": true,
+    "import": "I7",
+    "admitted_without_rerun": true
+  },
+  "status": "closed",
+  "unresolved": [],
+  "omitted_children": 0,
+  "counts": {
+    "alpha": 5871,
+    "early_empty": 1201,
+    "raw_cutoff": 3556,
+    "kappa": 89551,
+    "profile_rejects": 89378,
+    "profile_survivors": 173,
+    "allocations": 1327,
+    "allocation_rejects": 1308,
+    "allocation_survivors": 19,
+    "tuples": 342,
+    "label_inputs": 295,
+    "quota_rejects": 34380,
+    "propagation_rejects": 42180,
+    "complete_labels": 156972,
+    "boxes": 156990,
+    "contradicted_boxes": 156981,
+    "maximum_depth": 2,
+    "exact_rejects": 47,
+    "splits": 9
+  },
+  "depths": [
+    {
+      "q": 4,
+      "counts": {
+        "alpha": 91,
+        "early_empty": 16,
+        "raw_cutoff": 1,
+        "kappa": 3357,
+        "profile_rejects": 3346,
+        "profile_survivors": 11,
+        "allocations": 42,
+        "allocation_rejects": 39,
+        "allocation_survivors": 3,
+        "tuples": 94,
+        "label_inputs": 90,
+        "quota_rejects": 142,
+        "propagation_rejects": 486,
+        "complete_labels": 129,
+        "boxes": 129,
+        "contradicted_boxes": 129,
+        "exact_rejects": 4
+      }
+    },
+    {
+      "q": 5,
+      "counts": {
+        "alpha": 270,
+        "early_empty": 15,
+        "raw_cutoff": 12,
+        "kappa": 21138,
+        "profile_rejects": 21069,
+        "profile_survivors": 69,
+        "allocations": 533,
+        "allocation_rejects": 530,
+        "allocation_survivors": 3,
+        "tuples": 78,
+        "label_inputs": 78,
+        "quota_rejects": 0,
+        "propagation_rejects": 3330,
+        "complete_labels": 1710,
+        "boxes": 1728,
+        "contradicted_boxes": 1719,
+        "exact_rejects": 0,
+        "splits": 9
+      }
+    },
+    {
+      "q": 6,
+      "counts": {
+        "alpha": 540,
+        "early_empty": 80,
+        "raw_cutoff": 102,
+        "kappa": 33362,
+        "profile_rejects": 33281,
+        "profile_survivors": 81,
+        "allocations": 657,
+        "allocation_rejects": 645,
+        "allocation_survivors": 12,
+        "tuples": 169,
+        "label_inputs": 127,
+        "quota_rejects": 34238,
+        "propagation_rejects": 38364,
+        "complete_labels": 155133,
+        "boxes": 155133,
+        "contradicted_boxes": 155133,
+        "exact_rejects": 42,
+        "splits": 0
+      }
+    },
+    {
+      "q": 7,
+      "counts": {
+        "alpha": 811,
+        "early_empty": 75,
+        "raw_cutoff": 401,
+        "kappa": 26630,
+        "profile_rejects": 26618,
+        "profile_survivors": 12,
+        "allocations": 95,
+        "allocation_rejects": 94,
+        "allocation_survivors": 1,
+        "tuples": 1,
+        "label_inputs": 0,
+        "quota_rejects": 0,
+        "propagation_rejects": 0,
+        "complete_labels": 0,
+        "boxes": 0,
+        "contradicted_boxes": 0,
+        "exact_rejects": 1,
+        "splits": 0
+      }
+    },
+    {
+      "q": 8,
+      "counts": {
+        "alpha": 1009,
+        "early_empty": 206,
+        "raw_cutoff": 733,
+        "kappa": 3874,
+        "profile_rejects": 3874,
+        "profile_survivors": 0,
+        "allocations": 0,
+        "allocation_rejects": 0,
+        "allocation_survivors": 0,
+        "tuples": 0,
+        "label_inputs": 0,
+        "quota_rejects": 0,
+        "propagation_rejects": 0,
+        "complete_labels": 0,
+        "boxes": 0,
+        "contradicted_boxes": 0,
+        "exact_rejects": 0,
+        "splits": 0
+      }
+    },
+    {
+      "q": 9,
+      "counts": {
+        "alpha": 1090,
+        "early_empty": 185,
+        "raw_cutoff": 884,
+        "kappa": 816,
+        "profile_rejects": 816,
+        "profile_survivors": 0,
+        "allocations": 0,
+        "allocation_rejects": 0,
+        "allocation_survivors": 0,
+        "tuples": 0,
+        "label_inputs": 0,
+        "quota_rejects": 0,
+        "propagation_rejects": 0,
+        "complete_labels": 0,
+        "boxes": 0,
+        "contradicted_boxes": 0,
+        "exact_rejects": 0,
+        "splits": 0
+      }
+    },
+    {
+      "q": 10,
+      "counts": {
+        "alpha": 1076,
+        "early_empty": 333,
+        "raw_cutoff": 734,
+        "kappa": 254,
+        "profile_rejects": 254,
+        "profile_survivors": 0,
+        "allocations": 0,
+        "allocation_rejects": 0,
+        "allocation_survivors": 0,
+        "tuples": 0,
+        "label_inputs": 0,
+        "quota_rejects": 0,
+        "propagation_rejects": 0,
+        "complete_labels": 0,
+        "boxes": 0,
+        "contradicted_boxes": 0,
+        "exact_rejects": 0,
+        "splits": 0
+      }
+    },
+    {
+      "q": 11,
+      "counts": {
+        "alpha": 984,
+        "early_empty": 291,
+        "raw_cutoff": 689,
+        "kappa": 120,
+        "profile_rejects": 120,
+        "profile_survivors": 0,
+        "allocations": 0,
+        "allocation_rejects": 0,
+        "allocation_survivors": 0,
+        "tuples": 0,
+        "label_inputs": 0,
+        "quota_rejects": 0,
+        "propagation_rejects": 0,
+        "complete_labels": 0,
+        "boxes": 0,
+        "contradicted_boxes": 0,
+        "exact_rejects": 0,
+        "splits": 0
+      }
+    }
+  ],
+  "stages": {
+    "profiles": {
+      "file": "profiles.jsonl.gz",
+      "events": 95456,
+      "content_sha256": "208378cef6c4f886b07aa9cd14efb97ce49a51e7f841c357d1ceb241dfcf24e1",
+      "sha256": "7386fe7f4fa96d79015f7aad710f380f6bfd24ac40b6e8b781291559fbe4d7f3",
+      "rules": {
+        "I1_I5_SMALL_TOTAL_DEPTH": 22,
+        "I2_Q_LE_3": 3,
+        "I3_EARLY_EMPTY": 1201,
+        "L20_ALPHA_DOMAIN": 8,
+        "L20_DOMAIN": 173,
+        "L20_KAPPA_RECTANGLE": 1114,
+        "L2_Q_EQUALS_N": 1,
+        "L3_L5_L6_I7_RAW_CUTOFF": 3556,
+        "L6_EMPTY": 33817,
+        "L6_I7_CUTOFF": 949,
+        "L9_L11_PREFIX": 54612
+      }
+    },
+    "allocations": {
+      "file": "allocations.jsonl.gz",
+      "events": 8727,
+      "content_sha256": "8cead475ddbf6554ab53fd16a4882605daa7e0a8b2b8314b66ad363d1338a8c9",
+      "sha256": "bc90793f71494afb15b478da664f0debd46c485bb3fd08537e255a3e02e7fb47",
+      "rules": {
+        "L13_GLOBAL_H": 1327,
+        "L14_L15_COORDINATE": 787,
+        "L14_PREFIX": 3345,
+        "L20_EXACT_DOMAIN": 19,
+        "L20_H_COMPOSITION": 1941,
+        "L6_EMPTY": 1293,
+        "L6_I7_CUTOFF": 15
+      }
+    },
+    "tuples": {
+      "file": "tuples.jsonl.gz",
+      "events": 843,
+      "content_sha256": "edc00895e67a5f3dacb07618f5c5cbc91f80ea222e04412e926458f70521478b",
+      "sha256": "68cc20174e20386637e03a12d8cc3171543c4e7cc178a35cf9d29cd220efbe6e",
+      "rules": {
+        "L21_L22_LABEL_DOMAIN": 295,
+        "L5_L14_L21_CAP": 47,
+        "L5_L6_L20_RHO_INTERSECTION": 501
+      }
+    },
+    "labels": {
+      "file": "labels.jsonl.gz",
+      "events": 1885919,
+      "content_sha256": "5f3ee587a49246b8a26465693363120dc08e5b19fac9633969dfa2b8af045359",
+      "sha256": "ee6d11f6a370d35fc918956228fc5a38d5240fea37c9cc5a396f826ac2be8661",
+      "rules": {
+        "L21_L22_DOMAIN": 295,
+        "L22_ALL_DEGREES": 344,
+        "L22_CHILD_DOMAIN": 552109,
+        "L22_EXACT_QUOTAS": 156972,
+        "L22_POSITIVE": 514389,
+        "L22_QUOTA_LOOKAHEAD": 34380,
+        "L22_ZERO": 270957,
+        "L23_EMPTY": 42180,
+        "L24_L25_JOINT_MAX": 156990,
+        "L26_CHILD": 18,
+        "L26_COVER_COMPLETE": 295,
+        "L26_COVER_SPLIT": 9,
+        "L26_MATCHING": 156981
+      }
+    }
+  },
+  "elapsed_seconds": 146.9389350414276
+}

@@ -1,0 +1,309 @@
+{
+  "schema_version": 1,
+  "scope": "14..37 only",
+  "rules": {
+    "L2_Q_EQUALS_N": {
+      "lemmas": [
+        "L1",
+        "L2"
+      ],
+      "condition": "q=n; weighted alpha sum vanishes, T=D=empty"
+    },
+    "I2_Q_LE_3": {
+      "imports": [
+        "I2"
+      ],
+      "condition": "q=1,2,3; q1 direct, q2 Proposition3.13, q3 Corollary6.5"
+    },
+    "I1_I5_SMALL_TOTAL_DEPTH": {
+      "imports": [
+        "I1",
+        "I5"
+      ],
+      "condition": "q>=4; e<=3 dispatched by I1; e>=4 and n<=3q-1 via I5 ratio-free proof-level consequence"
+    },
+    "I3_EARLY_EMPTY": {
+      "imports": [
+        "I3"
+      ],
+      "condition": "q>=4, EVERY alpha_i=0 for 1<=i<ceil(q/2)"
+    },
+    "L3_L5_L6_I7_RAW_CUTOFF": {
+      "lemmas": [
+        "L3",
+        "L5",
+        "L6"
+      ],
+      "imports": [
+        "I7"
+      ],
+      "condition": "q<n, delta<=M, sigma=min(qM,(q-1)M+U); E=(sigma-1)//(n-q), C=qE+sigma<=200"
+    },
+    "L20_ALPHA_DOMAIN": {
+      "lemmas": [
+        "L20"
+      ],
+      "condition": "complete weighted composition alpha"
+    },
+    "L20_KAPPA_RECTANGLE": {
+      "lemmas": [
+        "L20"
+      ],
+      "condition": "kappa1=0, each remaining coordinate EVERY0..alpha_i"
+    },
+    "L9_L11_PREFIX": {
+      "lemmas": [
+        "L7",
+        "L8",
+        "L9",
+        "L10",
+        "L11",
+        "L16"
+      ],
+      "condition": "required sum kappa through Q exceeds numerical universal-representation cap"
+    },
+    "L18_PAIR_REQUIRED": {
+      "lemmas": [
+        "L18"
+      ],
+      "condition": "q4,kappa2=0,kappa3=alpha3,P0<kappa3"
+    },
+    "L12_NEGATIVE_N2": {
+      "lemmas": [
+        "L12"
+      ],
+      "condition": "pair-only exact-layer criteria, forced compressed representatives exceed U_q(beta)"
+    },
+    "L15_PREFIX": {
+      "lemmas": [
+        "L7",
+        "L8",
+        "L10",
+        "L11",
+        "L15",
+        "L16",
+        "L17"
+      ],
+      "imports": [
+        "I7"
+      ],
+      "condition": "c>=201, positive Mmax=E+F; cutoff prefix required sum kappa exceeds cap"
+    },
+    "L6_EMPTY": {
+      "lemmas": [
+        "L1",
+        "L5",
+        "L6"
+      ],
+      "imports": [
+        "I1"
+      ],
+      "condition": "e>=max(4,1+s), E<e_min"
+    },
+    "L6_I7_CUTOFF": {
+      "lemmas": [
+        "L5",
+        "L6"
+      ],
+      "imports": [
+        "I7"
+      ],
+      "condition": "strict-violation conductor bound C<=200 inclusive"
+    },
+    "L20_DOMAIN": {
+      "lemmas": [
+        "L20"
+      ],
+      "condition": "retained F,N,sigma,E,C define conservative finite domain"
+    },
+    "L13_GLOBAL_H": {
+      "lemmas": [
+        "L13",
+        "L20"
+      ],
+      "condition": "one globally shared exact composition allocation h, true polynomial total degree over Q"
+    },
+    "L14_L15_COORDINATE": {
+      "lemmas": [
+        "L11",
+        "L14",
+        "L15"
+      ],
+      "condition": "complete h coordinate composition bounded by exact-level formal counts; omitted values contradict that count"
+    },
+    "L14_PREFIX": {
+      "lemmas": [
+        "L14"
+      ],
+      "condition": "shared sum h degree t through Q exceeds selected divisor cap"
+    },
+    "L20_H_COMPOSITION": {
+      "lemmas": [
+        "L13",
+        "L20"
+      ],
+      "condition": "all bounded compositions visited"
+    },
+    "L14_L15_PREFIX": {
+      "lemmas": [
+        "L14",
+        "L15"
+      ],
+      "condition": "shared h prefix exceeds cutoff-conditioned cap at Mmax"
+    },
+    "L20_EXACT_DOMAIN": {
+      "lemmas": [
+        "L20"
+      ],
+      "condition": "same h refinements retain old F,N,sigma minima"
+    },
+    "L5_L6_L20_RHO_INTERSECTION": {
+      "lemmas": [
+        "L1",
+        "L5",
+        "L6",
+        "L20"
+      ],
+      "imports": [
+        "I7"
+      ],
+      "condition": "all full e and delta Cartesian points visited; EVERY rho in intersection of six exact linear conditions; complement has specified failing inequality"
+    },
+    "L14_L21_PREFIX": {
+      "lemmas": [
+        "L14",
+        "L21"
+      ],
+      "condition": "shared degree-prefix h demand exceeds all-divisor ranked formal/selected shadow cap"
+    },
+    "L5_L14_L21_CAP": {
+      "lemmas": [
+        "L5",
+        "L14",
+        "L21"
+      ],
+      "condition": "delta>F or delta>rho+N, using ONE global compression allowance"
+    },
+    "L21_L22_LABEL_DOMAIN": {
+      "lemmas": [
+        "L21",
+        "L22"
+      ],
+      "condition": "tuple retained for every global-h-consistent label"
+    },
+    "L21_L22_DOMAIN": {
+      "lemmas": [
+        "L21",
+        "L22"
+      ],
+      "condition": "complete initial named rank box and all-degree labels"
+    },
+    "L24_L25_JOINT_MAX": {
+      "lemmas": [
+        "L24",
+        "L25"
+      ],
+      "condition": "joint all-degree integer maximum Tmax; if needed joint mandatory+optional residue maximum Rmax, right primitives omitted conservatively"
+    },
+    "L26_MATCHING": {
+      "lemmas": [
+        "L24",
+        "L25",
+        "L26"
+      ],
+      "condition": "min(K+Tmax,Rmax-1-s)<delta=m-full_e; Rmax may be skipped if K+Tmax already suffices"
+    },
+    "L26_UNRESOLVED": {
+      "lemmas": [
+        "L26"
+      ],
+      "condition": "passing singleton, node limit or missing contradiction remains genuine gap"
+    },
+    "L26_COVER_SPLIT": {
+      "lemmas": [
+        "L26"
+      ],
+      "condition": "integer midpoint and both disjoint covering children"
+    },
+    "L26_CHILD": {
+      "lemmas": [
+        "L26"
+      ],
+      "condition": "both children visited"
+    },
+    "L23_EMPTY": {
+      "lemmas": [
+        "L23"
+      ],
+      "condition": "complete multiplicity-aware integer constraint propagation yields empty coordinate"
+    },
+    "L22_EXACT_QUOTAS": {
+      "lemmas": [
+        "L13",
+        "L22"
+      ],
+      "condition": "all degree2..r label quotas exactly filled, same global h"
+    },
+    "L22_QUOTA_LOOKAHEAD": {
+      "lemmas": [
+        "L22"
+      ],
+      "condition": "total quota exceeds remaining monomials, or layer quota exceeds eligible superset"
+    },
+    "L22_CHILD_DOMAIN": {
+      "lemmas": [
+        "L21",
+        "L22"
+      ],
+      "condition": "all eligible positive labels with nonzero quotas plus0 when quota remains feasible; omitted labels have absent quota/divisor/exact-level/rank condition"
+    },
+    "L22_ZERO": {
+      "lemmas": [
+        "L22"
+      ],
+      "condition": "not selected LEFT; permits selected top; exact remaining quota feasibility"
+    },
+    "L22_POSITIVE": {
+      "lemmas": [
+        "L22",
+        "L23"
+      ],
+      "condition": "positive left layer child, every immediate divisor strictly earlier"
+    },
+    "L22_ALL_DEGREES": {
+      "lemmas": [
+        "L22"
+      ],
+      "condition": "complete repeated-index monomials for every degree2..r"
+    },
+    "L21_L23_EMPTY_INITIAL": {
+      "lemmas": [
+        "L21",
+        "L23"
+      ],
+      "condition": "initial named primitive/rank box empty"
+    },
+    "L26_COVER_COMPLETE": {
+      "lemmas": [
+        "L26",
+        "L27"
+      ],
+      "condition": "every required label/box child visited and contradicted; no unresolved"
+    },
+    "I1_E_LE_3": {
+      "imports": [
+        "I1"
+      ],
+      "condition": "Every semigroup with FULL e<=3 is dispatched before e_min=max(4,1+s); e counts all right primitives"
+    }
+  },
+  "cap_correspondence": {
+    "refine_profile": "L4 missing-star or collision min, L11 numerical cap, L12 forced N2, L16 top-only, L18 compressed q4 V, L19q4 early/primitive-U intersections; all losses intersected rather than added",
+    "arithmetic.G/cutoff_G/noncompressed_bound": "L7–L12 universal numerical shadows, L15 exact strict conditioned formal filter, L16Q5 and L17 marked quartic caps with hypotheses",
+    "selected_cap/allocations/refine_allocation": "L13–L15 one global h, exact top split, EVERY shadow degree; coordinate exclusions are necessary integer upper caps",
+    "ranked_possible": "L21 all bipartitions recursively include every proper multiplicity-aware divisor, same simultaneous primitive box",
+    "pack": "L22 all-degree labels; L23 multiplicities; L24/25 JOINT MAXIMUM; L26 unlimited covering splits except explicit limits returned unresolved"
+  },
+  "portable_bindings": "Source references are package-relative. The implementation imports local arithmetic.py and the Python standard library.",
+  "proof_source": "proofs/LEMMAS_v1.txt"
+}

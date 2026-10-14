@@ -1,0 +1,123 @@
+{
+  "schema_version": 1,
+  "n": 25,
+  "q_domain": [
+    1,
+    25
+  ],
+  "residual_q_domain": [
+    4,
+    8
+  ],
+  "e_leaf": "I1 full e<=3; all later e>=4",
+  "cutoff": {
+    "H": 200,
+    "inclusive": true,
+    "import": "I7",
+    "admitted_without_rerun": true
+  },
+  "status": "closed",
+  "unresolved": [],
+  "omitted_children": 0,
+  "counts": {
+    "alpha": 720,
+    "early_empty": 171,
+    "raw_cutoff": 504,
+    "kappa": 1530,
+    "profile_rejects": 1530
+  },
+  "depths": [
+    {
+      "q": 4,
+      "counts": {
+        "alpha": 48,
+        "early_empty": 11,
+        "raw_cutoff": 11,
+        "kappa": 697,
+        "profile_rejects": 697
+      }
+    },
+    {
+      "q": 5,
+      "counts": {
+        "alpha": 108,
+        "early_empty": 11,
+        "raw_cutoff": 78,
+        "kappa": 833,
+        "profile_rejects": 833
+      }
+    },
+    {
+      "q": 6,
+      "counts": {
+        "alpha": 164,
+        "early_empty": 40,
+        "raw_cutoff": 124,
+        "kappa": 0,
+        "profile_rejects": 0
+      }
+    },
+    {
+      "q": 7,
+      "counts": {
+        "alpha": 199,
+        "early_empty": 37,
+        "raw_cutoff": 162,
+        "kappa": 0,
+        "profile_rejects": 0
+      }
+    },
+    {
+      "q": 8,
+      "counts": {
+        "alpha": 201,
+        "early_empty": 72,
+        "raw_cutoff": 129,
+        "kappa": 0,
+        "profile_rejects": 0
+      }
+    }
+  ],
+  "stages": {
+    "profiles": {
+      "file": "profiles.jsonl.gz",
+      "events": 2275,
+      "content_sha256": "8d88d519ac0c38530a0df0eda04bbbfdd201d0b8a89b843e4cb3c375749d4ef0",
+      "sha256": "d1ed617ed25b0c7c7d78fe6087bc81b9acba643055eac03811edbd95ed0e2148",
+      "rules": {
+        "I1_I5_SMALL_TOTAL_DEPTH": 16,
+        "I2_Q_LE_3": 3,
+        "I3_EARLY_EMPTY": 171,
+        "L20_ALPHA_DOMAIN": 5,
+        "L20_KAPPA_RECTANGLE": 45,
+        "L2_Q_EQUALS_N": 1,
+        "L3_L5_L6_I7_RAW_CUTOFF": 504,
+        "L6_EMPTY": 604,
+        "L6_I7_CUTOFF": 9,
+        "L9_L11_PREFIX": 917
+      }
+    },
+    "allocations": {
+      "file": "allocations.jsonl.gz",
+      "events": 0,
+      "content_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "rules": {}
+    },
+    "tuples": {
+      "file": "tuples.jsonl.gz",
+      "events": 0,
+      "content_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "rules": {}
+    },
+    "labels": {
+      "file": "labels.jsonl.gz",
+      "events": 0,
+      "content_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "rules": {}
+    }
+  },
+  "elapsed_seconds": 0.10015010833740234
+}

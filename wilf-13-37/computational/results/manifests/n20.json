@@ -1,0 +1,91 @@
+{
+  "schema_version": 1,
+  "n": 20,
+  "q_domain": [
+    1,
+    20
+  ],
+  "residual_q_domain": [
+    4,
+    6
+  ],
+  "e_leaf": "I1 full e<=3; all later e>=4",
+  "cutoff": {
+    "H": 200,
+    "inclusive": true,
+    "import": "I7",
+    "admitted_without_rerun": true
+  },
+  "status": "closed",
+  "unresolved": [],
+  "omitted_children": 0,
+  "counts": {
+    "alpha": 154,
+    "early_empty": 41,
+    "raw_cutoff": 113
+  },
+  "depths": [
+    {
+      "q": 4,
+      "counts": {
+        "alpha": 30,
+        "early_empty": 9,
+        "raw_cutoff": 21
+      }
+    },
+    {
+      "q": 5,
+      "counts": {
+        "alpha": 54,
+        "early_empty": 8,
+        "raw_cutoff": 46
+      }
+    },
+    {
+      "q": 6,
+      "counts": {
+        "alpha": 70,
+        "early_empty": 24,
+        "raw_cutoff": 46
+      }
+    }
+  ],
+  "stages": {
+    "profiles": {
+      "file": "profiles.jsonl.gz",
+      "events": 174,
+      "content_sha256": "d3db5ae2082e8c09b6adbeb5a7820aa39a41c37a87ee84f9b4991e99cb0e337d",
+      "sha256": "4e2e7e63c14b4911947854b99b426b7076930144afff55c221de7fe7a82ab0bf",
+      "rules": {
+        "I1_I5_SMALL_TOTAL_DEPTH": 13,
+        "I2_Q_LE_3": 3,
+        "I3_EARLY_EMPTY": 41,
+        "L20_ALPHA_DOMAIN": 3,
+        "L2_Q_EQUALS_N": 1,
+        "L3_L5_L6_I7_RAW_CUTOFF": 113
+      }
+    },
+    "allocations": {
+      "file": "allocations.jsonl.gz",
+      "events": 0,
+      "content_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "rules": {}
+    },
+    "tuples": {
+      "file": "tuples.jsonl.gz",
+      "events": 0,
+      "content_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "rules": {}
+    },
+    "labels": {
+      "file": "labels.jsonl.gz",
+      "events": 0,
+      "content_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "rules": {}
+    }
+  },
+  "elapsed_seconds": 0.0033788681030273438
+}

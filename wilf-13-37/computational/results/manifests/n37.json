@@ -1,0 +1,333 @@
+{
+  "schema_version": 1,
+  "n": 37,
+  "q_domain": [
+    1,
+    37
+  ],
+  "residual_q_domain": [
+    4,
+    12
+  ],
+  "e_leaf": "I1 full e<=3; all later e>=4",
+  "cutoff": {
+    "H": 200,
+    "inclusive": true,
+    "import": "I7",
+    "admitted_without_rerun": true
+  },
+  "status": "closed",
+  "unresolved": [],
+  "omitted_children": 0,
+  "counts": {
+    "alpha": 10985,
+    "early_empty": 2259,
+    "raw_cutoff": 6279,
+    "kappa": 248503,
+    "profile_rejects": 247287,
+    "profile_survivors": 1216,
+    "allocations": 13593,
+    "allocation_rejects": 13488,
+    "allocation_survivors": 105,
+    "tuples": 1469,
+    "exact_rejects": 347,
+    "label_inputs": 1122,
+    "quota_rejects": 2811793,
+    "complete_labels": 2626961,
+    "boxes": 2627241,
+    "contradicted_boxes": 2627101,
+    "propagation_rejects": 663341,
+    "maximum_depth": 9,
+    "splits": 140,
+    "examined_singletons": 3371
+  },
+  "depths": [
+    {
+      "q": 4,
+      "counts": {
+        "alpha": 108,
+        "early_empty": 17,
+        "raw_cutoff": 1,
+        "kappa": 4850,
+        "profile_rejects": 4833,
+        "profile_survivors": 17,
+        "allocations": 88,
+        "allocation_rejects": 85,
+        "allocation_survivors": 3,
+        "tuples": 17,
+        "exact_rejects": 6,
+        "label_inputs": 11,
+        "quota_rejects": 12,
+        "complete_labels": 21,
+        "boxes": 73,
+        "contradicted_boxes": 47,
+        "propagation_rejects": 294,
+        "splits": 26
+      }
+    },
+    {
+      "q": 5,
+      "counts": {
+        "alpha": 351,
+        "early_empty": 17,
+        "raw_cutoff": 11,
+        "kappa": 35041,
+        "profile_rejects": 34827,
+        "profile_survivors": 214,
+        "allocations": 2209,
+        "allocation_rejects": 2192,
+        "allocation_survivors": 17,
+        "tuples": 477,
+        "exact_rejects": 37,
+        "label_inputs": 440,
+        "quota_rejects": 2329344,
+        "complete_labels": 1047811,
+        "boxes": 1048039,
+        "contradicted_boxes": 1047925,
+        "propagation_rejects": 12357,
+        "splits": 114,
+        "examined_singletons": 6
+      }
+    },
+    {
+      "q": 6,
+      "counts": {
+        "alpha": 748,
+        "early_empty": 96,
+        "raw_cutoff": 78,
+        "kappa": 72268,
+        "profile_rejects": 71701,
+        "profile_survivors": 567,
+        "allocations": 6797,
+        "allocation_rejects": 6730,
+        "allocation_survivors": 67,
+        "tuples": 888,
+        "exact_rejects": 270,
+        "label_inputs": 618,
+        "quota_rejects": 477493,
+        "complete_labels": 1578558,
+        "boxes": 1578558,
+        "contradicted_boxes": 1578558,
+        "propagation_rejects": 645958,
+        "splits": 0,
+        "examined_singletons": 3365
+      }
+    },
+    {
+      "q": 7,
+      "counts": {
+        "alpha": 1206,
+        "early_empty": 91,
+        "raw_cutoff": 327,
+        "kappa": 87968,
+        "profile_rejects": 87557,
+        "profile_survivors": 411,
+        "allocations": 4477,
+        "allocation_rejects": 4459,
+        "allocation_survivors": 18,
+        "tuples": 87,
+        "exact_rejects": 34,
+        "label_inputs": 53,
+        "quota_rejects": 4944,
+        "complete_labels": 571,
+        "boxes": 571,
+        "contradicted_boxes": 571,
+        "propagation_rejects": 4732,
+        "splits": 0,
+        "examined_singletons": 0
+      }
+    },
+    {
+      "q": 8,
+      "counts": {
+        "alpha": 1579,
+        "early_empty": 270,
+        "raw_cutoff": 874,
+        "kappa": 36120,
+        "profile_rejects": 36113,
+        "profile_survivors": 7,
+        "allocations": 22,
+        "allocation_rejects": 22,
+        "allocation_survivors": 0,
+        "tuples": 0,
+        "exact_rejects": 0,
+        "label_inputs": 0,
+        "quota_rejects": 0,
+        "complete_labels": 0,
+        "boxes": 0,
+        "contradicted_boxes": 0,
+        "propagation_rejects": 0,
+        "splits": 0,
+        "examined_singletons": 0
+      }
+    },
+    {
+      "q": 9,
+      "counts": {
+        "alpha": 1801,
+        "early_empty": 249,
+        "raw_cutoff": 1395,
+        "kappa": 8537,
+        "profile_rejects": 8537,
+        "profile_survivors": 0,
+        "allocations": 0,
+        "allocation_rejects": 0,
+        "allocation_survivors": 0,
+        "tuples": 0,
+        "exact_rejects": 0,
+        "label_inputs": 0,
+        "quota_rejects": 0,
+        "complete_labels": 0,
+        "boxes": 0,
+        "contradicted_boxes": 0,
+        "propagation_rejects": 0,
+        "splits": 0,
+        "examined_singletons": 0
+      }
+    },
+    {
+      "q": 10,
+      "counts": {
+        "alpha": 1845,
+        "early_empty": 480,
+        "raw_cutoff": 1324,
+        "kappa": 2062,
+        "profile_rejects": 2062,
+        "profile_survivors": 0,
+        "allocations": 0,
+        "allocation_rejects": 0,
+        "allocation_survivors": 0,
+        "tuples": 0,
+        "exact_rejects": 0,
+        "label_inputs": 0,
+        "quota_rejects": 0,
+        "complete_labels": 0,
+        "boxes": 0,
+        "contradicted_boxes": 0,
+        "propagation_rejects": 0,
+        "splits": 0,
+        "examined_singletons": 0
+      }
+    },
+    {
+      "q": 11,
+      "counts": {
+        "alpha": 1761,
+        "early_empty": 427,
+        "raw_cutoff": 1310,
+        "kappa": 1015,
+        "profile_rejects": 1015,
+        "profile_survivors": 0,
+        "allocations": 0,
+        "allocation_rejects": 0,
+        "allocation_survivors": 0,
+        "tuples": 0,
+        "exact_rejects": 0,
+        "label_inputs": 0,
+        "quota_rejects": 0,
+        "complete_labels": 0,
+        "boxes": 0,
+        "contradicted_boxes": 0,
+        "propagation_rejects": 0,
+        "splits": 0,
+        "examined_singletons": 0
+      }
+    },
+    {
+      "q": 12,
+      "counts": {
+        "alpha": 1586,
+        "early_empty": 612,
+        "raw_cutoff": 959,
+        "kappa": 642,
+        "profile_rejects": 642,
+        "profile_survivors": 0,
+        "allocations": 0,
+        "allocation_rejects": 0,
+        "allocation_survivors": 0,
+        "tuples": 0,
+        "exact_rejects": 0,
+        "label_inputs": 0,
+        "quota_rejects": 0,
+        "complete_labels": 0,
+        "boxes": 0,
+        "contradicted_boxes": 0,
+        "propagation_rejects": 0,
+        "splits": 0,
+        "examined_singletons": 0
+      }
+    }
+  ],
+  "stages": {
+    "profiles": {
+      "file": "profiles.jsonl.gz",
+      "events": 259525,
+      "content_sha256": "edd39449b165991b092788a91c9af1c869a60521f870e4fd34211b374fc4991f",
+      "sha256": "e18efa2f63175489ae6ad6f2ebb452652f64a4dbb6fc1e4374a031d5936a5f9b",
+      "rules": {
+        "I1_I5_SMALL_TOTAL_DEPTH": 24,
+        "I2_Q_LE_3": 3,
+        "I3_EARLY_EMPTY": 2259,
+        "L12_NEGATIVE_N2": 4,
+        "L15_PREFIX": 4,
+        "L20_ALPHA_DOMAIN": 9,
+        "L20_DOMAIN": 1216,
+        "L20_KAPPA_RECTANGLE": 2447,
+        "L2_Q_EQUALS_N": 1,
+        "L3_L5_L6_I7_RAW_CUTOFF": 6279,
+        "L6_EMPTY": 90144,
+        "L6_I7_CUTOFF": 1732,
+        "L9_L11_PREFIX": 155403
+      }
+    },
+    "allocations": {
+      "file": "allocations.jsonl.gz",
+      "events": 97846,
+      "content_sha256": "6b5b555488b9472a6d5cf6a443c52d3bcd69095a472085a0dc7a5a51e64c9556",
+      "sha256": "b5ed9ef5fac6a0883c4c1e366620aa8f1de94286d7b081c85717b724d7228117",
+      "rules": {
+        "L13_GLOBAL_H": 13593,
+        "L14_L15_COORDINATE": 7544,
+        "L14_PREFIX": 43195,
+        "L20_EXACT_DOMAIN": 105,
+        "L20_H_COMPOSITION": 19921,
+        "L6_EMPTY": 13390,
+        "L6_I7_CUTOFF": 98
+      }
+    },
+    "tuples": {
+      "file": "tuples.jsonl.gz",
+      "events": 4207,
+      "content_sha256": "f8cdd641a03eb77a67fc6a95d86b0a7016759ee6acee148a730b3df8c78ba84e",
+      "sha256": "4edc97c081d649923427db2ba97feb32a3bced36ed3244d01bfc727e5060c585",
+      "rules": {
+        "L14_L21_PREFIX": 7,
+        "L21_L22_LABEL_DOMAIN": 1122,
+        "L5_L14_L21_CAP": 340,
+        "L5_L6_L20_RHO_INTERSECTION": 2738
+      }
+    },
+    "labels": {
+      "file": "labels.jsonl.gz",
+      "events": 42764425,
+      "content_sha256": "98e2195ed6ec09f8c98d6547aab4421861af6c344e03a5178c5bf4d0fc1e94e9",
+      "sha256": "e39607126e1cc370b7563a3b98f0f8f4e9d210fe195fd63c9dd379b28e31ca66",
+      "rules": {
+        "L21_L22_DOMAIN": 1122,
+        "L22_ALL_DEGREES": 119057,
+        "L22_CHILD_DOMAIN": 12592647,
+        "L22_EXACT_QUOTAS": 2626961,
+        "L22_POSITIVE": 8567977,
+        "L22_QUOTA_LOOKAHEAD": 2811793,
+        "L22_ZERO": 10125643,
+        "L23_EMPTY": 663341,
+        "L24_L25_JOINT_MAX": 2627241,
+        "L26_CHILD": 280,
+        "L26_COVER_COMPLETE": 1122,
+        "L26_COVER_SPLIT": 140,
+        "L26_MATCHING": 2627101
+      }
+    }
+  },
+  "elapsed_seconds": 2438.6526308059692
+}

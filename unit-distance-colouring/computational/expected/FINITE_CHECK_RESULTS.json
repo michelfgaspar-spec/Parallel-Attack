@@ -1,0 +1,88 @@
+{
+  "status": "PASS-scoped-finite-computations",
+  "root_words": {
+    "targets": 2835,
+    "rank_mod_101": 12,
+    "kernel_generators_checked": 2,
+    "objective_evaluations": 339332,
+    "maximum_integer_A_domain_width": 115,
+    "oracle": "bounded integer A scan plus convex B binary search, not arrangement vertices",
+    "all_word_identities": true,
+    "all_integer_shift_minima": true
+  },
+  "forest": {
+    "edges": 110592,
+    "coordinate_word_steps": 5509120,
+    "short_steps": 3649656,
+    "prefix_steps": 3439213,
+    "forest_steps": 3437445,
+    "disjoint_consecutive_equal_direction_pairs": 1450915,
+    "all_4096_fibre_records_match": true,
+    "all_endpoints_BFS_connected": true,
+    "bfs_vertex_visits": 3441541,
+    "forest_stream_sha256": "8e1f7dd00b92d5c415c53e937d973d981e59ba07fea6febfbf4f0c334dc8dfa1",
+    "disjoint_pair_index_stream_sha256": "2b2320c094a15a90f55e893c5090a363c2a66a746e14da08b7d71c466d07ca8e",
+    "maximum_anchor49": 3087,
+    "full_coordinate_bound49": 3304,
+    "maximum_root_word": 66,
+    "maximum_full_word": 90,
+    "paired_vertex_upper_bound": 3536104331,
+    "paired_selected_edge_upper_bound": 20581558017,
+    "spectrum": {
+      "-14": 135,
+      "-10": 477,
+      "-6": 693,
+      "-2": 864,
+      "2": 693,
+      "6": 558,
+      "10": 459,
+      "14": 180,
+      "18": 36,
+      "54": 1
+    }
+  },
+  "geometry": [
+    {
+      "shell": 0,
+      "vertices": 2045,
+      "selected_edges": 11944,
+      "induced_edges": 12697,
+      "common_vertices": 87,
+      "common_selected_edges": 198,
+      "extra_unit_edges": 753,
+      "strict_cross_unit_edges": 367,
+      "difference_norms": 256914,
+      "physical_maps_boundaries_DAG_checked": true,
+      "vertex_saving_per_pair": 86,
+      "selected_edge_saving_per_pair": 198
+    },
+    {
+      "shell": 1,
+      "vertices": 2045,
+      "selected_edges": 11944,
+      "induced_edges": 12697,
+      "common_vertices": 87,
+      "common_selected_edges": 198,
+      "extra_unit_edges": 753,
+      "strict_cross_unit_edges": 367,
+      "difference_norms": 256914,
+      "physical_maps_boundaries_DAG_checked": true,
+      "vertex_saving_per_pair": 86,
+      "selected_edge_saving_per_pair": 198
+    },
+    {
+      "shell": 2,
+      "vertices": 2045,
+      "selected_edges": 11944,
+      "induced_edges": 12697,
+      "common_vertices": 87,
+      "common_selected_edges": 198,
+      "extra_unit_edges": 753,
+      "strict_cross_unit_edges": 367,
+      "difference_norms": 256914,
+      "physical_maps_boundaries_DAG_checked": true,
+      "vertex_saving_per_pair": 86,
+      "selected_edge_saving_per_pair": 198
+    }
+  ]
+}

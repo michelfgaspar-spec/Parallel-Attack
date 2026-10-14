@@ -1,0 +1,331 @@
+{
+  "schema_version": 1,
+  "n": 36,
+  "q_domain": [
+    1,
+    36
+  ],
+  "residual_q_domain": [
+    4,
+    12
+  ],
+  "e_leaf": "I1 full e<=3; all later e>=4",
+  "cutoff": {
+    "H": 200,
+    "inclusive": true,
+    "import": "I7",
+    "admitted_without_rerun": true
+  },
+  "status": "closed",
+  "unresolved": [],
+  "omitted_children": 0,
+  "counts": {
+    "alpha": 9355,
+    "early_empty": 2019,
+    "raw_cutoff": 5483,
+    "kappa": 176079,
+    "profile_rejects": 175372,
+    "profile_survivors": 707,
+    "allocations": 7644,
+    "allocation_rejects": 7586,
+    "allocation_survivors": 58,
+    "tuples": 864,
+    "exact_rejects": 177,
+    "label_inputs": 687,
+    "quota_rejects": 1195259,
+    "complete_labels": 837497,
+    "boxes": 838067,
+    "contradicted_boxes": 837782,
+    "propagation_rejects": 451050,
+    "maximum_depth": 7,
+    "splits": 285,
+    "examined_singletons": 4881
+  },
+  "depths": [
+    {
+      "q": 4,
+      "counts": {
+        "alpha": 102,
+        "early_empty": 17,
+        "raw_cutoff": 1,
+        "kappa": 4305,
+        "profile_rejects": 4288,
+        "profile_survivors": 17,
+        "allocations": 75,
+        "allocation_rejects": 71,
+        "allocation_survivors": 4,
+        "tuples": 44,
+        "exact_rejects": 5,
+        "label_inputs": 39,
+        "quota_rejects": 33,
+        "complete_labels": 42,
+        "boxes": 166,
+        "contradicted_boxes": 104,
+        "propagation_rejects": 696,
+        "splits": 62
+      }
+    },
+    {
+      "q": 5,
+      "counts": {
+        "alpha": 321,
+        "early_empty": 16,
+        "raw_cutoff": 12,
+        "kappa": 29700,
+        "profile_rejects": 29543,
+        "profile_survivors": 157,
+        "allocations": 1497,
+        "allocation_rejects": 1486,
+        "allocation_survivors": 11,
+        "tuples": 253,
+        "exact_rejects": 9,
+        "label_inputs": 244,
+        "quota_rejects": 776588,
+        "complete_labels": 389273,
+        "boxes": 389719,
+        "contradicted_boxes": 389496,
+        "propagation_rejects": 9566,
+        "splits": 223
+      }
+    },
+    {
+      "q": 6,
+      "counts": {
+        "alpha": 674,
+        "early_empty": 91,
+        "raw_cutoff": 86,
+        "kappa": 56593,
+        "profile_rejects": 56238,
+        "profile_survivors": 355,
+        "allocations": 4065,
+        "allocation_rejects": 4025,
+        "allocation_survivors": 40,
+        "tuples": 561,
+        "exact_rejects": 161,
+        "label_inputs": 400,
+        "quota_rejects": 418555,
+        "complete_labels": 448170,
+        "boxes": 448170,
+        "contradicted_boxes": 448170,
+        "propagation_rejects": 440734,
+        "splits": 0,
+        "examined_singletons": 4881
+      }
+    },
+    {
+      "q": 7,
+      "counts": {
+        "alpha": 1057,
+        "early_empty": 85,
+        "raw_cutoff": 346,
+        "kappa": 62970,
+        "profile_rejects": 62793,
+        "profile_survivors": 177,
+        "allocations": 2007,
+        "allocation_rejects": 2004,
+        "allocation_survivors": 3,
+        "tuples": 6,
+        "exact_rejects": 2,
+        "label_inputs": 4,
+        "quota_rejects": 83,
+        "complete_labels": 12,
+        "boxes": 12,
+        "contradicted_boxes": 12,
+        "propagation_rejects": 54,
+        "splits": 0,
+        "examined_singletons": 0
+      }
+    },
+    {
+      "q": 8,
+      "counts": {
+        "alpha": 1367,
+        "early_empty": 249,
+        "raw_cutoff": 877,
+        "kappa": 17410,
+        "profile_rejects": 17409,
+        "profile_survivors": 1,
+        "allocations": 0,
+        "allocation_rejects": 0,
+        "allocation_survivors": 0,
+        "tuples": 0,
+        "exact_rejects": 0,
+        "label_inputs": 0,
+        "quota_rejects": 0,
+        "complete_labels": 0,
+        "boxes": 0,
+        "contradicted_boxes": 0,
+        "propagation_rejects": 0,
+        "splits": 0,
+        "examined_singletons": 0
+      }
+    },
+    {
+      "q": 9,
+      "counts": {
+        "alpha": 1527,
+        "early_empty": 225,
+        "raw_cutoff": 1230,
+        "kappa": 3514,
+        "profile_rejects": 3514,
+        "profile_survivors": 0,
+        "allocations": 0,
+        "allocation_rejects": 0,
+        "allocation_survivors": 0,
+        "tuples": 0,
+        "exact_rejects": 0,
+        "label_inputs": 0,
+        "quota_rejects": 0,
+        "complete_labels": 0,
+        "boxes": 0,
+        "contradicted_boxes": 0,
+        "propagation_rejects": 0,
+        "splits": 0,
+        "examined_singletons": 0
+      }
+    },
+    {
+      "q": 10,
+      "counts": {
+        "alpha": 1549,
+        "early_empty": 427,
+        "raw_cutoff": 1101,
+        "kappa": 893,
+        "profile_rejects": 893,
+        "profile_survivors": 0,
+        "allocations": 0,
+        "allocation_rejects": 0,
+        "allocation_survivors": 0,
+        "tuples": 0,
+        "exact_rejects": 0,
+        "label_inputs": 0,
+        "quota_rejects": 0,
+        "complete_labels": 0,
+        "boxes": 0,
+        "contradicted_boxes": 0,
+        "propagation_rejects": 0,
+        "splits": 0,
+        "examined_singletons": 0
+      }
+    },
+    {
+      "q": 11,
+      "counts": {
+        "alpha": 1455,
+        "early_empty": 377,
+        "raw_cutoff": 1067,
+        "kappa": 408,
+        "profile_rejects": 408,
+        "profile_survivors": 0,
+        "allocations": 0,
+        "allocation_rejects": 0,
+        "allocation_survivors": 0,
+        "tuples": 0,
+        "exact_rejects": 0,
+        "label_inputs": 0,
+        "quota_rejects": 0,
+        "complete_labels": 0,
+        "boxes": 0,
+        "contradicted_boxes": 0,
+        "propagation_rejects": 0,
+        "splits": 0,
+        "examined_singletons": 0
+      }
+    },
+    {
+      "q": 12,
+      "counts": {
+        "alpha": 1303,
+        "early_empty": 532,
+        "raw_cutoff": 763,
+        "kappa": 286,
+        "profile_rejects": 286,
+        "profile_survivors": 0,
+        "allocations": 0,
+        "allocation_rejects": 0,
+        "allocation_survivors": 0,
+        "tuples": 0,
+        "exact_rejects": 0,
+        "label_inputs": 0,
+        "quota_rejects": 0,
+        "complete_labels": 0,
+        "boxes": 0,
+        "contradicted_boxes": 0,
+        "propagation_rejects": 0,
+        "splits": 0,
+        "examined_singletons": 0
+      }
+    }
+  ],
+  "stages": {
+    "profiles": {
+      "file": "profiles.jsonl.gz",
+      "events": 185470,
+      "content_sha256": "8329495118656d51e30cc436b0967bb5be41247748f7acd1701b06fda9970c9d",
+      "sha256": "7ab24eaa6ec5d0243354a3d2417a273170e12a952494306bcb6e4dc08175b92b",
+      "rules": {
+        "I1_I5_SMALL_TOTAL_DEPTH": 23,
+        "I2_Q_LE_3": 3,
+        "I3_EARLY_EMPTY": 2019,
+        "L12_NEGATIVE_N2": 4,
+        "L15_PREFIX": 1,
+        "L20_ALPHA_DOMAIN": 9,
+        "L20_DOMAIN": 707,
+        "L20_KAPPA_RECTANGLE": 1853,
+        "L2_Q_EQUALS_N": 1,
+        "L3_L5_L6_I7_RAW_CUTOFF": 5483,
+        "L6_EMPTY": 64946,
+        "L6_I7_CUTOFF": 1443,
+        "L9_L11_PREFIX": 108978
+      }
+    },
+    "allocations": {
+      "file": "allocations.jsonl.gz",
+      "events": 53367,
+      "content_sha256": "2235f4469dff2b0230f349195c585296f07efefa2c727101e033a22e9cd52b03",
+      "sha256": "6d457f6b6b7ca8ceef052772ab74f4da659f24b7e5009b07ac1d6de2fbbf4c10",
+      "rules": {
+        "L13_GLOBAL_H": 7644,
+        "L14_L15_COORDINATE": 4158,
+        "L14_PREFIX": 22826,
+        "L20_EXACT_DOMAIN": 58,
+        "L20_H_COMPOSITION": 11095,
+        "L6_EMPTY": 7537,
+        "L6_I7_CUTOFF": 49
+      }
+    },
+    "tuples": {
+      "file": "tuples.jsonl.gz",
+      "events": 2415,
+      "content_sha256": "bf4135dc075c0868ac8578cbb534095922e247e5ba6b6976ba24b994aecd028e",
+      "sha256": "199ff781ec21268fcd54b41e467e4350b8bc70e30acde60d1bdc9596a5664b13",
+      "rules": {
+        "L21_L22_LABEL_DOMAIN": 687,
+        "L5_L14_L21_CAP": 177,
+        "L5_L6_L20_RHO_INTERSECTION": 1551
+      }
+    },
+    "labels": {
+      "file": "labels.jsonl.gz",
+      "events": 18822160,
+      "content_sha256": "1efa96643230ced114c59bf8c8129720f09e14b40070cbdc64e82bf2af256225",
+      "sha256": "52d7f1f6b988362f4039c8c8bd8a130f6b25b6f03c75c0978228b68ffdd724a0",
+      "rules": {
+        "L21_L22_DOMAIN": 687,
+        "L22_ALL_DEGREES": 130573,
+        "L22_CHILD_DOMAIN": 6023292,
+        "L22_EXACT_QUOTAS": 837497,
+        "L22_POSITIVE": 3661623,
+        "L22_QUOTA_LOOKAHEAD": 1195259,
+        "L22_ZERO": 4844788,
+        "L23_EMPTY": 451050,
+        "L24_L25_JOINT_MAX": 838067,
+        "L26_CHILD": 570,
+        "L26_COVER_COMPLETE": 687,
+        "L26_COVER_SPLIT": 285,
+        "L26_MATCHING": 837782
+      }
+    }
+  },
+  "elapsed_seconds": 1274.9188840389252
+}

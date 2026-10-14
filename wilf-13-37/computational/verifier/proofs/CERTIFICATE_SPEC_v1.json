@@ -1,0 +1,353 @@
+{
+  "schema_version": 1,
+  "kind": "abstract ordinary finite-cover specification; no execution or executable correspondence claim",
+  "proof_document": "LEMMAS_v1.txt",
+  "primary_import_documents": [
+    "IMPORTS_v1.txt",
+    "SOURCES_v1.json"
+  ],
+  "scope": {
+    "description": "Precise finite domains, necessary rules and conditional complete-cover soundness.",
+    "recorded_cardinalities": [
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37
+    ],
+    "execution_evidence": "See MANIFEST.json, the per-cardinality manifests and the mathematical journals; this abstract specification alone certifies no execution."
+  },
+  "semantics": {
+    "n": "cardinality S intersect [0,c), INCLUDING zero",
+    "e": "FULL primitive cardinality, including all right primitives",
+    "D": "finite positive decomposable Apery set D_A; source D_S is the infinite set of decomposable positive S-elements",
+    "delta": "|D_A|",
+    "m": "multiplicity; m=e+delta",
+    "q": "ceil(c/m)",
+    "rho": "q*m-c; integer 0..m-1",
+    "A": "Ap(S,m), exactly one value per residue modulo m, contained in [0,c+m)",
+    "lambda": "floor((x+rho)/m); shifted numerical level, NEVER algebraic total degree",
+    "alpha_i": "|A_i| for 1<=i<q",
+    "kappa_i": "|A_i intersect D_A| for 1<=i<q",
+    "beta_i": "alpha_i-kappa_i; number of left primitive Apery variables in level i",
+    "B": "primitive left Apery set; m is not a variable and right primitives are not B variables",
+    "s": "sum_i beta_i",
+    "K": "sum_i kappa_i",
+    "h_dj": "number of globally selected degree-d left monomials at level j, from ONE degree-first rank-second selection",
+    "Cmp": "set of D_A values possessing ANY compressed split in ANY representation; its complement avoids compression in EVERY split of EVERY representation",
+    "label_0": "not selected LEFT; does not assert absence from S and does not exclude possible selected top membership",
+    "integer_interval": "[a,b]_Z inclusive; empty iff a>b",
+    "total_degree": "sum of monomial exponents in a proper homogeneous quotient of a polynomial ring over Q",
+    "rights_of_optional_top_vertices": "a conservative candidate superset, not an assertion of realizability"
+  },
+  "inputs": {
+    "N0": "finite set of nonnegative integers; no instance is certified merely by listing it",
+    "H": "integer H>=0, usable as an inclusive cutoff ONLY with a registered theorem leaf proving Wilf for every c<=H; otherwise the c>=H+1 branch is unavailable",
+    "G": "optional integer genus bound with an independent theorem leaf for every g<=G; g=c-n",
+    "import_registry": "exact theorem statements, source versions/locators and hypothesis adapters; explicit admitted computation status preserved",
+    "optional_imports": {
+      "I1": "full e<=3 implies W>=0; exact modern corroboration DEF2310.07742v1 Theorem1.1(1), original FGH credit and access limits retained",
+      "I2": "q3 Cor6.5, q2 Prop3.13 of Eliahou1703.01761v1; q1 direct; combined q<=3 gate",
+      "I3a": "q>=4 and EVERY alpha_i=0 for i<ceil(q/2), EMA2006.01480v1 Thm3.1 and Prop2.7 W0 transfer",
+      "I3b": "zero-inclusive n<=12 EMA Thm4.1; credit only, outside the computed range 14..37",
+      "I4": "3e>=m graph main theorem1909.03699v1 Thm1.1; separate optional exact-tuple gate",
+      "I5": "e>=4,q>=4,n<=3q-1, graph proof-level Section5.2-5.4 consequence; tau(X)=n-q, graph vertex number not n; no ratio premise",
+      "I6": "Macaulay growth for positive degree d>=1 in standard total-degree graded Q algebra; zero handled directly; Gao supplies positive small-value convention",
+      "I7": "Bacher2604.25051v8 Section2.3 conductor<=200 INCLUSIVE; admitted unrerun computational leaf, no larger conjecture-assisted range",
+      "I8": "DEF2310.07742v1 Theorem3.5 genus<=100; admitted unrerun computational leaf, no genus120 special-semigroup leaf",
+      "I9": "author n13 predecessor citation ONLY; never a current certificate dispatch leaf"
+    },
+    "arithmetic": "exact signed integers, rational comparisons by exact cross multiplication, mathematical floor and ceil; floating approximation cannot exclude a branch"
+  },
+  "complete_domains": {
+    "trivial": "S=N has c=n=0,W=0. Any nontrivial semigroup has n>=1. No positive-conductor formulas are applied to S=N.",
+    "q": "for each positive n in N0, ALL q=1,...,n. q=n closes by L2 (T=B=D_A=empty,delta=0,c<=ne). In particular q1 is covered directly. Optional published gates may dispatch a family only after every stated hypothesis holds.",
+    "alpha": {
+      "indices": "i=1,...,q-1",
+      "range": "integer 0<=alpha_i<=floor((n-q)/(q-i))",
+      "equation": "sum_i (q-i)*alpha_i=n-q",
+      "enumeration": "in fixed level order choose EVERY alpha_i in 0..floor(remaining/(q-i)), subtract its weight, and accept only final remainder0; equivalently use the full bounded Cartesian product plus the equation"
+    },
+    "kappa": {
+      "indices": "i=1,...,q-1",
+      "range": "kappa_1=0; EVERY integer kappa_i=0,...,alpha_i for i>=2",
+      "beta": "beta_i=alpha_i-kappa_i; s=sum beta_i; K=sum kappa_i",
+      "B_empty": "s=0 forces delta=0 by L1/L2; if K>0 this is a contradiction. Empty vectors and sums are explicit, not passed into a missing-coordinate routine."
+    },
+    "baseline_finite_bounds": {
+      "M": "P_q(alpha)",
+      "U": "U_q(alpha)",
+      "F": "M initially, then only intersections with proved total-decomposable caps",
+      "N": "F is an initial valid noncompressed cap; improve only by proved noncompressed caps",
+      "sigma": "min(q*F,(q-1)*F+U,(q-1)*F+N, every separately proved J cap); preserve previous sigma by a minimum on refinement",
+      "e_min": "max(2,1+s) always by L1; max(4,1+s) ONLY AFTER I1 has dispatched every e<=3 branch",
+      "E": "floor((sigma-1)/(n-q)) for q<n; if E<e_min reject before using it as a positive Mmax bound",
+      "C": "q*E+sigma; conductor bound ONLY for hypothetical strict violations",
+      "Mmax": "F+E, usable for conditioned patterns only when E>=e_min and Mmax>0"
+    },
+    "exact_tuple": {
+      "e": "EVERY integer e in [e_min,E]_Z; e is never defined to be 1+s",
+      "delta": "EVERY integer delta in [K,F]_Z",
+      "m": "exactly e+delta, require m>=2",
+      "rho": "EVERY integer 0,...,m-1, including rho=0",
+      "c": "exactly q*m-rho",
+      "required_tests": [
+        "c>n*e (equivalently q*delta-rho>(n-q)*e)",
+        "q*delta-rho<=sigma",
+        "delta<=rho+N",
+        "c>=H+1 if an inclusive cutoff leaf is used"
+      ],
+      "additional_elementary_tests": [
+        "1+sum alpha_i<=m, because these are distinct Apery elements",
+        "e-1-s>=0, preserving possible right primitive slots"
+      ],
+      "optional_leaf_tests": [
+        "c<=H dispatches only via its registered cutoff theorem",
+        "c-n<=G dispatches only via its registered genus theorem",
+        "3e>=m dispatches only via I4 if invoked"
+      ],
+      "empty_domains": "an empty full e/delta/rho interval or a false necessary equation proves impossibility; no tuples are selected as representatives of an interval"
+    },
+    "h": {
+      "indices": "d=2,...,q-1; j=1,...,q-1",
+      "range": "integer 0<=h[d,j]<=kappa_j; h[d,j]=0 for d>j",
+      "equation": "for EVERY j, sum_(d=2)^(q-1) h[d,j]=kappa_j",
+      "enumeration": "for each j enumerate EVERY bounded composition among d=2,...,min(j,q-1). Assign each coordinate EVERY integer0..remaining, then require final remainder0; equivalent full bounded Cartesian product with exact equations.",
+      "single_shared_witness": "the SAME h serves all prefixes Q, target degrees t, left labels, total and noncompressed caps; independently maximizing a shadow with a new kappa budget is forbidden",
+      "K_zero": "h is identically zero, r=1, and possible top degree<=min(q,2)",
+      "formal_coordinate_pruning": "h[d,j] cannot exceed an EXACT-level formal/ranked count for the SAME d,j under only justified hypotheses; zero such count forces h[d,j]=0"
+    },
+    "rank_variables": {
+      "indices": "(i,a), i=1,...,q-1, a=0,...,beta_i-1; concatenate them in this order",
+      "initial_lower": "L[i,a]=max(m+1,i*m-rho)+a",
+      "initial_upper": "U[i,a]=(i+1)*m-rho-beta_i+a",
+      "order": "x[i,a+1]>=x[i,a]+1 within each level; initial rank reservations apply simultaneously",
+      "empty_box": "some L>U is a necessary contradiction",
+      "meaning": "all actual named primitive vectors are contained in the finite integer box; the proof need not enumerate those vectors"
+    },
+    "monomials": {
+      "degree_domain": "u in N^s with sum u_i=t, all t<=q; repeated factors allowed; for s=0 there are no positive-degree monomials",
+      "factor_levels": "l(u) repeats the known level of variable i exactly u_i times",
+      "enumeration": "visit EVERY nonnegative exponent vector of sum t, or every weakly increasing list of t variable indices; do not merge monomials by numerical value unless a proved injective quotient adapter allows it",
+      "distinct_immediate_divisors": "u-e_i for EVERY i with u_i>0, one distinct divisor per index; ALL lower divisors follow by induction"
+    },
+    "labels": {
+      "r": "max({1} union {d:sum_j h[d,j]>0})",
+      "left_monomials": "ALL monomials of EVERY degree d=2,...,r, lower degrees finished first",
+      "label_domain": "0 or j in1,...,q-1, with EXACT h[d,j] positive quotas; label0 means unselected LEFT",
+      "positive_label_requirements": [
+        "remaining quota h[d,j]>0",
+        "primitive factor level bounds permit j",
+        "sound occupied/rank/cutoff tests permit exact j",
+        "current sum interval intersects [j*m-rho,(j+1)*m-rho-1]_Z",
+        "if d>=3, EVERY immediate divisor has a positive prior label STRICTLY less than j"
+      ],
+      "enumeration": "at each monomial branch to0 when quotas remain feasible and to EVERY eligible positive j; continue until every exact quota is filled; all degrees are present even with two or more cubics or higher left monomials",
+      "lookahead_pruning": "reject only when total remaining quota exceeds number of remaining monomials, or one degree/layer quota exceeds remaining eligible monomials for it; eligibility supersets are conservative",
+      "terminal": "every quota zero; otherwise the label branch is invalid, not a successful certificate leaf",
+      "top_monomials": "ALL degrees2,...,min(q,r+1); exclude positively labeled LEFT monomials; at d>=3 EVERY immediate divisor must be positively labeled left; retain necessary factor/rank tests and nonempty exact top interval"
+    }
+  },
+  "formula_registry": {
+    "L3_PAIR": {
+      "P_Q": "sum_(i<j,i+j<=Q+1) z_i*z_j + sum_(2i<=Q+1) binom(z_i+1,2), i,j=1..Q-1",
+      "U_Q": "same with i+j<=Q and2i<=Q",
+      "bounds": "delta<=P_q(alpha); for numerical primitive-pair targets through Q use P_Q(beta); noncompressed primitive pairs through Q use U_Q(beta)",
+      "small_weight": "q>=2,n-q<q-1: M<=floor((n-q)/ceil((q-1)/2)); 2(n-q)<q-1:M=0. q1 handled directly."
+    },
+    "L4_GRAPH": {
+      "degree": "decomposable vertex has actual neighbor degree<=K; loops counted once",
+      "missing_or_collision": "if kappa_j>0 and r_j=sum_(i<=min(q-1,q+1-j))alpha_i>=2, delta<=M-1",
+      "missing_star": "delta<=M-r_j+min(r_j,K) at an occupied decomposable vertex; more losses added only for proved disjoint formal eligible stars",
+      "level2_missing": "q>=4: delta<=M-kappa_2*alpha_(q-1)"
+    },
+    "L5_COMPRESSION": "one injection z->(z+2rho) mod m into0..rho-1 for the UNION of all compressed values; delta<=U+rho; no separate rho per degree/type/layer",
+    "L6_ENDPOINTS": "strict (n-q)*e<q*delta-rho<=sigma gives E=floor((sigma-1)/(n-q)), C=q*E+sigma; never floor(sigma/(n-q)); q=n direct",
+    "L7_MACAULAY": {
+      "binomial": "a=sum_(i=1)^d binom(a_i,i), a_d>...>a_1>=0, a_i>=i-1; zero tail a_i=i-1; equivalent positive truncated expansion",
+      "G_d": "sum_i binom(a_i+1,i+1), G_d(0)=0; positive degree d>=1 only",
+      "H_dt": "G_(t-1) o ... o G_d; increasing on nonnegative integers; for0<=a<d, G_d(a)=a",
+      "quotient": "actual proper homogeneous quotient over Q, ordinary polynomial TOTAL DEGREE. For an empty target family the bound is direct, avoiding an improper quotient."
+    },
+    "L8_NUMERICAL_SHADOW": "requires EVERY degree-t representation of EVERY target numerical value to have EVERY degree-d partial sum in K0; least additive base(t+1) rank at fixed degrees injects into a true homogeneous quotient; a witness-only check is forbidden",
+    "L9_NUMERICAL_PREFIX": {
+      "ell": "minimum occupied primitive level below Q; if none, all decomposable targets through Q absent",
+      "shadow_range": "max(ell+d-1,d*(ell-1)+1)<=j<=Q-t+d, 2<=d<t<=Q",
+      "cap": "P_Q(beta)+sum_(t=3)^Q min_(2<=d<t) H_dt(sum kappa_j over that range)",
+      "prefix": "for Q<q require sum_(j<=Q)kappa_j<=cap; for Q=q cap bounds delta"
+    },
+    "L10_OCCUPIED_RECURSION": {
+      "singleton": "mu((i))=i if beta_i>0, unavailable otherwise",
+      "all_splits": "EVERY nonempty proper bipartition l=v+w; if ANY piece is unavailable the full target is unavailable",
+      "a": "maximum over splits of mu(v)+mu(w)-1, mu(v)+1, mu(w)+1",
+      "b": "maximum over splits of mu(v)+mu(w), mu(v)+1, mu(w)+1; ONLY for global noncompressed target",
+      "proper_mu": "least j with kappa_j>0 and a<=j<=min(q-1,sum(l)+len(l)-1); absent j means unavailable",
+      "full_target": "ordinary a<=Q, noncompressed b<=Q; top target is NOT rounded to left occupancy"
+    },
+    "L11_FORMAL": {
+      "pattern_domain": "ALL weakly increasing primitive level patterns of length t, 1<=li<=Q-t+1, max(max li+t-1,sum li-t+1)<=Q",
+      "multiplicity": "product_i binom(beta_i+r_i-1,r_i); r_i=0 gives1, r_i>0,beta_i=0 gives0",
+      "ordinary": "available a<=Q",
+      "noncompressed": "available b<=Q, a GLOBAL property; no chosen favorable factorization",
+      "exact_level": "also require upper level sum(li)+t-1>=j and a<=j or b<=j; numerical rank interval must intersect exact j if rank filter is used",
+      "proper_a_d_Q": "d1=min occupied primitive level below Q; d>=2=min proper mu over all nonzero formal patterns at bound Q-1 with available mu<=Q-1; if none use sentinelQ",
+      "ordinary_shadow_range": "a_d(Q)<=j<=min(Q-t+d,Q-a_(t-d)(Q)+1)",
+      "noncompressed_shadow_range": "a_d(Q)<=j<=min(Q-t+d,Q-a_(t-d)(Q))",
+      "numerical_shadow_cap": "H_dt(sum kappa_j in the appropriate range), using L8 UNIVERSAL representation premise proved from the occupied recursion",
+      "all_degree_union": "sum valid per-length caps; possible numerical collisions or multiple lengths only weaken an upper bound"
+    },
+    "L12_FORCED_PAIR": {
+      "pair_only": "for a layer j<q, every length3..j exact-level ordinary pattern count is zero under justified hypotheses; length>j impossible",
+      "p_j": "complete exact-j formal primitive pair count under global noncompressed conditions",
+      "f_j": "max(0,kappa_j-p_j)",
+      "N2": "U_q(beta)-sum f_j, summing ONLY proven pair-only layers; distinct chosen numerical compressed values give distinct pair representatives",
+      "negative": "if sum f_j>U_q(beta), reject the required profile; never use a negative cardinality bound on an alleged actual object"
+    },
+    "L13_GLOBAL_SELECTION": "select once for every B-representable Apery value by (total degree, sum u_i(q+1)^i). Replacement proves divisor closure, including cross-degree collisions; this one finite order ideal induces the shared h.",
+    "L14_SELECTED_SHADOW": {
+      "premise": "EVERY selected divisor belongs to the single global order ideal and its allocated h degree/layer; numerical universal-representation hypothesis is not substituted here",
+      "degree_cap": "for each Q,t take min of conditioned ordinary/noncompressed formal counts, EVERY selected shadow H_dt(sum h[d,j] over its justified range), and independent same-degree special caps",
+      "prefix": "for Q<q sum_(j<=Q)h[t,j]<=C_Qt",
+      "F_h": "sum_(t=2)^q C_(q,t)",
+      "N_h": "sum_(t=2)^q Cnc_(q,t); selected degrees have disjoint numerical values",
+      "exact_top_split": "C_(q,t) also<=L_t+formal_exact_top_count(q,t), L_t=sum_(j<q)h[t,j], L_q=0. For noncompressed caps count ALL L_t conservatively and only noncompressed exact-top candidates.",
+      "degree2_nc": "may intersect with L12 N2 after checking its pair-only hypothesis; use only one compression allowance across all degrees"
+    },
+    "L15_CUTOFF": {
+      "hypotheses": "integer H>=0, c>=H+1, m<=Mmax>0; actual q enters rho bound, even for prefix Q",
+      "rho_ratio": "rho/m<=q-(H+1)/Mmax",
+      "pattern": "L=sum li, r=# factors with li>=2; conservative lower value L*m-r*rho, strict upper (Q+1)*m-rho",
+      "exact_necessity": "(L-Q-1)*m<(r-1)*rho, including t2 and rho0",
+      "conservative_filter": "r<=1,L>=Q+1 impossible; r>=2 reject if (L-Q-1)*Mmax>=(r-1)*(q*Mmax-(H+1))",
+      "iteration": "take minima with previous F,N,sigma,E, recompute Mmax=F+E; terminate at fixed point or proved rejection; failure to improve is not exclusion"
+    },
+    "L16_SPECIAL_CUBICS": {
+      "top_only": "q>=4,R subset A_(q-1) (equivalently kappa_j=0 for j<q-1): length<=3, cubic factors only levels1/2; F<=P_q(beta)+binom(beta1+beta2+2,3)",
+      "ordinary_Q5": "q>=5,kappa2=0: degree3 numerical cap binom(beta1+beta2+2,3)+kappa3*beta3",
+      "nc_Q5": "q>=5: degree3 noncompressed cap binom(beta1+2,3)+(kappa2+kappa3)*beta2+kappa2*beta3"
+    },
+    "L17_SMALL_SHADOWS_QUARTICS": {
+      "small_cubic": "k allowed quadratics,k0..4: cubic cap0,1,2,4,5 after the numerical/selected injection",
+      "marked_quartic": "actual q>=5,Q5,beta1=1,kappa2+kappa3<=3: degree4 ordinary cap5",
+      "ordinary4": "cap4 ONLY if no target quartic with four level2 factors, justified e.g. by L15 pattern exclusion",
+      "ordinary3": "cap3 ONLY if in addition no target quartic with one level1 and three level2 factors",
+      "nc3": "degree4 noncompressed cap3 under the marked-quartic hypotheses; both factor exclusions follow from all-split noncompression"
+    },
+    "L18_Q4": {
+      "parameters": "q4,alpha=(a,b,d),kappa=(0,h,k),r=a+b",
+      "M": "binom(r+1,2)+r*d",
+      "U": "binom(r+1,2)+a*d",
+      "h_bound": "0<=h<=min(b,binom(a+1,2))",
+      "primitive_pair": "P=binom(r-h+1,2)+(r-h)*(d-k)",
+      "generic_F": "min(M-h*d,P+G2(h+k)+H_(2,4)(h)); quartic term may be further min with H_(3,4)(k)",
+      "compressed_hypothesis": "h=0 and k=d (A2 primitive, all A3 decomposable); r=a+b",
+      "P0": "binom(a+b+1,2)",
+      "F0": "P0+G2(k)",
+      "V0": "(P0-k)+binom(a+1,2)+a*b+binom(a+2,3)",
+      "J": "3*F+V0 for ANY already proved total delta<=F; reject P0<k before computing a negative pair-top count"
+    },
+    "L19_Q4_EARLY": {
+      "empty_A1": "q=4, alpha1=0; b=alpha2,d=alpha3,k=kappa3. hmax=min(b*d,b*(d-k)+G2(k)); F<=binom(b+1,2)+hmax; qdelta-rho<=2*b*(b+1)-k+3*hmax. Original partition k+ell+h0 retains k+h0<=rho and k+ell<=binom(b+1,2).",
+      "primitive_U": "q4,all A1 and A2 primitive (kappa2=0); r0=alpha1+alpha2,d=alpha3,k=kappa3: F<=binom(r0+1,2)+G2(k)+r0*(d-k)"
+    },
+    "L21_RANKED": "for EVERY proper divisor compute all-split occupied mu strengthened by interval intersection with an occupied left layer; reject full monomial only if no possible proper divisor layer or full prefix/exact-layer intersection. Count ALL surviving named exponent vectors; each actual selected representative survives.",
+    "L23_PROPAGATION": {
+      "labeled_sum": "j*m-rho<=sum u_i*x_i<=(j+1)*m-rho-1",
+      "lower": "L_i=max(L_i,ceil((j*m-rho-sum_(k!=i)u_k*U_k)/u_i)) for u_i>0",
+      "upper": "U_i=min(U_i,floor(((j+1)*m-rho-1-sum_(k!=i)u_k*L_k)/u_i)) for u_i>0",
+      "rank": "L_next=max(L_next,L_previous+1); U_previous=min(U_previous,U_next-1), same level only",
+      "termination": "repeat a complete pass until no change or empty coordinate; every solution survives every sequential update, including negative numerators and repeated-variable multiplicity"
+    },
+    "L24_INTEGER_MAX": {
+      "graph": "ONE bipartite graph from ALL top monomials of ALL degrees to top integers, edge iff point belongs to I_u=[sum u_i L_i,sum u_i U_i] intersect[q*m-rho,(q+1)*m-rho-1]_Z",
+      "algorithm": "sort nonempty inclusive intervals by upper endpoint; for each choose smallest UNUSED integer>=lower and<=upper; skip only if none. This is an EXACT maximum by the exchange proof.",
+      "cap": "F_box<=K+T_max; separate per-degree found matchings are not substitutes for the joint MAXIMUM",
+      "empty": "no candidates gives T_max=0"
+    },
+    "L25_RESIDUE_MAX": {
+      "mandatory": "0 with interval{0}; each B variable with[L_i,U_i]; each positively labeled left monomial with sum interval intersect its labeled layer",
+      "optional": "ALL top candidates of ALL degrees with I_u",
+      "right": "residues0,...,m-1; interval of cardinality>=m attains all, otherwise reduce EVERY interval integer modulo m including wrap",
+      "algorithm": "exact maximum by sequential exhaustive alternating augmenting-path search, a seen-residue set, and owner-edge path flips; no augmenting path means no increase",
+      "cap": "F_box<=R_max-1-s; a merely found matching is a LOWER bound and cannot certify exclusion",
+      "right_primitives": "omitted conservatively; e remains FULL and exact delta=m-e retained",
+      "mandatory_coverage": "computed maximum may be unconstrained; the actual mandatory-inclusive matching is still bounded by it"
+    },
+    "L26_BOX": {
+      "reject": "empty coordinate, failed necessary label/divisor/quota test, or min(K+T_max,R_max-1-s)<delta=m-e; residue graph may be skipped if integer bound already contradicts",
+      "split": "choose a coordinate L<U, mid=floor((L+U)/2), children[L,mid] and[mid+1,U] with all other coordinates identical; both children required",
+      "recompute": "sound propagation and candidate/MAXIMUM matching caps in each child; reuse conservative supersets only if they still contain every actual candidate",
+      "gap": "ANY noncontradicted singleton, resource/depth/node limit, missing child, interrupted search or unvisited label is UNRESOLVED, never rejected"
+    }
+  },
+  "certificate_grammar": {
+    "identities": "bind proof/spec/import source bytes by SHA256; distinguish mathematical claim scope from byte identity and execution evidence",
+    "profile_manifest": "for EVERY n,q,alpha, record complete kappa-domain coverage; family-wide pruning needs a rule whose hypotheses hold throughout that family",
+    "allocation_manifest": "for EVERY surviving profile/tuple enumerate every h or cover an h-family by an explicit necessary contradiction; same h key preserved at all later stages",
+    "tuple_manifest": "include EVERY e,delta,m,rho from the derived exact domains or cover its integer subfamily by a proved contradiction; no representative sampling or endpoint interpolation",
+    "label_manifest": "enumeration tree with every eligible0/positive child, exact remaining quotas, and a proved justification for each absent child; unvisited choices are unresolved",
+    "node_kinds": {
+      "dispatch": "registered imported theorem leaf plus all exact hypotheses and admitted status",
+      "necessary_reject": "numbered LEMMAS rule ID, evaluated exact quantities, inequality/equation and hypotheses proving impossibility",
+      "split": "parent and both integer-box children with exact mid; recursively both must close",
+      "closed_label": "terminal exact quotas and a wholly contradicted finite box tree",
+      "unresolved": "passing box/singleton, resource limit, omitted child/label or incomplete evidence; never closure"
+    },
+    "matching_evidence": "recomputable finite interval/residue graph and exact maximum algorithm at the specified node. Optional matching witness alone cannot upper-bound the maximum.",
+    "closure_manifest": "each original family linked to every required child and all descendants; zero UNRESOLVED leaves and zero omitted branches, across ALL n rather than endpoint inference",
+    "no_realizability_premise": "passing alpha,kappa,h,labels,tuples or boxes need not describe a semigroup. Soundness covers every actual violating semigroup by a surviving relaxed branch.",
+    "invalid_exclusions": [
+      "resource failure",
+      "unsupported assertion",
+      "closure of a different parameter domain",
+      "independent degree allocations each spending full kappa budget",
+      "numerical levels used as grading",
+      "one favorable representation supplied to L8",
+      "found nonmaximum matching",
+      "summed rho allowances",
+      "unspecified additive collision/missing-star losses",
+      "right generators omitted from e",
+      "label0 interpreted as absence from S",
+      "strict endpoint rounded as sigma/(n-q)"
+    ],
+    "local_validation": "A later checker must validate the concrete complete range/child enumeration and every local exclusion formula with its hypotheses and exact bound inputs. Zero-gap aggregate counts or opaque sound-filter labels do not establish coverage; counts only summarize independently validated branches."
+  },
+  "soundness": {
+    "theorem": "LEMMAS_v1 L27: a COMPLETE finite certificate satisfying all domains and numbered rule hypotheses, every terminal branch contradicted and no unresolved leaves, proves ne>=c for every semigroup with n in N0, relative only to the imported leaves actually used",
+    "finite": "q,alpha,kappa,h are bounded compositions; initial M gives bounded full e,delta,m,rho; ranks and monomial degrees are bounded; finite box subdivision can reach singletons. No statement that these bounds suffice to contradict every singleton is made.",
+    "limitation": "The abstract soundness argument is distinct from implementation correspondence and completeness of a recorded execution."
+  },
+  "artifact_bindings": {
+    "LEMMAS_v1.txt": {
+      "reference": "LEMMAS_v1.txt",
+      "sha256": "e614dfc4590a1ab6a4ba11631e7d3ad69cec29249593a8a6dd83ce73b2b4eb4e"
+    },
+    "IMPORTS_v1.txt": {
+      "reference": "IMPORTS_v1.txt",
+      "sha256": "f79bb2acf78ed8714b0a4da9ca83d5c5f27e8deae6262fe102b04a5e424314a3"
+    },
+    "SOURCES_v1.json": {
+      "reference": "SOURCES_v1.json",
+      "sha256": "af95ee1d7a80c9ce0e85971fb8cea80d16f2dec8be10e0b32e07a02d33d8e4c7"
+    }
+  }
+}
