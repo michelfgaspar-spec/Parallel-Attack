@@ -1,0 +1,27 @@
+import Partials.UnitDistance.Algebra
+import Partials.UnitDistance.Assembly
+import Partials.UnitDistance.BoundaryRelations
+import Partials.UnitDistance.CertificateData
+import Partials.UnitDistance.Characters
+import Partials.UnitDistance.Counts
+import Partials.UnitDistance.Data
+import Partials.UnitDistance.DataAdmissions
+import Partials.UnitDistance.DeletionCertificate
+import Partials.UnitDistance.EqualityGadget
+import Partials.UnitDistance.Height
+import Partials.UnitDistance.HexWord
+import Partials.UnitDistance.Lift
+import Partials.UnitDistance.LineHit
+import Partials.UnitDistance.Minimization
+import Partials.UnitDistance.Model
+import Partials.UnitDistance.Network
+import Partials.UnitDistance.PairPacking
+import Partials.UnitDistance.Quotient
+import Partials.UnitDistance.SeenForest
+import Partials.UnitDistance.SevenPairKernel
+import Partials.UnitDistance.Targets
+import Partials.UnitDistance.WordData
+import Partials.UnitDistance.WordMetric
+
+/-! R6 verification root only, blind/uncompiled. The admitted Partials root
+remains empty. No concrete primitive/data target is supplied a witness. -/
