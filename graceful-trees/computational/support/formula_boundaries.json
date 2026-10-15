@@ -1,0 +1,10 @@
+{
+  "interpretation": "Consecutive leaf labels x=6,...,q-5 mapped to parent labels before transfers and split. Repeated parents describe stars, not repeated vertex labels.",
+  "source": "Root_Zero_Graceful_Trees.pdf, Table 3 (q=27), Table 4 (q=25), equation (9) (q=29), equation (16) (q=29)",
+  "cases": [
+    {"u": 2, "v": 2, "q": 27, "mode": "standard", "source": "Table 3, t=0", "parents": [25,24,23,5,5,5,5,5,23,5,5,5,5,5,4,3,2]},
+    {"u": 1, "v": 2, "q": 25, "mode": "standard", "source": "Table 4, t=0", "parents": [23,22,22,4,21,5,4,4,4,22,4,4,22,3,2]},
+    {"u": 2, "v": 3, "q": 29, "mode": "standard", "source": "equation (9), t=0", "parents": [27,2,2,2,2,2,26,25,4,2,5,2,2,2,2,2,26,3,2]},
+    {"u": 1, "v": 4, "q": 29, "mode": "alternate", "source": "equation (16), t=0", "parents": [27,26,5,3,26,4,26,4,4,4,4,4,26,4,25,4,4,1,4]}
+  ]
+}

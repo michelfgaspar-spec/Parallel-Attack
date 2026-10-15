@@ -1,7 +1,7 @@
 import Partials.Graceful.Model
 
 /-! The exact two exceptional final labelings from Table tab:small after
-the source star split. `by decide` is authored source, not an executed check. -/
+the source star split. The finite checks are included in the project build. -/
 namespace Partials.Graceful
 
 def small23Label : Vertex 1 1 → Fin 24

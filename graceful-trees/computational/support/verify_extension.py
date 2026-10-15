@@ -8,6 +8,9 @@ from collections import Counter
 import json
 from pathlib import Path
 
+if not __debug__:
+    raise SystemExit("Assertions are required; do not use -O or -OO.")
+
 HERE = Path(__file__).resolve().parent
 SMALL = json.loads((HERE / "small_solutions.json").read_text())
 
@@ -27,7 +30,14 @@ def skeleton(q, mode):
     return groups, q, 2, q - 3, q - 4
 
 
-def assignment(u, v):
+def assignment(u, v, checkpoints=False):
+    assert type(u) is int and type(v) is int and u > 0 and v > 0
+    stages = {}
+
+    def snapshot(name):
+        if checkpoints:
+            stages[name] = dict(leaves)
+
     q = 19 + 2 * (u + v)
     mode = "alternate" if q % 3 == 2 and u == 1 and q >= 29 else "standard"
     groups, A, B, P, Q = skeleton(q, mode)
@@ -35,6 +45,7 @@ def assignment(u, v):
     leaves = {x: P if q % 3 == 1 or mode == "alternate" else B for x in range(6, q - 4)}
 
     def set_rows(rows):
+        assert len({x for _, x in rows}) == len(rows), "Repeated leaf assignment"
         for p, x in rows:
             assert x in leaves
             leaves[x] = p
@@ -55,7 +66,9 @@ def assignment(u, v):
         x, y = m, m+3
         assert x+y == P+Q
         assert leaves[x] == leaves[y] == P
+        snapshot("base")
         leaves[x] = leaves[y] = Q
+        snapshot("first_transfer")
     elif q % 3 == 0:
         C, Z = (q+9)//3, (2*q+3)//3
         set_rows([(2, q-5), (q-2, 6), (3, q-6), (q-3, 7),
@@ -66,7 +79,9 @@ def assignment(u, v):
             x, y = C-3, Z+2
         assert x+y == B+Q
         assert leaves[x] == leaves[y] == B
+        snapshot("base")
         leaves[x] = leaves[y] = Q
+        snapshot("first_transfer")
         # Transfer v-1 full reflection pairs to P, preserving the anchors.
         choices = [(x, q+1-x) for x in range(6, (q+1)//2)
                    if leaves.get(x) == B and leaves.get(q+1-x) == B
@@ -83,7 +98,9 @@ def assignment(u, v):
         x,y = h,h+1
         assert x+y == P+Q
         assert leaves[x] == leaves[y] == P
+        snapshot("base")
         leaves[x] = leaves[y] = Q
+        snapshot("first_transfer")
         choices = [(x,q+1-x) for x in range(6,h)
                    if leaves.get(x) == P and leaves.get(q+1-x) == P]
         assert len(choices) >= u-1
@@ -98,7 +115,9 @@ def assignment(u, v):
         x,y=C-3,Z-1
         assert x+y == B+Q
         assert leaves[x] == leaves[y] == B
+        snapshot("base")
         leaves[x] = leaves[y] = Q
+        snapshot("first_transfer")
         choices = [(x,q-1-x) for x in range(6,(q-1)//2)
                    if leaves.get(x)==B and leaves.get(q-1-x)==B
                    and C not in (x,q-1-x) and Z not in (x,q-1-x)]
@@ -107,6 +126,11 @@ def assignment(u, v):
             assert x+y == B+P
             leaves[x] = leaves[y] = P
 
+    if checkpoints and "base" not in stages:
+        # The two literal witnesses are supplied directly before the split.
+        snapshot("base")
+        snapshot("first_transfer")
+    snapshot("redistributed")
     assert leaves[C] == leaves[Z] == B
     assert set(leaves) == set(range(6,q-4))
     counts=Counter(leaves.values())
@@ -142,7 +166,12 @@ def assignment(u, v):
                 branch += [1]
         profile.append(tuple(sorted(branch)))
     assert sorted(profile)==sorted([(1,1,3),(1,1,2*v),(1,2*u)]), (u,v,profile)
-    return {"u":u,"v":v,"q":q,"mode":mode,"edges":edges}
+    result = {"u":u,"v":v,"q":q,"mode":mode,"edges":edges}
+    if checkpoints:
+        result.update(stages=stages, groups=groups, labels=labels,
+                      anchor=[A,B,C,Z], distinguished=[B,P,Q],
+                      direct_small_witness=(q == 23 or (q == 27 and u == 1)))
+    return result
 
 
 def main():

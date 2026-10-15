@@ -6,11 +6,11 @@ import Mathlib.Tactic.Tauto
 set_option maxHeartbeats 2000000
 
 /-!
-R2 symbolic construction, authored without Lean/Lake/Power execution.
-The affine formulas below are the four constructions of the frozen
-`sources/graceful/main.tex`, Sections 2--6. The base difference proofs use
-explicit bijections of normalized label indices; no base gracefulness is a
-premise. Universal realization on `Vertex u v` remains a separate obligation.
+Symbolic constructions for manuscript Sections 2--6, included in the build.
+The base difference proofs use explicit bijections of normalized label indices;
+base gracefulness is proved rather than assumed. Realization.lean and
+NumericConstruction.lean realize these parents on `Vertex u v`;
+ManuscriptFormulas.lean connects the affine expressions to the printed formulas.
 -/
 namespace Partials.Graceful.Symbolic
 

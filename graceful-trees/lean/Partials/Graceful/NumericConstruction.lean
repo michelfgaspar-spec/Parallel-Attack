@@ -4,8 +4,8 @@ import Mathlib.Tactic.FinCases
 
 set_option maxHeartbeats 2000000
 
-/-! R2 numeric/profile integration, native request q0004. Authored blind:
-no Lean/Lake/Power execution or kernel-check claim. -/
+/-! Numeric/profile integration: the symbolic parent maps are realized on
+the manuscript family, with proved fiber counts and graceful differences. -/
 namespace Partials.Graceful.NumericConstruction
 
 open Symbolic

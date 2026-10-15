@@ -1,10 +1,11 @@
 import Partials.Graceful.NumericConstruction
 import Partials.Graceful.Witnesses
 
-/-! R2 exhaustive parameter classification, drafted without local Lean.
+/-! Exhaustive parameter classification.
 The route classifier, concrete profile counts, numerical difference proofs
-and two literal witnesses are assembled at source level only. None has been
-elaborated or kernel checked. See WIP/CASE_CONSTRUCTION_OBLIGATIONS.md.
+and two literal witnesses are assembled here and included in the project build.
+Executable.lean supplies the computable labeling; ManuscriptPresentation.lean,
+PreSplitCorrespondence.lean and ManuscriptFormulas.lean give the graph and formula links.
 -/
 namespace Partials.Graceful
 
@@ -42,9 +43,9 @@ theorem allPositiveCases (u v : ℕ) (hu : 0 < u) (hv : 0 < v) :
     · exact .residue2 t (by simpa [Symbolic.q2] using h2) hu2
     · exact .alternate t (by simpa [Symbolic.q2] using h2) (by omega)
 
-/-- Source proof of the exact all-positive target. Its proof term and every
-imported draft still await compilation, axiom audit and correspondence checking.
-No desired case conclusion is assumed as a field or hypothesis here. -/
+/-- Proof of the exact all-positive target, included in the project build.
+The case constructions supply the labeling without assuming a desired case
+conclusion. CentreZero.lean identifies zero with the unique graph-theoretic centre. -/
 theorem main_root_zero : AllPositiveTarget := by
   intro u v hu hv
   cases allPositiveCases u v hu hv with

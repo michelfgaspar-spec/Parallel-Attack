@@ -1,4 +1,5 @@
 import Partials.Graceful.Model
+import Mathlib.Data.Finset.Sort
 
 /-! Transport a finite numerical parent presentation with exact leaf fibers
 to the paper's fixed vertex type. Proof fields are explicit case obligations;
@@ -49,11 +50,12 @@ structure ProfileFrame (u v : ℕ) where
 
 namespace ProfileFrame
 
-noncomputable def leafEquiv {u v : ℕ} (F : ProfileFrame u v) (c : DepthCode) :
+/-- Enumerate the actual numerical fiber in strictly increasing label order. -/
+def leafEquiv {u v : ℕ} (F : ProfileFrame u v) (c : DepthCode) :
     Fin (pendantCount u v c.1 c.2) ≃ ↥(F.fibers c) :=
-  Fintype.equivOfCardEq (by simpa using (F.fiber_card c).symm)
+  ((F.fibers c).orderIsoOfFin (F.fiber_card c)).toEquiv
 
-noncomputable def leafMap {u v : ℕ} (F : ProfileFrame u v) :
+def leafMap {u v : ℕ} (F : ProfileFrame u v) :
     FlatLeafCode u v → Fin (q u v + 1) :=
   fun ⟨c, k⟩ => (F.leafEquiv c k).val
 
@@ -75,7 +77,7 @@ theorem leafMap_injective {u v : ℕ} (F : ProfileFrame u v) :
   cases hkl
   rfl
 
-noncomputable def fullMap {u v : ℕ} (F : ProfileFrame u v) :
+def fullMap {u v : ℕ} (F : ProfileFrame u v) :
     InternalCode ⊕ FlatLeafCode u v → Fin (q u v + 1) :=
   Sum.elim F.internal F.leafMap
 

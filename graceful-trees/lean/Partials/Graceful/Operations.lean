@@ -1,8 +1,7 @@
 import Partials.Graceful.Model
 import Mathlib.Data.Finset.Sort
 
-/-! R2 blind source draft: graph-level pair transfer and star split.
-No Lean/Lake execution, elaboration, or kernel check has run.
+/-! Graph-level pair transfer and star split, included in the project build.
 
 The hypotheses below describe pendant vertices, distinct attachment sites,
 old incidences, and the paper's label equations. No operation theorem assumes

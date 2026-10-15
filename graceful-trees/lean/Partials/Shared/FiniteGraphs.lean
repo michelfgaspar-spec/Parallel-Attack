@@ -1,8 +1,9 @@
 import Mathlib.Data.Fintype.Basic
 import Mathlib.Data.Nat.Dist
 
-/-! R1 draft interfaces. Graceful R2 and Unit-Distance R6 must instantiate
-these presentations and prove exact correspondence with their source graphs. -/
+/-! Finite graph, rooted-parent and labeling interfaces.
+Graceful.Model instantiates these interfaces for the manuscript family;
+Graceful.Geometry connects its incidences to the undirected simple graph. -/
 namespace Partials.Interface
 
 /-- Each undirected edge is represented once, with a chosen orientation. -/
@@ -12,8 +13,8 @@ structure FiniteEdgeGraph (V E : Type*) [Fintype V] [Fintype E] where
   unique_edge : ∀ e f, ends e = ends f ∨
     ((ends e).1 = (ends f).2 ∧ (ends e).2 = (ends f).1) → e = f
 
-/-- An explicit parent/depth presentation; tree correspondence is a consumer
-obligation, not an assumed graph-theoretic theorem. -/
+/-- A rooted-parent presentation with strictly decreasing depth away from
+the root. Graph incidences are linked to it by `ParentCompatible`. -/
 structure RootedParentTree (V : Type*) where
   root : V
   parent : V → V

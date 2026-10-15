@@ -3,8 +3,8 @@ import Mathlib.Algebra.BigOperators.Fin
 import Lean.Elab.Tactic.RCases
 import Lean.Elab.Tactic.Omega
 
-/-! R2 blind source draft. Exact ordered representative of the paper's
-unordered branch profiles. No local elaboration or kernel check has run. -/
+/-! Exact ordered representative of the paper's unordered branch profiles.
+Included in the project build. -/
 namespace Partials.Graceful
 
 def q (u v : ℕ) : ℕ := 19 + 2 * (u + v)
